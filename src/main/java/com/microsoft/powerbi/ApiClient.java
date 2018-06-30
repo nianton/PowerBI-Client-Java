@@ -35,13 +35,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.microsoft.powerbi.auth.Authentication;
-import com.microsoft.powerbi.auth.HttpBasicAuth;
-import com.microsoft.powerbi.auth.ApiKeyAuth;
 import com.microsoft.powerbi.auth.OAuth;
 
 public class ApiClient {
+    public static final String PowerBiBasePath = "https://api.powerbi.com";
+    public static final String DefaultUserAgent = "com.microsoft.powerbi/1.0.0/java";
+    private static final String DefaultAuthenticationName = "defaultAuth";
 
-    private String basePath = "https://api.powerbi.com";
+    private String basePath = PowerBiBasePath;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -65,19 +66,18 @@ public class ApiClient {
     /*
      * Constructor for ApiClient
      */
-    public ApiClient() {
+    public ApiClient(Authentication authentication) {
         httpClient = new OkHttpClient();
-
-
         verifyingSsl = true;
-
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/1.0.0/java");
+        setUserAgent(DefaultUserAgent);
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
+        authentications.put(DefaultAuthenticationName, authentication);
+
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -250,66 +250,6 @@ public class ApiClient {
      */
     public Authentication getAuthentication(String authName) {
         return authentications.get(authName);
-    }
-
-    /**
-     * Helper method to set username for the first HTTP basic authentication.
-     *
-     * @param username Username
-     */
-    public void setUsername(String username) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof HttpBasicAuth) {
-                ((HttpBasicAuth) auth).setUsername(username);
-                return;
-            }
-        }
-        throw new RuntimeException("No HTTP basic authentication configured!");
-    }
-
-    /**
-     * Helper method to set password for the first HTTP basic authentication.
-     *
-     * @param password Password
-     */
-    public void setPassword(String password) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof HttpBasicAuth) {
-                ((HttpBasicAuth) auth).setPassword(password);
-                return;
-            }
-        }
-        throw new RuntimeException("No HTTP basic authentication configured!");
-    }
-
-    /**
-     * Helper method to set API key value for the first API key authentication.
-     *
-     * @param apiKey API key
-     */
-    public void setApiKey(String apiKey) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof ApiKeyAuth) {
-                ((ApiKeyAuth) auth).setApiKey(apiKey);
-                return;
-            }
-        }
-        throw new RuntimeException("No API key authentication configured!");
-    }
-
-    /**
-     * Helper method to set API key prefix for the first API key authentication.
-     *
-     * @param apiKeyPrefix API key prefix
-     */
-    public void setApiKeyPrefix(String apiKeyPrefix) {
-        for (Authentication auth : authentications.values()) {
-            if (auth instanceof ApiKeyAuth) {
-                ((ApiKeyAuth) auth).setApiKeyPrefix(apiKeyPrefix);
-                return;
-            }
-        }
-        throw new RuntimeException("No API key authentication configured!");
     }
 
     /**
@@ -1069,6 +1009,11 @@ public class ApiClient {
      * @param headerParams  Map of header parameters
      */
     public void updateParamsForAuth(String[] authNames, List<Pair> queryParams, Map<String, String> headerParams) {
+        
+        if (authNames == null || authNames.length == 0) {
+            authNames = new String[] { DefaultAuthenticationName };
+        }
+        
         for (String authName : authNames) {
             Authentication auth = authentications.get(authName);
             if (auth == null) throw new RuntimeException("Authentication undefined: " + authName);

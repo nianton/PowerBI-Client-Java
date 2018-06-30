@@ -100,16 +100,16 @@ public class Dataset {
   @SerializedName("defaultMode")
   private DefaultModeEnum defaultMode = null;
 
-  @SerializedName("IsRefreshable")
+  @SerializedName("isRefreshable")
   private Boolean isRefreshable = null;
 
-  @SerializedName("IsEffectiveIdentityRequired")
+  @SerializedName("isEffectiveIdentityRequired")
   private Boolean isEffectiveIdentityRequired = null;
 
-  @SerializedName("IsEffectiveIdentityRolesRequired")
+  @SerializedName("isEffectiveIdentityRolesRequired")
   private Boolean isEffectiveIdentityRolesRequired = null;
 
-  @SerializedName("IsOnPremGatewayRequired")
+  @SerializedName("isOnPremGatewayRequired")
   private Boolean isOnPremGatewayRequired = null;
 
   public Dataset id(String id) {

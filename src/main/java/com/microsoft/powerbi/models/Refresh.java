@@ -15,7 +15,7 @@ import org.threeten.bp.OffsetDateTime;
  * A Power BI refresh history entry
  */
 @ApiModel(description = "A Power BI refresh history entry")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class Refresh {
   @SerializedName("refreshType")
   private String refreshType = null;

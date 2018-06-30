@@ -33,11 +33,11 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysAddDatasourceUserTest() throws ApiException {
+    public void addDatasourceUserTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
         UserAccessRight addUserToDatasourceRequest = null;
-        Object response = api.gatewaysAddDatasourceUser(gatewayId, datasourceId, addUserToDatasourceRequest);
+        Object response = api.addDatasourceUser(gatewayId, datasourceId, addUserToDatasourceRequest);
 
         // TODO: test validations
     }
@@ -51,10 +51,10 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysCreateDatasourceTest() throws ApiException {
+    public void createDatasourceTest() throws ApiException {
         String gatewayId = null;
         PublishDatasourceToGatewayRequest datasourceToGatewayRequest = null;
-        GatewayDatasource response = api.gatewaysCreateDatasource(gatewayId, datasourceToGatewayRequest);
+        GatewayDatasource response = api.createDatasource(gatewayId, datasourceToGatewayRequest);
 
         // TODO: test validations
     }
@@ -68,10 +68,10 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysDeleteDatasourceTest() throws ApiException {
+    public void deleteDatasourceTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
-        Object response = api.gatewaysDeleteDatasource(gatewayId, datasourceId);
+        Object response = api.deleteDatasource(gatewayId, datasourceId);
 
         // TODO: test validations
     }
@@ -85,11 +85,11 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysDeleteDatasourceUserTest() throws ApiException {
+    public void deleteDatasourceUserTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
         String emailAdress = null;
-        Object response = api.gatewaysDeleteDatasourceUser(gatewayId, datasourceId, emailAdress);
+        Object response = api.deleteDatasourceUser(gatewayId, datasourceId, emailAdress);
 
         // TODO: test validations
     }
@@ -103,10 +103,10 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysGetDatasourceByIdTest() throws ApiException {
+    public void getDatasourceByIdTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
-        GatewayDatasource response = api.gatewaysGetDatasourceById(gatewayId, datasourceId);
+        GatewayDatasource response = api.getDatasourceById(gatewayId, datasourceId);
 
         // TODO: test validations
     }
@@ -120,10 +120,10 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysGetDatasourceStatusByIdTest() throws ApiException {
+    public void getDatasourceStatusByIdTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
-        Object response = api.gatewaysGetDatasourceStatusById(gatewayId, datasourceId);
+        Object response = api.getDatasourceStatusById(gatewayId, datasourceId);
 
         // TODO: test validations
     }
@@ -137,10 +137,10 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysGetDatasourceUsersTest() throws ApiException {
+    public void getDatasourceUsersTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
-        ODataResponseListUserAccessRight response = api.gatewaysGetDatasourceUsers(gatewayId, datasourceId);
+        ODataResponseListUserAccessRight response = api.getDatasourceUsers(gatewayId, datasourceId);
 
         // TODO: test validations
     }
@@ -154,9 +154,9 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysGetDatasourcesTest() throws ApiException {
+    public void getDatasourcesTest() throws ApiException {
         String gatewayId = null;
-        ODataResponseListGatewayDatasource response = api.gatewaysGetDatasources(gatewayId);
+        ODataResponseListGatewayDatasource response = api.getDatasources(gatewayId);
 
         // TODO: test validations
     }
@@ -170,11 +170,11 @@ public class DatasourcesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysUpdateDatasourceTest() throws ApiException {
+    public void updateDatasourceTest() throws ApiException {
         String gatewayId = null;
         String datasourceId = null;
         UpdateDatasourceRequest updateDatasourceRequest = null;
-        Object response = api.gatewaysUpdateDatasource(gatewayId, datasourceId, updateDatasourceRequest);
+        Object response = api.updateDatasource(gatewayId, datasourceId, updateDatasourceRequest);
 
         // TODO: test validations
     }

@@ -16,7 +16,7 @@ import java.util.List;
  * The identity that the generated token should reflect
  */
 @ApiModel(description = "The identity that the generated token should reflect")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class EffectiveIdentity {
   @SerializedName("username")
   private String username = null;
@@ -26,6 +26,9 @@ public class EffectiveIdentity {
 
   @SerializedName("datasets")
   private List<String> datasets = new ArrayList<String>();
+
+  @SerializedName("customData")
+  private String customData = null;
 
   public EffectiveIdentity username(String username) {
     this.username = username;
@@ -94,6 +97,24 @@ public class EffectiveIdentity {
     this.datasets = datasets;
   }
 
+  public EffectiveIdentity customData(String customData) {
+    this.customData = customData;
+    return this;
+  }
+
+   /**
+   * The value of customdata to be used for applying RLS rules (Only supported for live connections to Azure Analysis Services)
+   * @return customData
+  **/
+  @ApiModelProperty(value = "The value of customdata to be used for applying RLS rules (Only supported for live connections to Azure Analysis Services)")
+  public String getCustomData() {
+    return customData;
+  }
+
+  public void setCustomData(String customData) {
+    this.customData = customData;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +127,13 @@ public class EffectiveIdentity {
     EffectiveIdentity effectiveIdentity = (EffectiveIdentity) o;
     return Objects.equals(this.username, effectiveIdentity.username) &&
         Objects.equals(this.roles, effectiveIdentity.roles) &&
-        Objects.equals(this.datasets, effectiveIdentity.datasets);
+        Objects.equals(this.datasets, effectiveIdentity.datasets) &&
+        Objects.equals(this.customData, effectiveIdentity.customData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, roles, datasets);
+    return Objects.hash(username, roles, datasets, customData);
   }
 
 
@@ -123,6 +145,7 @@ public class EffectiveIdentity {
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("    datasets: ").append(toIndentedString(datasets)).append("\n");
+    sb.append("    customData: ").append(toIndentedString(customData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

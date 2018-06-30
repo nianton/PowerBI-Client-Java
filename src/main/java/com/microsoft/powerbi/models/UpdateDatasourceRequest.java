@@ -15,7 +15,7 @@ import java.io.IOException;
  * An Update Datasource To Gateway Request
  */
 @ApiModel(description = "An Update Datasource To Gateway Request")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class UpdateDatasourceRequest {
   @SerializedName("credentialDetails")
   private CredentialDetails credentialDetails = null;

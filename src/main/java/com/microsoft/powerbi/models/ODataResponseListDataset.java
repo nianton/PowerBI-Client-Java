@@ -17,7 +17,7 @@ import java.util.List;
  * A dataset odata list wrapper
  */
 @ApiModel(description = "A dataset odata list wrapper")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class ODataResponseListDataset {
   @SerializedName("odata.context")
   private String odataContext = null;

@@ -53,7 +53,7 @@ public class DatasetsApi {
     }
 
     /**
-     * Build call for datasetsBindToGateway
+     * Build call for bindToGateway
      * @param datasetKey The dataset id (required)
      * @param bindToGatewayRequest The bind to gateway request (required)
      * @param progressListener Progress listener
@@ -61,7 +61,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsBindToGatewayCall(String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call bindToGatewayCall(String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = bindToGatewayRequest;
 
         // create path and map variables
@@ -104,20 +104,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsBindToGatewayValidateBeforeCall(String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call bindToGatewayValidateBeforeCall(String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsBindToGateway(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling bindToGateway(Async)");
         }
         
         // verify the required parameter 'bindToGatewayRequest' is set
         if (bindToGatewayRequest == null) {
-            throw new ApiException("Missing the required parameter 'bindToGatewayRequest' when calling datasetsBindToGateway(Async)");
+            throw new ApiException("Missing the required parameter 'bindToGatewayRequest' when calling bindToGateway(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsBindToGatewayCall(datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = bindToGatewayCall(datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -130,8 +130,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsBindToGateway(String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
-        ApiResponse<Object> resp = datasetsBindToGatewayWithHttpInfo(datasetKey, bindToGatewayRequest);
+    public Object bindToGateway(String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
+        ApiResponse<Object> resp = bindToGatewayWithHttpInfo(datasetKey, bindToGatewayRequest);
         return resp.getData();
     }
 
@@ -143,8 +143,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsBindToGatewayWithHttpInfo(String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsBindToGatewayValidateBeforeCall(datasetKey, bindToGatewayRequest, null, null);
+    public ApiResponse<Object> bindToGatewayWithHttpInfo(String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
+        com.squareup.okhttp.Call call = bindToGatewayValidateBeforeCall(datasetKey, bindToGatewayRequest, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -158,7 +158,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsBindToGatewayAsync(String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call bindToGatewayAsync(String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -179,13 +179,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsBindToGatewayValidateBeforeCall(datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = bindToGatewayValidateBeforeCall(datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsBindToGatewayInGroup
+     * Build call for bindToGatewayInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param bindToGatewayRequest The bind to gateway request (required)
@@ -194,7 +194,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsBindToGatewayInGroupCall(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call bindToGatewayInGroupCall(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = bindToGatewayRequest;
 
         // create path and map variables
@@ -238,25 +238,25 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsBindToGatewayInGroupValidateBeforeCall(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call bindToGatewayInGroupValidateBeforeCall(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsBindToGatewayInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling bindToGatewayInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsBindToGatewayInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling bindToGatewayInGroup(Async)");
         }
         
         // verify the required parameter 'bindToGatewayRequest' is set
         if (bindToGatewayRequest == null) {
-            throw new ApiException("Missing the required parameter 'bindToGatewayRequest' when calling datasetsBindToGatewayInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'bindToGatewayRequest' when calling bindToGatewayInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsBindToGatewayInGroupCall(groupId, datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = bindToGatewayInGroupCall(groupId, datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -270,8 +270,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsBindToGatewayInGroup(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
-        ApiResponse<Object> resp = datasetsBindToGatewayInGroupWithHttpInfo(groupId, datasetKey, bindToGatewayRequest);
+    public Object bindToGatewayInGroup(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
+        ApiResponse<Object> resp = bindToGatewayInGroupWithHttpInfo(groupId, datasetKey, bindToGatewayRequest);
         return resp.getData();
     }
 
@@ -284,8 +284,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsBindToGatewayInGroupWithHttpInfo(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsBindToGatewayInGroupValidateBeforeCall(groupId, datasetKey, bindToGatewayRequest, null, null);
+    public ApiResponse<Object> bindToGatewayInGroupWithHttpInfo(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest) throws ApiException {
+        com.squareup.okhttp.Call call = bindToGatewayInGroupValidateBeforeCall(groupId, datasetKey, bindToGatewayRequest, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -300,7 +300,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsBindToGatewayInGroupAsync(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call bindToGatewayInGroupAsync(String groupId, String datasetKey, BindToGatewayRequest bindToGatewayRequest, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -321,20 +321,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsBindToGatewayInGroupValidateBeforeCall(groupId, datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = bindToGatewayInGroupValidateBeforeCall(groupId, datasetKey, bindToGatewayRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsDeleteDatasetById
+     * Build call for deleteDatasetById
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteDatasetByIdCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasetByIdCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -377,15 +377,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsDeleteDatasetByIdValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteDatasetByIdValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsDeleteDatasetById(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling deleteDatasetById(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsDeleteDatasetByIdCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasetByIdCall(datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -397,8 +397,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsDeleteDatasetById(String datasetKey) throws ApiException {
-        ApiResponse<Object> resp = datasetsDeleteDatasetByIdWithHttpInfo(datasetKey);
+    public Object deleteDatasetById(String datasetKey) throws ApiException {
+        ApiResponse<Object> resp = deleteDatasetByIdWithHttpInfo(datasetKey);
         return resp.getData();
     }
 
@@ -409,8 +409,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsDeleteDatasetByIdWithHttpInfo(String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsDeleteDatasetByIdValidateBeforeCall(datasetKey, null, null);
+    public ApiResponse<Object> deleteDatasetByIdWithHttpInfo(String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = deleteDatasetByIdValidateBeforeCall(datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -423,7 +423,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteDatasetByIdAsync(String datasetKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasetByIdAsync(String datasetKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -444,13 +444,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsDeleteDatasetByIdValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasetByIdValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsDeleteDatasetByIdInGroup
+     * Build call for deleteDatasetByIdInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
@@ -458,7 +458,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteDatasetByIdInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasetByIdInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -502,20 +502,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsDeleteDatasetByIdInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteDatasetByIdInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsDeleteDatasetByIdInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling deleteDatasetByIdInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsDeleteDatasetByIdInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling deleteDatasetByIdInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsDeleteDatasetByIdInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasetByIdInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -528,8 +528,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsDeleteDatasetByIdInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<Object> resp = datasetsDeleteDatasetByIdInGroupWithHttpInfo(groupId, datasetKey);
+    public Object deleteDatasetByIdInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<Object> resp = deleteDatasetByIdInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -541,8 +541,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsDeleteDatasetByIdInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsDeleteDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<Object> deleteDatasetByIdInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = deleteDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -556,7 +556,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteDatasetByIdInGroupAsync(String groupId, String datasetKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasetByIdInGroupAsync(String groupId, String datasetKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -577,13 +577,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsDeleteDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsDeleteRows
+     * Build call for deleteRows
      * @param datasetKey The dataset id (required)
      * @param tableName The table name (required)
      * @param progressListener Progress listener
@@ -591,7 +591,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteRowsCall(String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteRowsCall(String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -635,20 +635,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsDeleteRowsValidateBeforeCall(String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteRowsValidateBeforeCall(String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsDeleteRows(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling deleteRows(Async)");
         }
         
         // verify the required parameter 'tableName' is set
         if (tableName == null) {
-            throw new ApiException("Missing the required parameter 'tableName' when calling datasetsDeleteRows(Async)");
+            throw new ApiException("Missing the required parameter 'tableName' when calling deleteRows(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsDeleteRowsCall(datasetKey, tableName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteRowsCall(datasetKey, tableName, progressListener, progressRequestListener);
         return call;
 
     }
@@ -661,8 +661,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsDeleteRows(String datasetKey, String tableName) throws ApiException {
-        ApiResponse<Object> resp = datasetsDeleteRowsWithHttpInfo(datasetKey, tableName);
+    public Object deleteRows(String datasetKey, String tableName) throws ApiException {
+        ApiResponse<Object> resp = deleteRowsWithHttpInfo(datasetKey, tableName);
         return resp.getData();
     }
 
@@ -674,8 +674,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsDeleteRowsWithHttpInfo(String datasetKey, String tableName) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsDeleteRowsValidateBeforeCall(datasetKey, tableName, null, null);
+    public ApiResponse<Object> deleteRowsWithHttpInfo(String datasetKey, String tableName) throws ApiException {
+        com.squareup.okhttp.Call call = deleteRowsValidateBeforeCall(datasetKey, tableName, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -689,7 +689,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteRowsAsync(String datasetKey, String tableName, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteRowsAsync(String datasetKey, String tableName, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -710,13 +710,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsDeleteRowsValidateBeforeCall(datasetKey, tableName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteRowsValidateBeforeCall(datasetKey, tableName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsDeleteRowsInGroup
+     * Build call for deleteRowsInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param tableName The table name (required)
@@ -725,7 +725,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteRowsInGroupCall(String groupId, String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteRowsInGroupCall(String groupId, String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -770,25 +770,25 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsDeleteRowsInGroupValidateBeforeCall(String groupId, String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteRowsInGroupValidateBeforeCall(String groupId, String datasetKey, String tableName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsDeleteRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling deleteRowsInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsDeleteRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling deleteRowsInGroup(Async)");
         }
         
         // verify the required parameter 'tableName' is set
         if (tableName == null) {
-            throw new ApiException("Missing the required parameter 'tableName' when calling datasetsDeleteRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'tableName' when calling deleteRowsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsDeleteRowsInGroupCall(groupId, datasetKey, tableName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteRowsInGroupCall(groupId, datasetKey, tableName, progressListener, progressRequestListener);
         return call;
 
     }
@@ -802,8 +802,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsDeleteRowsInGroup(String groupId, String datasetKey, String tableName) throws ApiException {
-        ApiResponse<Object> resp = datasetsDeleteRowsInGroupWithHttpInfo(groupId, datasetKey, tableName);
+    public Object deleteRowsInGroup(String groupId, String datasetKey, String tableName) throws ApiException {
+        ApiResponse<Object> resp = deleteRowsInGroupWithHttpInfo(groupId, datasetKey, tableName);
         return resp.getData();
     }
 
@@ -816,8 +816,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsDeleteRowsInGroupWithHttpInfo(String groupId, String datasetKey, String tableName) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsDeleteRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, null, null);
+    public ApiResponse<Object> deleteRowsInGroupWithHttpInfo(String groupId, String datasetKey, String tableName) throws ApiException {
+        com.squareup.okhttp.Call call = deleteRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -832,7 +832,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsDeleteRowsInGroupAsync(String groupId, String datasetKey, String tableName, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteRowsInGroupAsync(String groupId, String datasetKey, String tableName, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -853,13 +853,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsDeleteRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGenerateTokenInGroup
+     * Build call for generateTokenInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param requestParameters Generate token parameters (required)
@@ -868,7 +868,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGenerateTokenInGroupCall(String groupId, String datasetKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenInGroupCall(String groupId, String datasetKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -912,25 +912,25 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGenerateTokenInGroupValidateBeforeCall(String groupId, String datasetKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenInGroupValidateBeforeCall(String groupId, String datasetKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling generateTokenInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling generateTokenInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling datasetsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateTokenInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGenerateTokenInGroupCall(groupId, datasetKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenInGroupCall(groupId, datasetKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -944,8 +944,8 @@ public class DatasetsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken datasetsGenerateTokenInGroup(String groupId, String datasetKey, GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = datasetsGenerateTokenInGroupWithHttpInfo(groupId, datasetKey, requestParameters);
+    public EmbedToken generateTokenInGroup(String groupId, String datasetKey, GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenInGroupWithHttpInfo(groupId, datasetKey, requestParameters);
         return resp.getData();
     }
 
@@ -958,8 +958,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> datasetsGenerateTokenInGroupWithHttpInfo(String groupId, String datasetKey, GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGenerateTokenInGroupValidateBeforeCall(groupId, datasetKey, requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenInGroupWithHttpInfo(String groupId, String datasetKey, GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenInGroupValidateBeforeCall(groupId, datasetKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -974,7 +974,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGenerateTokenInGroupAsync(String groupId, String datasetKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenInGroupAsync(String groupId, String datasetKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -995,20 +995,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGenerateTokenInGroupValidateBeforeCall(groupId, datasetKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenInGroupValidateBeforeCall(groupId, datasetKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetDatasetById
+     * Build call for getDatasetById
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetByIdCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetByIdCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1051,15 +1051,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetDatasetByIdValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasetByIdValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetDatasetById(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getDatasetById(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetByIdCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetByIdCall(datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1071,8 +1071,8 @@ public class DatasetsApi {
      * @return Dataset
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Dataset datasetsGetDatasetById(String datasetKey) throws ApiException {
-        ApiResponse<Dataset> resp = datasetsGetDatasetByIdWithHttpInfo(datasetKey);
+    public Dataset getDatasetById(String datasetKey) throws ApiException {
+        ApiResponse<Dataset> resp = getDatasetByIdWithHttpInfo(datasetKey);
         return resp.getData();
     }
 
@@ -1083,8 +1083,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Dataset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Dataset> datasetsGetDatasetByIdWithHttpInfo(String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetDatasetByIdValidateBeforeCall(datasetKey, null, null);
+    public ApiResponse<Dataset> getDatasetByIdWithHttpInfo(String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasetByIdValidateBeforeCall(datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1097,7 +1097,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetByIdAsync(String datasetKey, final ApiCallback<Dataset> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetByIdAsync(String datasetKey, final ApiCallback<Dataset> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1118,13 +1118,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetByIdValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetByIdValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetDatasetByIdInGroup
+     * Build call for getDatasetByIdInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
@@ -1132,7 +1132,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetByIdInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetByIdInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1176,20 +1176,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetDatasetByIdInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasetByIdInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGetDatasetByIdInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getDatasetByIdInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetDatasetByIdInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getDatasetByIdInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetByIdInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetByIdInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1202,8 +1202,8 @@ public class DatasetsApi {
      * @return Dataset
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Dataset datasetsGetDatasetByIdInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<Dataset> resp = datasetsGetDatasetByIdInGroupWithHttpInfo(groupId, datasetKey);
+    public Dataset getDatasetByIdInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<Dataset> resp = getDatasetByIdInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -1215,8 +1215,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Dataset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Dataset> datasetsGetDatasetByIdInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<Dataset> getDatasetByIdInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1230,7 +1230,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetByIdInGroupAsync(String groupId, String datasetKey, final ApiCallback<Dataset> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetByIdInGroupAsync(String groupId, String datasetKey, final ApiCallback<Dataset> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1251,19 +1251,19 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetByIdInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetDatasets
+     * Build call for getDatasets
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1305,10 +1305,10 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetDatasetsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasetsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetsCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -1319,8 +1319,8 @@ public class DatasetsApi {
      * @return ODataResponseListDataset
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListDataset datasetsGetDatasets() throws ApiException {
-        ApiResponse<ODataResponseListDataset> resp = datasetsGetDatasetsWithHttpInfo();
+    public ODataResponseListDataset getDatasets() throws ApiException {
+        ApiResponse<ODataResponseListDataset> resp = getDatasetsWithHttpInfo();
         return resp.getData();
     }
 
@@ -1330,8 +1330,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListDataset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListDataset> datasetsGetDatasetsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetDatasetsValidateBeforeCall(null, null);
+    public ApiResponse<ODataResponseListDataset> getDatasetsWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getDatasetsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListDataset>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1343,7 +1343,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetsAsync(final ApiCallback<ODataResponseListDataset> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetsAsync(final ApiCallback<ODataResponseListDataset> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1364,20 +1364,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListDataset>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetDatasetsInGroup
+     * Build call for getDatasetsInGroup
      * @param groupId The group id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1420,15 +1420,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetDatasetsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasetsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGetDatasetsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getDatasetsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetsInGroupCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetsInGroupCall(groupId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1440,8 +1440,8 @@ public class DatasetsApi {
      * @return ODataResponseListDataset
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListDataset datasetsGetDatasetsInGroup(String groupId) throws ApiException {
-        ApiResponse<ODataResponseListDataset> resp = datasetsGetDatasetsInGroupWithHttpInfo(groupId);
+    public ODataResponseListDataset getDatasetsInGroup(String groupId) throws ApiException {
+        ApiResponse<ODataResponseListDataset> resp = getDatasetsInGroupWithHttpInfo(groupId);
         return resp.getData();
     }
 
@@ -1452,8 +1452,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListDataset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListDataset> datasetsGetDatasetsInGroupWithHttpInfo(String groupId) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetDatasetsInGroupValidateBeforeCall(groupId, null, null);
+    public ApiResponse<ODataResponseListDataset> getDatasetsInGroupWithHttpInfo(String groupId) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasetsInGroupValidateBeforeCall(groupId, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListDataset>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1466,7 +1466,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasetsInGroupAsync(String groupId, final ApiCallback<ODataResponseListDataset> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasetsInGroupAsync(String groupId, final ApiCallback<ODataResponseListDataset> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1487,20 +1487,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetDatasetsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasetsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListDataset>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetDatasources
+     * Build call for getDatasources
      * @param datasetKey  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasourcesCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourcesCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1543,15 +1543,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetDatasourcesValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasourcesValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetDatasources(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getDatasources(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetDatasourcesCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourcesCall(datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1563,8 +1563,8 @@ public class DatasetsApi {
      * @return ODataResponseListDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListDatasource datasetsGetDatasources(String datasetKey) throws ApiException {
-        ApiResponse<ODataResponseListDatasource> resp = datasetsGetDatasourcesWithHttpInfo(datasetKey);
+    public ODataResponseListDatasource getDatasources(String datasetKey) throws ApiException {
+        ApiResponse<ODataResponseListDatasource> resp = getDatasourcesWithHttpInfo(datasetKey);
         return resp.getData();
     }
 
@@ -1575,8 +1575,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListDatasource> datasetsGetDatasourcesWithHttpInfo(String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetDatasourcesValidateBeforeCall(datasetKey, null, null);
+    public ApiResponse<ODataResponseListDatasource> getDatasourcesWithHttpInfo(String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasourcesValidateBeforeCall(datasetKey, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1589,7 +1589,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasourcesAsync(String datasetKey, final ApiCallback<ODataResponseListDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourcesAsync(String datasetKey, final ApiCallback<ODataResponseListDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1610,13 +1610,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetDatasourcesValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourcesValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetDatasourcesInGroup
+     * Build call for getDatasourcesInGroup
      * @param groupId The group id (required)
      * @param datasetKey  (required)
      * @param progressListener Progress listener
@@ -1624,7 +1624,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasourcesInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourcesInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1668,20 +1668,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetDatasourcesInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasourcesInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGetDatasourcesInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getDatasourcesInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetDatasourcesInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getDatasourcesInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetDatasourcesInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourcesInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1694,8 +1694,8 @@ public class DatasetsApi {
      * @return ODataResponseListDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListDatasource datasetsGetDatasourcesInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<ODataResponseListDatasource> resp = datasetsGetDatasourcesInGroupWithHttpInfo(groupId, datasetKey);
+    public ODataResponseListDatasource getDatasourcesInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<ODataResponseListDatasource> resp = getDatasourcesInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -1707,8 +1707,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListDatasource> datasetsGetDatasourcesInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<ODataResponseListDatasource> getDatasourcesInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1722,7 +1722,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetDatasourcesInGroupAsync(String groupId, String datasetKey, final ApiCallback<ODataResponseListDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourcesInGroupAsync(String groupId, String datasetKey, final ApiCallback<ODataResponseListDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1743,20 +1743,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetGatewayDatasources
+     * Build call for getGatewayDatasources
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetGatewayDatasourcesCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getGatewayDatasourcesCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1799,15 +1799,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetGatewayDatasourcesValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getGatewayDatasourcesValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetGatewayDatasources(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getGatewayDatasources(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetGatewayDatasourcesCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewayDatasourcesCall(datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1819,8 +1819,8 @@ public class DatasetsApi {
      * @return ODataResponseListGatewayDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListGatewayDatasource datasetsGetGatewayDatasources(String datasetKey) throws ApiException {
-        ApiResponse<ODataResponseListGatewayDatasource> resp = datasetsGetGatewayDatasourcesWithHttpInfo(datasetKey);
+    public ODataResponseListGatewayDatasource getGatewayDatasources(String datasetKey) throws ApiException {
+        ApiResponse<ODataResponseListGatewayDatasource> resp = getGatewayDatasourcesWithHttpInfo(datasetKey);
         return resp.getData();
     }
 
@@ -1831,8 +1831,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListGatewayDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListGatewayDatasource> datasetsGetGatewayDatasourcesWithHttpInfo(String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetGatewayDatasourcesValidateBeforeCall(datasetKey, null, null);
+    public ApiResponse<ODataResponseListGatewayDatasource> getGatewayDatasourcesWithHttpInfo(String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getGatewayDatasourcesValidateBeforeCall(datasetKey, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListGatewayDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1845,7 +1845,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetGatewayDatasourcesAsync(String datasetKey, final ApiCallback<ODataResponseListGatewayDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getGatewayDatasourcesAsync(String datasetKey, final ApiCallback<ODataResponseListGatewayDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1866,13 +1866,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetGatewayDatasourcesValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewayDatasourcesValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListGatewayDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetGatewayDatasourcesInGroup
+     * Build call for getGatewayDatasourcesInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
@@ -1880,7 +1880,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetGatewayDatasourcesInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getGatewayDatasourcesInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1924,20 +1924,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetGatewayDatasourcesInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getGatewayDatasourcesInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGetGatewayDatasourcesInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getGatewayDatasourcesInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetGatewayDatasourcesInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getGatewayDatasourcesInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetGatewayDatasourcesInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewayDatasourcesInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1950,8 +1950,8 @@ public class DatasetsApi {
      * @return ODataResponseListGatewayDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListGatewayDatasource datasetsGetGatewayDatasourcesInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<ODataResponseListGatewayDatasource> resp = datasetsGetGatewayDatasourcesInGroupWithHttpInfo(groupId, datasetKey);
+    public ODataResponseListGatewayDatasource getGatewayDatasourcesInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<ODataResponseListGatewayDatasource> resp = getGatewayDatasourcesInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -1963,8 +1963,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListGatewayDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListGatewayDatasource> datasetsGetGatewayDatasourcesInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetGatewayDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<ODataResponseListGatewayDatasource> getGatewayDatasourcesInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getGatewayDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListGatewayDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1978,7 +1978,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetGatewayDatasourcesInGroupAsync(String groupId, String datasetKey, final ApiCallback<ODataResponseListGatewayDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getGatewayDatasourcesInGroupAsync(String groupId, String datasetKey, final ApiCallback<ODataResponseListGatewayDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1999,13 +1999,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetGatewayDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewayDatasourcesInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListGatewayDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetRefreshHistory
+     * Build call for getRefreshHistory
      * @param datasetKey The dataset id (required)
      * @param top The requested number of entries in the refresh history, if not supported the default is all available entries (optional)
      * @param progressListener Progress listener
@@ -2013,7 +2013,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetRefreshHistoryCall(String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getRefreshHistoryCall(String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2058,15 +2058,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetRefreshHistoryValidateBeforeCall(String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getRefreshHistoryValidateBeforeCall(String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetRefreshHistory(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getRefreshHistory(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetRefreshHistoryCall(datasetKey, top, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRefreshHistoryCall(datasetKey, top, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2079,8 +2079,8 @@ public class DatasetsApi {
      * @return ODataResponseListRefresh
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListRefresh datasetsGetRefreshHistory(String datasetKey, Integer top) throws ApiException {
-        ApiResponse<ODataResponseListRefresh> resp = datasetsGetRefreshHistoryWithHttpInfo(datasetKey, top);
+    public ODataResponseListRefresh getRefreshHistory(String datasetKey, Integer top) throws ApiException {
+        ApiResponse<ODataResponseListRefresh> resp = getRefreshHistoryWithHttpInfo(datasetKey, top);
         return resp.getData();
     }
 
@@ -2092,8 +2092,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListRefresh&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListRefresh> datasetsGetRefreshHistoryWithHttpInfo(String datasetKey, Integer top) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetRefreshHistoryValidateBeforeCall(datasetKey, top, null, null);
+    public ApiResponse<ODataResponseListRefresh> getRefreshHistoryWithHttpInfo(String datasetKey, Integer top) throws ApiException {
+        com.squareup.okhttp.Call call = getRefreshHistoryValidateBeforeCall(datasetKey, top, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListRefresh>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2107,7 +2107,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetRefreshHistoryAsync(String datasetKey, Integer top, final ApiCallback<ODataResponseListRefresh> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRefreshHistoryAsync(String datasetKey, Integer top, final ApiCallback<ODataResponseListRefresh> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2128,13 +2128,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetRefreshHistoryValidateBeforeCall(datasetKey, top, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRefreshHistoryValidateBeforeCall(datasetKey, top, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListRefresh>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetRefreshHistoryInGroup
+     * Build call for getRefreshHistoryInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param top The requested number of entries in the refresh history, if not supported the default is all available entries (optional)
@@ -2143,7 +2143,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetRefreshHistoryInGroupCall(String groupId, String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getRefreshHistoryInGroupCall(String groupId, String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2189,20 +2189,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetRefreshHistoryInGroupValidateBeforeCall(String groupId, String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getRefreshHistoryInGroupValidateBeforeCall(String groupId, String datasetKey, Integer top, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGetRefreshHistoryInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getRefreshHistoryInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetRefreshHistoryInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getRefreshHistoryInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetRefreshHistoryInGroupCall(groupId, datasetKey, top, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRefreshHistoryInGroupCall(groupId, datasetKey, top, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2216,8 +2216,8 @@ public class DatasetsApi {
      * @return ODataResponseListRefresh
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListRefresh datasetsGetRefreshHistoryInGroup(String groupId, String datasetKey, Integer top) throws ApiException {
-        ApiResponse<ODataResponseListRefresh> resp = datasetsGetRefreshHistoryInGroupWithHttpInfo(groupId, datasetKey, top);
+    public ODataResponseListRefresh getRefreshHistoryInGroup(String groupId, String datasetKey, Integer top) throws ApiException {
+        ApiResponse<ODataResponseListRefresh> resp = getRefreshHistoryInGroupWithHttpInfo(groupId, datasetKey, top);
         return resp.getData();
     }
 
@@ -2230,8 +2230,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListRefresh&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListRefresh> datasetsGetRefreshHistoryInGroupWithHttpInfo(String groupId, String datasetKey, Integer top) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetRefreshHistoryInGroupValidateBeforeCall(groupId, datasetKey, top, null, null);
+    public ApiResponse<ODataResponseListRefresh> getRefreshHistoryInGroupWithHttpInfo(String groupId, String datasetKey, Integer top) throws ApiException {
+        com.squareup.okhttp.Call call = getRefreshHistoryInGroupValidateBeforeCall(groupId, datasetKey, top, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListRefresh>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2246,7 +2246,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetRefreshHistoryInGroupAsync(String groupId, String datasetKey, Integer top, final ApiCallback<ODataResponseListRefresh> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRefreshHistoryInGroupAsync(String groupId, String datasetKey, Integer top, final ApiCallback<ODataResponseListRefresh> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2267,20 +2267,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetRefreshHistoryInGroupValidateBeforeCall(groupId, datasetKey, top, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRefreshHistoryInGroupValidateBeforeCall(groupId, datasetKey, top, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListRefresh>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetTables
+     * Build call for getTables
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetTablesCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTablesCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2323,15 +2323,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetTablesValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTablesValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetTables(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getTables(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetTablesCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTablesCall(datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2343,8 +2343,8 @@ public class DatasetsApi {
      * @return ODataResponseListTable
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListTable datasetsGetTables(String datasetKey) throws ApiException {
-        ApiResponse<ODataResponseListTable> resp = datasetsGetTablesWithHttpInfo(datasetKey);
+    public ODataResponseListTable getTables(String datasetKey) throws ApiException {
+        ApiResponse<ODataResponseListTable> resp = getTablesWithHttpInfo(datasetKey);
         return resp.getData();
     }
 
@@ -2355,8 +2355,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListTable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListTable> datasetsGetTablesWithHttpInfo(String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetTablesValidateBeforeCall(datasetKey, null, null);
+    public ApiResponse<ODataResponseListTable> getTablesWithHttpInfo(String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getTablesValidateBeforeCall(datasetKey, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListTable>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2369,7 +2369,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetTablesAsync(String datasetKey, final ApiCallback<ODataResponseListTable> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTablesAsync(String datasetKey, final ApiCallback<ODataResponseListTable> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2390,13 +2390,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetTablesValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTablesValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListTable>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsGetTablesInGroup
+     * Build call for getTablesInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
@@ -2404,7 +2404,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetTablesInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTablesInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2448,20 +2448,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsGetTablesInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTablesInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsGetTablesInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getTablesInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsGetTablesInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling getTablesInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsGetTablesInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTablesInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2474,8 +2474,8 @@ public class DatasetsApi {
      * @return ODataResponseListTable
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListTable datasetsGetTablesInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<ODataResponseListTable> resp = datasetsGetTablesInGroupWithHttpInfo(groupId, datasetKey);
+    public ODataResponseListTable getTablesInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<ODataResponseListTable> resp = getTablesInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -2487,8 +2487,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;ODataResponseListTable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListTable> datasetsGetTablesInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsGetTablesInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<ODataResponseListTable> getTablesInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = getTablesInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListTable>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2502,7 +2502,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsGetTablesInGroupAsync(String groupId, String datasetKey, final ApiCallback<ODataResponseListTable> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTablesInGroupAsync(String groupId, String datasetKey, final ApiCallback<ODataResponseListTable> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2523,20 +2523,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsGetTablesInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTablesInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListTable>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsPostDataset
+     * Build call for postDataset
      * @param dataset Create dataset parameters (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostDatasetCall(Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postDatasetCall(Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = dataset;
 
         // create path and map variables
@@ -2578,15 +2578,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsPostDatasetValidateBeforeCall(Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postDatasetValidateBeforeCall(Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'dataset' is set
         if (dataset == null) {
-            throw new ApiException("Missing the required parameter 'dataset' when calling datasetsPostDataset(Async)");
+            throw new ApiException("Missing the required parameter 'dataset' when calling postDataset(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsPostDatasetCall(dataset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postDatasetCall(dataset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2598,8 +2598,8 @@ public class DatasetsApi {
      * @return Dataset
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Dataset datasetsPostDataset(Dataset dataset) throws ApiException {
-        ApiResponse<Dataset> resp = datasetsPostDatasetWithHttpInfo(dataset);
+    public Dataset postDataset(Dataset dataset) throws ApiException {
+        ApiResponse<Dataset> resp = postDatasetWithHttpInfo(dataset);
         return resp.getData();
     }
 
@@ -2610,8 +2610,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Dataset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Dataset> datasetsPostDatasetWithHttpInfo(Dataset dataset) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsPostDatasetValidateBeforeCall(dataset, null, null);
+    public ApiResponse<Dataset> postDatasetWithHttpInfo(Dataset dataset) throws ApiException {
+        com.squareup.okhttp.Call call = postDatasetValidateBeforeCall(dataset, null, null);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2624,7 +2624,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostDatasetAsync(Dataset dataset, final ApiCallback<Dataset> callback) throws ApiException {
+    public com.squareup.okhttp.Call postDatasetAsync(Dataset dataset, final ApiCallback<Dataset> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2645,13 +2645,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsPostDatasetValidateBeforeCall(dataset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postDatasetValidateBeforeCall(dataset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsPostDatasetInGroup
+     * Build call for postDatasetInGroup
      * @param groupId The group id (required)
      * @param dataset Create dataset parameters (required)
      * @param progressListener Progress listener
@@ -2659,7 +2659,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostDatasetInGroupCall(String groupId, Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postDatasetInGroupCall(String groupId, Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = dataset;
 
         // create path and map variables
@@ -2702,20 +2702,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsPostDatasetInGroupValidateBeforeCall(String groupId, Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postDatasetInGroupValidateBeforeCall(String groupId, Dataset dataset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsPostDatasetInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling postDatasetInGroup(Async)");
         }
         
         // verify the required parameter 'dataset' is set
         if (dataset == null) {
-            throw new ApiException("Missing the required parameter 'dataset' when calling datasetsPostDatasetInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'dataset' when calling postDatasetInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsPostDatasetInGroupCall(groupId, dataset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postDatasetInGroupCall(groupId, dataset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2728,8 +2728,8 @@ public class DatasetsApi {
      * @return Dataset
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Dataset datasetsPostDatasetInGroup(String groupId, Dataset dataset) throws ApiException {
-        ApiResponse<Dataset> resp = datasetsPostDatasetInGroupWithHttpInfo(groupId, dataset);
+    public Dataset postDatasetInGroup(String groupId, Dataset dataset) throws ApiException {
+        ApiResponse<Dataset> resp = postDatasetInGroupWithHttpInfo(groupId, dataset);
         return resp.getData();
     }
 
@@ -2741,8 +2741,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Dataset&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Dataset> datasetsPostDatasetInGroupWithHttpInfo(String groupId, Dataset dataset) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsPostDatasetInGroupValidateBeforeCall(groupId, dataset, null, null);
+    public ApiResponse<Dataset> postDatasetInGroupWithHttpInfo(String groupId, Dataset dataset) throws ApiException {
+        com.squareup.okhttp.Call call = postDatasetInGroupValidateBeforeCall(groupId, dataset, null, null);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2756,7 +2756,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostDatasetInGroupAsync(String groupId, Dataset dataset, final ApiCallback<Dataset> callback) throws ApiException {
+    public com.squareup.okhttp.Call postDatasetInGroupAsync(String groupId, Dataset dataset, final ApiCallback<Dataset> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2777,13 +2777,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsPostDatasetInGroupValidateBeforeCall(groupId, dataset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postDatasetInGroupValidateBeforeCall(groupId, dataset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Dataset>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsPostRows
+     * Build call for postRows
      * @param datasetKey The dataset id (required)
      * @param tableName The table name (required)
      * @param requestMessage The request message (required)
@@ -2792,7 +2792,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostRowsCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postRowsCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestMessage;
 
         // create path and map variables
@@ -2836,25 +2836,25 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsPostRowsValidateBeforeCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postRowsValidateBeforeCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsPostRows(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling postRows(Async)");
         }
         
         // verify the required parameter 'tableName' is set
         if (tableName == null) {
-            throw new ApiException("Missing the required parameter 'tableName' when calling datasetsPostRows(Async)");
+            throw new ApiException("Missing the required parameter 'tableName' when calling postRows(Async)");
         }
         
         // verify the required parameter 'requestMessage' is set
         if (requestMessage == null) {
-            throw new ApiException("Missing the required parameter 'requestMessage' when calling datasetsPostRows(Async)");
+            throw new ApiException("Missing the required parameter 'requestMessage' when calling postRows(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsPostRowsCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postRowsCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2868,8 +2868,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsPostRows(String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        ApiResponse<Object> resp = datasetsPostRowsWithHttpInfo(datasetKey, tableName, requestMessage);
+    public Object postRows(String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        ApiResponse<Object> resp = postRowsWithHttpInfo(datasetKey, tableName, requestMessage);
         return resp.getData();
     }
 
@@ -2882,8 +2882,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsPostRowsWithHttpInfo(String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsPostRowsValidateBeforeCall(datasetKey, tableName, requestMessage, null, null);
+    public ApiResponse<Object> postRowsWithHttpInfo(String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        com.squareup.okhttp.Call call = postRowsValidateBeforeCall(datasetKey, tableName, requestMessage, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2898,7 +2898,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostRowsAsync(String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call postRowsAsync(String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2919,13 +2919,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsPostRowsValidateBeforeCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postRowsValidateBeforeCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsPostRowsInGroup
+     * Build call for postRowsInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param tableName The table name (required)
@@ -2935,7 +2935,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostRowsInGroupCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postRowsInGroupCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestMessage;
 
         // create path and map variables
@@ -2980,30 +2980,30 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsPostRowsInGroupValidateBeforeCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postRowsInGroupValidateBeforeCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsPostRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling postRowsInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsPostRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling postRowsInGroup(Async)");
         }
         
         // verify the required parameter 'tableName' is set
         if (tableName == null) {
-            throw new ApiException("Missing the required parameter 'tableName' when calling datasetsPostRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'tableName' when calling postRowsInGroup(Async)");
         }
         
         // verify the required parameter 'requestMessage' is set
         if (requestMessage == null) {
-            throw new ApiException("Missing the required parameter 'requestMessage' when calling datasetsPostRowsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestMessage' when calling postRowsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsPostRowsInGroupCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postRowsInGroupCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3018,8 +3018,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsPostRowsInGroup(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        ApiResponse<Object> resp = datasetsPostRowsInGroupWithHttpInfo(groupId, datasetKey, tableName, requestMessage);
+    public Object postRowsInGroup(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        ApiResponse<Object> resp = postRowsInGroupWithHttpInfo(groupId, datasetKey, tableName, requestMessage);
         return resp.getData();
     }
 
@@ -3033,8 +3033,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsPostRowsInGroupWithHttpInfo(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsPostRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, null, null);
+    public ApiResponse<Object> postRowsInGroupWithHttpInfo(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        com.squareup.okhttp.Call call = postRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3050,7 +3050,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsPostRowsInGroupAsync(String groupId, String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call postRowsInGroupAsync(String groupId, String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3071,13 +3071,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsPostRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postRowsInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsPutTable
+     * Build call for putTable
      * @param datasetKey The dataset id (required)
      * @param tableName The table name (required)
      * @param requestMessage The request message (required)
@@ -3086,7 +3086,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsPutTableCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call putTableCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestMessage;
 
         // create path and map variables
@@ -3130,25 +3130,25 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsPutTableValidateBeforeCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call putTableValidateBeforeCall(String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsPutTable(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling putTable(Async)");
         }
         
         // verify the required parameter 'tableName' is set
         if (tableName == null) {
-            throw new ApiException("Missing the required parameter 'tableName' when calling datasetsPutTable(Async)");
+            throw new ApiException("Missing the required parameter 'tableName' when calling putTable(Async)");
         }
         
         // verify the required parameter 'requestMessage' is set
         if (requestMessage == null) {
-            throw new ApiException("Missing the required parameter 'requestMessage' when calling datasetsPutTable(Async)");
+            throw new ApiException("Missing the required parameter 'requestMessage' when calling putTable(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsPutTableCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = putTableCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3162,8 +3162,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsPutTable(String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        ApiResponse<Object> resp = datasetsPutTableWithHttpInfo(datasetKey, tableName, requestMessage);
+    public Object putTable(String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        ApiResponse<Object> resp = putTableWithHttpInfo(datasetKey, tableName, requestMessage);
         return resp.getData();
     }
 
@@ -3176,8 +3176,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsPutTableWithHttpInfo(String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsPutTableValidateBeforeCall(datasetKey, tableName, requestMessage, null, null);
+    public ApiResponse<Object> putTableWithHttpInfo(String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        com.squareup.okhttp.Call call = putTableValidateBeforeCall(datasetKey, tableName, requestMessage, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3192,7 +3192,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsPutTableAsync(String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call putTableAsync(String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3213,13 +3213,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsPutTableValidateBeforeCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = putTableValidateBeforeCall(datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsPutTableInGroup
+     * Build call for putTableInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param tableName The table name (required)
@@ -3229,7 +3229,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsPutTableInGroupCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call putTableInGroupCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestMessage;
 
         // create path and map variables
@@ -3274,30 +3274,30 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsPutTableInGroupValidateBeforeCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call putTableInGroupValidateBeforeCall(String groupId, String datasetKey, String tableName, Object requestMessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsPutTableInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling putTableInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsPutTableInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling putTableInGroup(Async)");
         }
         
         // verify the required parameter 'tableName' is set
         if (tableName == null) {
-            throw new ApiException("Missing the required parameter 'tableName' when calling datasetsPutTableInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'tableName' when calling putTableInGroup(Async)");
         }
         
         // verify the required parameter 'requestMessage' is set
         if (requestMessage == null) {
-            throw new ApiException("Missing the required parameter 'requestMessage' when calling datasetsPutTableInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestMessage' when calling putTableInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsPutTableInGroupCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = putTableInGroupCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3312,8 +3312,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsPutTableInGroup(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        ApiResponse<Object> resp = datasetsPutTableInGroupWithHttpInfo(groupId, datasetKey, tableName, requestMessage);
+    public Object putTableInGroup(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        ApiResponse<Object> resp = putTableInGroupWithHttpInfo(groupId, datasetKey, tableName, requestMessage);
         return resp.getData();
     }
 
@@ -3327,8 +3327,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsPutTableInGroupWithHttpInfo(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsPutTableInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, null, null);
+    public ApiResponse<Object> putTableInGroupWithHttpInfo(String groupId, String datasetKey, String tableName, Object requestMessage) throws ApiException {
+        com.squareup.okhttp.Call call = putTableInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3344,7 +3344,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsPutTableInGroupAsync(String groupId, String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call putTableInGroupAsync(String groupId, String datasetKey, String tableName, Object requestMessage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3365,20 +3365,20 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsPutTableInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = putTableInGroupValidateBeforeCall(groupId, datasetKey, tableName, requestMessage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsRefreshDataset
+     * Build call for refreshDataset
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsRefreshDatasetCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call refreshDatasetCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -3421,15 +3421,15 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsRefreshDatasetValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call refreshDatasetValidateBeforeCall(String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsRefreshDataset(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling refreshDataset(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsRefreshDatasetCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refreshDatasetCall(datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3441,8 +3441,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsRefreshDataset(String datasetKey) throws ApiException {
-        ApiResponse<Object> resp = datasetsRefreshDatasetWithHttpInfo(datasetKey);
+    public Object refreshDataset(String datasetKey) throws ApiException {
+        ApiResponse<Object> resp = refreshDatasetWithHttpInfo(datasetKey);
         return resp.getData();
     }
 
@@ -3453,8 +3453,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsRefreshDatasetWithHttpInfo(String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsRefreshDatasetValidateBeforeCall(datasetKey, null, null);
+    public ApiResponse<Object> refreshDatasetWithHttpInfo(String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = refreshDatasetValidateBeforeCall(datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3467,7 +3467,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsRefreshDatasetAsync(String datasetKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call refreshDatasetAsync(String datasetKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3488,13 +3488,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsRefreshDatasetValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refreshDatasetValidateBeforeCall(datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsRefreshDatasetInGroup
+     * Build call for refreshDatasetInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
@@ -3502,7 +3502,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsRefreshDatasetInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call refreshDatasetInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -3546,20 +3546,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsRefreshDatasetInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call refreshDatasetInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsRefreshDatasetInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling refreshDatasetInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsRefreshDatasetInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling refreshDatasetInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsRefreshDatasetInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refreshDatasetInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3572,8 +3572,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsRefreshDatasetInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<Object> resp = datasetsRefreshDatasetInGroupWithHttpInfo(groupId, datasetKey);
+    public Object refreshDatasetInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<Object> resp = refreshDatasetInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -3585,8 +3585,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsRefreshDatasetInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsRefreshDatasetInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<Object> refreshDatasetInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = refreshDatasetInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3600,7 +3600,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsRefreshDatasetInGroupAsync(String groupId, String datasetKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call refreshDatasetInGroupAsync(String groupId, String datasetKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3621,13 +3621,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsRefreshDatasetInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = refreshDatasetInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsSetAllDatasetConnections
+     * Build call for setAllDatasetConnections
      * @param datasetKey The dataset id (required)
      * @param parameters The body (required)
      * @param progressListener Progress listener
@@ -3635,7 +3635,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsSetAllDatasetConnectionsCall(String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call setAllDatasetConnectionsCall(String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = parameters;
 
         // create path and map variables
@@ -3678,20 +3678,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsSetAllDatasetConnectionsValidateBeforeCall(String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call setAllDatasetConnectionsValidateBeforeCall(String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsSetAllDatasetConnections(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling setAllDatasetConnections(Async)");
         }
         
         // verify the required parameter 'parameters' is set
         if (parameters == null) {
-            throw new ApiException("Missing the required parameter 'parameters' when calling datasetsSetAllDatasetConnections(Async)");
+            throw new ApiException("Missing the required parameter 'parameters' when calling setAllDatasetConnections(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsSetAllDatasetConnectionsCall(datasetKey, parameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setAllDatasetConnectionsCall(datasetKey, parameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3704,8 +3704,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsSetAllDatasetConnections(String datasetKey, ConnectionDetails parameters) throws ApiException {
-        ApiResponse<Object> resp = datasetsSetAllDatasetConnectionsWithHttpInfo(datasetKey, parameters);
+    public Object setAllDatasetConnections(String datasetKey, ConnectionDetails parameters) throws ApiException {
+        ApiResponse<Object> resp = setAllDatasetConnectionsWithHttpInfo(datasetKey, parameters);
         return resp.getData();
     }
 
@@ -3717,8 +3717,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsSetAllDatasetConnectionsWithHttpInfo(String datasetKey, ConnectionDetails parameters) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsSetAllDatasetConnectionsValidateBeforeCall(datasetKey, parameters, null, null);
+    public ApiResponse<Object> setAllDatasetConnectionsWithHttpInfo(String datasetKey, ConnectionDetails parameters) throws ApiException {
+        com.squareup.okhttp.Call call = setAllDatasetConnectionsValidateBeforeCall(datasetKey, parameters, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3732,7 +3732,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsSetAllDatasetConnectionsAsync(String datasetKey, ConnectionDetails parameters, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call setAllDatasetConnectionsAsync(String datasetKey, ConnectionDetails parameters, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3753,13 +3753,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsSetAllDatasetConnectionsValidateBeforeCall(datasetKey, parameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setAllDatasetConnectionsValidateBeforeCall(datasetKey, parameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsSetAllDatasetConnectionsInGroup
+     * Build call for setAllDatasetConnectionsInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param parameters The body (required)
@@ -3768,7 +3768,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsSetAllDatasetConnectionsInGroupCall(String groupId, String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call setAllDatasetConnectionsInGroupCall(String groupId, String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = parameters;
 
         // create path and map variables
@@ -3812,25 +3812,25 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsSetAllDatasetConnectionsInGroupValidateBeforeCall(String groupId, String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call setAllDatasetConnectionsInGroupValidateBeforeCall(String groupId, String datasetKey, ConnectionDetails parameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsSetAllDatasetConnectionsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling setAllDatasetConnectionsInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsSetAllDatasetConnectionsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling setAllDatasetConnectionsInGroup(Async)");
         }
         
         // verify the required parameter 'parameters' is set
         if (parameters == null) {
-            throw new ApiException("Missing the required parameter 'parameters' when calling datasetsSetAllDatasetConnectionsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'parameters' when calling setAllDatasetConnectionsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsSetAllDatasetConnectionsInGroupCall(groupId, datasetKey, parameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setAllDatasetConnectionsInGroupCall(groupId, datasetKey, parameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3844,8 +3844,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsSetAllDatasetConnectionsInGroup(String groupId, String datasetKey, ConnectionDetails parameters) throws ApiException {
-        ApiResponse<Object> resp = datasetsSetAllDatasetConnectionsInGroupWithHttpInfo(groupId, datasetKey, parameters);
+    public Object setAllDatasetConnectionsInGroup(String groupId, String datasetKey, ConnectionDetails parameters) throws ApiException {
+        ApiResponse<Object> resp = setAllDatasetConnectionsInGroupWithHttpInfo(groupId, datasetKey, parameters);
         return resp.getData();
     }
 
@@ -3858,8 +3858,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsSetAllDatasetConnectionsInGroupWithHttpInfo(String groupId, String datasetKey, ConnectionDetails parameters) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsSetAllDatasetConnectionsInGroupValidateBeforeCall(groupId, datasetKey, parameters, null, null);
+    public ApiResponse<Object> setAllDatasetConnectionsInGroupWithHttpInfo(String groupId, String datasetKey, ConnectionDetails parameters) throws ApiException {
+        com.squareup.okhttp.Call call = setAllDatasetConnectionsInGroupValidateBeforeCall(groupId, datasetKey, parameters, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3874,7 +3874,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsSetAllDatasetConnectionsInGroupAsync(String groupId, String datasetKey, ConnectionDetails parameters, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call setAllDatasetConnectionsInGroupAsync(String groupId, String datasetKey, ConnectionDetails parameters, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3895,13 +3895,13 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsSetAllDatasetConnectionsInGroupValidateBeforeCall(groupId, datasetKey, parameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setAllDatasetConnectionsInGroupValidateBeforeCall(groupId, datasetKey, parameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for datasetsTakeOverInGroup
+     * Build call for takeOverInGroup
      * @param groupId The group id (required)
      * @param datasetKey The dataset id (required)
      * @param progressListener Progress listener
@@ -3909,7 +3909,7 @@ public class DatasetsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call datasetsTakeOverInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call takeOverInGroupCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -3953,20 +3953,20 @@ public class DatasetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call datasetsTakeOverInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call takeOverInGroupValidateBeforeCall(String groupId, String datasetKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling datasetsTakeOverInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling takeOverInGroup(Async)");
         }
         
         // verify the required parameter 'datasetKey' is set
         if (datasetKey == null) {
-            throw new ApiException("Missing the required parameter 'datasetKey' when calling datasetsTakeOverInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetKey' when calling takeOverInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = datasetsTakeOverInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = takeOverInGroupCall(groupId, datasetKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3979,8 +3979,8 @@ public class DatasetsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object datasetsTakeOverInGroup(String groupId, String datasetKey) throws ApiException {
-        ApiResponse<Object> resp = datasetsTakeOverInGroupWithHttpInfo(groupId, datasetKey);
+    public Object takeOverInGroup(String groupId, String datasetKey) throws ApiException {
+        ApiResponse<Object> resp = takeOverInGroupWithHttpInfo(groupId, datasetKey);
         return resp.getData();
     }
 
@@ -3992,8 +3992,8 @@ public class DatasetsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> datasetsTakeOverInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
-        com.squareup.okhttp.Call call = datasetsTakeOverInGroupValidateBeforeCall(groupId, datasetKey, null, null);
+    public ApiResponse<Object> takeOverInGroupWithHttpInfo(String groupId, String datasetKey) throws ApiException {
+        com.squareup.okhttp.Call call = takeOverInGroupValidateBeforeCall(groupId, datasetKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4007,7 +4007,7 @@ public class DatasetsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call datasetsTakeOverInGroupAsync(String groupId, String datasetKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call takeOverInGroupAsync(String groupId, String datasetKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4028,7 +4028,7 @@ public class DatasetsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = datasetsTakeOverInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = takeOverInGroupValidateBeforeCall(groupId, datasetKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

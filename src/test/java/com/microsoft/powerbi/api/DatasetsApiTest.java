@@ -37,10 +37,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsBindToGatewayTest() throws ApiException {
+    public void bindToGatewayTest() throws ApiException {
         String datasetKey = null;
         BindToGatewayRequest bindToGatewayRequest = null;
-        Object response = api.datasetsBindToGateway(datasetKey, bindToGatewayRequest);
+        Object response = api.bindToGateway(datasetKey, bindToGatewayRequest);
 
         // TODO: test validations
     }
@@ -54,11 +54,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsBindToGatewayInGroupTest() throws ApiException {
+    public void bindToGatewayInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         BindToGatewayRequest bindToGatewayRequest = null;
-        Object response = api.datasetsBindToGatewayInGroup(groupId, datasetKey, bindToGatewayRequest);
+        Object response = api.bindToGatewayInGroup(groupId, datasetKey, bindToGatewayRequest);
 
         // TODO: test validations
     }
@@ -72,9 +72,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsDeleteDatasetByIdTest() throws ApiException {
+    public void deleteDatasetByIdTest() throws ApiException {
         String datasetKey = null;
-        Object response = api.datasetsDeleteDatasetById(datasetKey);
+        Object response = api.deleteDatasetById(datasetKey);
 
         // TODO: test validations
     }
@@ -88,10 +88,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsDeleteDatasetByIdInGroupTest() throws ApiException {
+    public void deleteDatasetByIdInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        Object response = api.datasetsDeleteDatasetByIdInGroup(groupId, datasetKey);
+        Object response = api.deleteDatasetByIdInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }
@@ -105,10 +105,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsDeleteRowsTest() throws ApiException {
+    public void deleteRowsTest() throws ApiException {
         String datasetKey = null;
         String tableName = null;
-        Object response = api.datasetsDeleteRows(datasetKey, tableName);
+        Object response = api.deleteRows(datasetKey, tableName);
 
         // TODO: test validations
     }
@@ -122,11 +122,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsDeleteRowsInGroupTest() throws ApiException {
+    public void deleteRowsInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         String tableName = null;
-        Object response = api.datasetsDeleteRowsInGroup(groupId, datasetKey, tableName);
+        Object response = api.deleteRowsInGroup(groupId, datasetKey, tableName);
 
         // TODO: test validations
     }
@@ -140,11 +140,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGenerateTokenInGroupTest() throws ApiException {
+    public void generateTokenInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.datasetsGenerateTokenInGroup(groupId, datasetKey, requestParameters);
+        EmbedToken response = api.generateTokenInGroup(groupId, datasetKey, requestParameters);
 
         // TODO: test validations
     }
@@ -158,9 +158,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetDatasetByIdTest() throws ApiException {
+    public void getDatasetByIdTest() throws ApiException {
         String datasetKey = null;
-        Dataset response = api.datasetsGetDatasetById(datasetKey);
+        Dataset response = api.getDatasetById(datasetKey);
 
         // TODO: test validations
     }
@@ -174,10 +174,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetDatasetByIdInGroupTest() throws ApiException {
+    public void getDatasetByIdInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        Dataset response = api.datasetsGetDatasetByIdInGroup(groupId, datasetKey);
+        Dataset response = api.getDatasetByIdInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }
@@ -191,8 +191,8 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetDatasetsTest() throws ApiException {
-        ODataResponseListDataset response = api.datasetsGetDatasets();
+    public void getDatasetsTest() throws ApiException {
+        ODataResponseListDataset response = api.getDatasets();
 
         // TODO: test validations
     }
@@ -206,9 +206,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetDatasetsInGroupTest() throws ApiException {
+    public void getDatasetsInGroupTest() throws ApiException {
         String groupId = null;
-        ODataResponseListDataset response = api.datasetsGetDatasetsInGroup(groupId);
+        ODataResponseListDataset response = api.getDatasetsInGroup(groupId);
 
         // TODO: test validations
     }
@@ -222,9 +222,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetDatasourcesTest() throws ApiException {
+    public void getDatasourcesTest() throws ApiException {
         String datasetKey = null;
-        ODataResponseListDatasource response = api.datasetsGetDatasources(datasetKey);
+        ODataResponseListDatasource response = api.getDatasources(datasetKey);
 
         // TODO: test validations
     }
@@ -238,10 +238,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetDatasourcesInGroupTest() throws ApiException {
+    public void getDatasourcesInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        ODataResponseListDatasource response = api.datasetsGetDatasourcesInGroup(groupId, datasetKey);
+        ODataResponseListDatasource response = api.getDatasourcesInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }
@@ -255,9 +255,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetGatewayDatasourcesTest() throws ApiException {
+    public void getGatewayDatasourcesTest() throws ApiException {
         String datasetKey = null;
-        ODataResponseListGatewayDatasource response = api.datasetsGetGatewayDatasources(datasetKey);
+        ODataResponseListGatewayDatasource response = api.getGatewayDatasources(datasetKey);
 
         // TODO: test validations
     }
@@ -271,10 +271,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetGatewayDatasourcesInGroupTest() throws ApiException {
+    public void getGatewayDatasourcesInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        ODataResponseListGatewayDatasource response = api.datasetsGetGatewayDatasourcesInGroup(groupId, datasetKey);
+        ODataResponseListGatewayDatasource response = api.getGatewayDatasourcesInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }
@@ -288,10 +288,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetRefreshHistoryTest() throws ApiException {
+    public void getRefreshHistoryTest() throws ApiException {
         String datasetKey = null;
         Integer top = null;
-        ODataResponseListRefresh response = api.datasetsGetRefreshHistory(datasetKey, top);
+        ODataResponseListRefresh response = api.getRefreshHistory(datasetKey, top);
 
         // TODO: test validations
     }
@@ -305,11 +305,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetRefreshHistoryInGroupTest() throws ApiException {
+    public void getRefreshHistoryInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         Integer top = null;
-        ODataResponseListRefresh response = api.datasetsGetRefreshHistoryInGroup(groupId, datasetKey, top);
+        ODataResponseListRefresh response = api.getRefreshHistoryInGroup(groupId, datasetKey, top);
 
         // TODO: test validations
     }
@@ -323,9 +323,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetTablesTest() throws ApiException {
+    public void getTablesTest() throws ApiException {
         String datasetKey = null;
-        ODataResponseListTable response = api.datasetsGetTables(datasetKey);
+        ODataResponseListTable response = api.getTables(datasetKey);
 
         // TODO: test validations
     }
@@ -339,10 +339,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsGetTablesInGroupTest() throws ApiException {
+    public void getTablesInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        ODataResponseListTable response = api.datasetsGetTablesInGroup(groupId, datasetKey);
+        ODataResponseListTable response = api.getTablesInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }
@@ -356,9 +356,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsPostDatasetTest() throws ApiException {
+    public void postDatasetTest() throws ApiException {
         Dataset dataset = null;
-        Dataset response = api.datasetsPostDataset(dataset);
+        Dataset response = api.postDataset(dataset);
 
         // TODO: test validations
     }
@@ -372,10 +372,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsPostDatasetInGroupTest() throws ApiException {
+    public void postDatasetInGroupTest() throws ApiException {
         String groupId = null;
         Dataset dataset = null;
-        Dataset response = api.datasetsPostDatasetInGroup(groupId, dataset);
+        Dataset response = api.postDatasetInGroup(groupId, dataset);
 
         // TODO: test validations
     }
@@ -389,11 +389,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsPostRowsTest() throws ApiException {
+    public void postRowsTest() throws ApiException {
         String datasetKey = null;
         String tableName = null;
         Object requestMessage = null;
-        Object response = api.datasetsPostRows(datasetKey, tableName, requestMessage);
+        Object response = api.postRows(datasetKey, tableName, requestMessage);
 
         // TODO: test validations
     }
@@ -407,12 +407,12 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsPostRowsInGroupTest() throws ApiException {
+    public void postRowsInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         String tableName = null;
         Object requestMessage = null;
-        Object response = api.datasetsPostRowsInGroup(groupId, datasetKey, tableName, requestMessage);
+        Object response = api.postRowsInGroup(groupId, datasetKey, tableName, requestMessage);
 
         // TODO: test validations
     }
@@ -426,11 +426,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsPutTableTest() throws ApiException {
+    public void putTableTest() throws ApiException {
         String datasetKey = null;
         String tableName = null;
         Object requestMessage = null;
-        Object response = api.datasetsPutTable(datasetKey, tableName, requestMessage);
+        Object response = api.putTable(datasetKey, tableName, requestMessage);
 
         // TODO: test validations
     }
@@ -444,12 +444,12 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsPutTableInGroupTest() throws ApiException {
+    public void putTableInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         String tableName = null;
         Object requestMessage = null;
-        Object response = api.datasetsPutTableInGroup(groupId, datasetKey, tableName, requestMessage);
+        Object response = api.putTableInGroup(groupId, datasetKey, tableName, requestMessage);
 
         // TODO: test validations
     }
@@ -463,9 +463,9 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsRefreshDatasetTest() throws ApiException {
+    public void refreshDatasetTest() throws ApiException {
         String datasetKey = null;
-        Object response = api.datasetsRefreshDataset(datasetKey);
+        Object response = api.refreshDataset(datasetKey);
 
         // TODO: test validations
     }
@@ -479,10 +479,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsRefreshDatasetInGroupTest() throws ApiException {
+    public void refreshDatasetInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        Object response = api.datasetsRefreshDatasetInGroup(groupId, datasetKey);
+        Object response = api.refreshDatasetInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }
@@ -496,10 +496,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsSetAllDatasetConnectionsTest() throws ApiException {
+    public void setAllDatasetConnectionsTest() throws ApiException {
         String datasetKey = null;
         ConnectionDetails parameters = null;
-        Object response = api.datasetsSetAllDatasetConnections(datasetKey, parameters);
+        Object response = api.setAllDatasetConnections(datasetKey, parameters);
 
         // TODO: test validations
     }
@@ -513,11 +513,11 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsSetAllDatasetConnectionsInGroupTest() throws ApiException {
+    public void setAllDatasetConnectionsInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
         ConnectionDetails parameters = null;
-        Object response = api.datasetsSetAllDatasetConnectionsInGroup(groupId, datasetKey, parameters);
+        Object response = api.setAllDatasetConnectionsInGroup(groupId, datasetKey, parameters);
 
         // TODO: test validations
     }
@@ -531,10 +531,10 @@ public class DatasetsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void datasetsTakeOverInGroupTest() throws ApiException {
+    public void takeOverInGroupTest() throws ApiException {
         String groupId = null;
         String datasetKey = null;
-        Object response = api.datasetsTakeOverInGroup(groupId, datasetKey);
+        Object response = api.takeOverInGroup(groupId, datasetKey);
 
         // TODO: test validations
     }

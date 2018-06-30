@@ -45,14 +45,14 @@ public class GatewaysApi {
     }
 
     /**
-     * Build call for gatewaysGetGatewayById
+     * Build call for getGatewayById
      * @param gatewayId The gateway id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetGatewayByIdCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getGatewayByIdCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -95,15 +95,15 @@ public class GatewaysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysGetGatewayByIdValidateBeforeCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getGatewayByIdValidateBeforeCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysGetGatewayById(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling getGatewayById(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysGetGatewayByIdCall(gatewayId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewayByIdCall(gatewayId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -115,8 +115,8 @@ public class GatewaysApi {
      * @return Gateway
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Gateway gatewaysGetGatewayById(String gatewayId) throws ApiException {
-        ApiResponse<Gateway> resp = gatewaysGetGatewayByIdWithHttpInfo(gatewayId);
+    public Gateway getGatewayById(String gatewayId) throws ApiException {
+        ApiResponse<Gateway> resp = getGatewayByIdWithHttpInfo(gatewayId);
         return resp.getData();
     }
 
@@ -127,8 +127,8 @@ public class GatewaysApi {
      * @return ApiResponse&lt;Gateway&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Gateway> gatewaysGetGatewayByIdWithHttpInfo(String gatewayId) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysGetGatewayByIdValidateBeforeCall(gatewayId, null, null);
+    public ApiResponse<Gateway> getGatewayByIdWithHttpInfo(String gatewayId) throws ApiException {
+        com.squareup.okhttp.Call call = getGatewayByIdValidateBeforeCall(gatewayId, null, null);
         Type localVarReturnType = new TypeToken<Gateway>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -141,7 +141,7 @@ public class GatewaysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetGatewayByIdAsync(String gatewayId, final ApiCallback<Gateway> callback) throws ApiException {
+    public com.squareup.okhttp.Call getGatewayByIdAsync(String gatewayId, final ApiCallback<Gateway> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -162,19 +162,19 @@ public class GatewaysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysGetGatewayByIdValidateBeforeCall(gatewayId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewayByIdValidateBeforeCall(gatewayId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Gateway>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysGetGateways
+     * Build call for getGateways
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetGatewaysCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getGatewaysCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -216,10 +216,10 @@ public class GatewaysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysGetGatewaysValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getGatewaysValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = gatewaysGetGatewaysCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewaysCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -230,8 +230,8 @@ public class GatewaysApi {
      * @return ODataResponseListGateway
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListGateway gatewaysGetGateways() throws ApiException {
-        ApiResponse<ODataResponseListGateway> resp = gatewaysGetGatewaysWithHttpInfo();
+    public ODataResponseListGateway getGateways() throws ApiException {
+        ApiResponse<ODataResponseListGateway> resp = getGatewaysWithHttpInfo();
         return resp.getData();
     }
 
@@ -241,8 +241,8 @@ public class GatewaysApi {
      * @return ApiResponse&lt;ODataResponseListGateway&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListGateway> gatewaysGetGatewaysWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysGetGatewaysValidateBeforeCall(null, null);
+    public ApiResponse<ODataResponseListGateway> getGatewaysWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getGatewaysValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListGateway>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -254,7 +254,7 @@ public class GatewaysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetGatewaysAsync(final ApiCallback<ODataResponseListGateway> callback) throws ApiException {
+    public com.squareup.okhttp.Call getGatewaysAsync(final ApiCallback<ODataResponseListGateway> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -275,7 +275,7 @@ public class GatewaysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysGetGatewaysValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGatewaysValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListGateway>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

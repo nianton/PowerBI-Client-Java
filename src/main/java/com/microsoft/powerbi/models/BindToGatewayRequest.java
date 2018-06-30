@@ -14,7 +14,7 @@ import java.io.IOException;
  * The Bind dataset to gateway request
  */
 @ApiModel(description = "The Bind dataset to gateway request")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class BindToGatewayRequest {
   @SerializedName("gatewayObjectId")
   private String gatewayObjectId = null;

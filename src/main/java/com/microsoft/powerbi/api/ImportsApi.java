@@ -46,14 +46,14 @@ public class ImportsApi {
     }
 
     /**
-     * Build call for importsGetImportById
+     * Build call for getImportById
      * @param importId The import id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportByIdCall(String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getImportByIdCall(String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -96,15 +96,15 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importsGetImportByIdValidateBeforeCall(String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getImportByIdValidateBeforeCall(String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'importId' is set
         if (importId == null) {
-            throw new ApiException("Missing the required parameter 'importId' when calling importsGetImportById(Async)");
+            throw new ApiException("Missing the required parameter 'importId' when calling getImportById(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = importsGetImportByIdCall(importId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportByIdCall(importId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -116,8 +116,8 @@ public class ImportsApi {
      * @return ModelImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelImport importsGetImportById(String importId) throws ApiException {
-        ApiResponse<ModelImport> resp = importsGetImportByIdWithHttpInfo(importId);
+    public ModelImport getImportById(String importId) throws ApiException {
+        ApiResponse<ModelImport> resp = getImportByIdWithHttpInfo(importId);
         return resp.getData();
     }
 
@@ -128,8 +128,8 @@ public class ImportsApi {
      * @return ApiResponse&lt;ModelImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelImport> importsGetImportByIdWithHttpInfo(String importId) throws ApiException {
-        com.squareup.okhttp.Call call = importsGetImportByIdValidateBeforeCall(importId, null, null);
+    public ApiResponse<ModelImport> getImportByIdWithHttpInfo(String importId) throws ApiException {
+        com.squareup.okhttp.Call call = getImportByIdValidateBeforeCall(importId, null, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -142,7 +142,7 @@ public class ImportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportByIdAsync(String importId, final ApiCallback<ModelImport> callback) throws ApiException {
+    public com.squareup.okhttp.Call getImportByIdAsync(String importId, final ApiCallback<ModelImport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -163,13 +163,13 @@ public class ImportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importsGetImportByIdValidateBeforeCall(importId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportByIdValidateBeforeCall(importId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for importsGetImportByIdInGroup
+     * Build call for getImportByIdInGroup
      * @param groupId The group id (required)
      * @param importId The import id (required)
      * @param progressListener Progress listener
@@ -177,7 +177,7 @@ public class ImportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportByIdInGroupCall(String groupId, String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getImportByIdInGroupCall(String groupId, String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -221,20 +221,20 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importsGetImportByIdInGroupValidateBeforeCall(String groupId, String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getImportByIdInGroupValidateBeforeCall(String groupId, String importId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling importsGetImportByIdInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getImportByIdInGroup(Async)");
         }
         
         // verify the required parameter 'importId' is set
         if (importId == null) {
-            throw new ApiException("Missing the required parameter 'importId' when calling importsGetImportByIdInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'importId' when calling getImportByIdInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = importsGetImportByIdInGroupCall(groupId, importId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportByIdInGroupCall(groupId, importId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -247,8 +247,8 @@ public class ImportsApi {
      * @return ModelImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelImport importsGetImportByIdInGroup(String groupId, String importId) throws ApiException {
-        ApiResponse<ModelImport> resp = importsGetImportByIdInGroupWithHttpInfo(groupId, importId);
+    public ModelImport getImportByIdInGroup(String groupId, String importId) throws ApiException {
+        ApiResponse<ModelImport> resp = getImportByIdInGroupWithHttpInfo(groupId, importId);
         return resp.getData();
     }
 
@@ -260,8 +260,8 @@ public class ImportsApi {
      * @return ApiResponse&lt;ModelImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelImport> importsGetImportByIdInGroupWithHttpInfo(String groupId, String importId) throws ApiException {
-        com.squareup.okhttp.Call call = importsGetImportByIdInGroupValidateBeforeCall(groupId, importId, null, null);
+    public ApiResponse<ModelImport> getImportByIdInGroupWithHttpInfo(String groupId, String importId) throws ApiException {
+        com.squareup.okhttp.Call call = getImportByIdInGroupValidateBeforeCall(groupId, importId, null, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -275,7 +275,7 @@ public class ImportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportByIdInGroupAsync(String groupId, String importId, final ApiCallback<ModelImport> callback) throws ApiException {
+    public com.squareup.okhttp.Call getImportByIdInGroupAsync(String groupId, String importId, final ApiCallback<ModelImport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -296,19 +296,19 @@ public class ImportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importsGetImportByIdInGroupValidateBeforeCall(groupId, importId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportByIdInGroupValidateBeforeCall(groupId, importId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for importsGetImports
+     * Build call for getImports
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getImportsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -350,10 +350,10 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importsGetImportsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getImportsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = importsGetImportsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportsCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -364,8 +364,8 @@ public class ImportsApi {
      * @return ODataResponseListImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListImport importsGetImports() throws ApiException {
-        ApiResponse<ODataResponseListImport> resp = importsGetImportsWithHttpInfo();
+    public ODataResponseListImport getImports() throws ApiException {
+        ApiResponse<ODataResponseListImport> resp = getImportsWithHttpInfo();
         return resp.getData();
     }
 
@@ -375,8 +375,8 @@ public class ImportsApi {
      * @return ApiResponse&lt;ODataResponseListImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListImport> importsGetImportsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = importsGetImportsValidateBeforeCall(null, null);
+    public ApiResponse<ODataResponseListImport> getImportsWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getImportsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListImport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -388,7 +388,7 @@ public class ImportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportsAsync(final ApiCallback<ODataResponseListImport> callback) throws ApiException {
+    public com.squareup.okhttp.Call getImportsAsync(final ApiCallback<ODataResponseListImport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -409,20 +409,20 @@ public class ImportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importsGetImportsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListImport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for importsGetImportsInGroup
+     * Build call for getImportsInGroup
      * @param groupId The group id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getImportsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -465,15 +465,15 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importsGetImportsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getImportsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling importsGetImportsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getImportsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = importsGetImportsInGroupCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportsInGroupCall(groupId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -485,8 +485,8 @@ public class ImportsApi {
      * @return ODataResponseListImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListImport importsGetImportsInGroup(String groupId) throws ApiException {
-        ApiResponse<ODataResponseListImport> resp = importsGetImportsInGroupWithHttpInfo(groupId);
+    public ODataResponseListImport getImportsInGroup(String groupId) throws ApiException {
+        ApiResponse<ODataResponseListImport> resp = getImportsInGroupWithHttpInfo(groupId);
         return resp.getData();
     }
 
@@ -497,8 +497,8 @@ public class ImportsApi {
      * @return ApiResponse&lt;ODataResponseListImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListImport> importsGetImportsInGroupWithHttpInfo(String groupId) throws ApiException {
-        com.squareup.okhttp.Call call = importsGetImportsInGroupValidateBeforeCall(groupId, null, null);
+    public ApiResponse<ODataResponseListImport> getImportsInGroupWithHttpInfo(String groupId) throws ApiException {
+        com.squareup.okhttp.Call call = getImportsInGroupValidateBeforeCall(groupId, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListImport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -511,7 +511,7 @@ public class ImportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importsGetImportsInGroupAsync(String groupId, final ApiCallback<ODataResponseListImport> callback) throws ApiException {
+    public com.squareup.okhttp.Call getImportsInGroupAsync(String groupId, final ApiCallback<ODataResponseListImport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -532,13 +532,13 @@ public class ImportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importsGetImportsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getImportsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListImport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for importsPostImport
+     * Build call for postImport
      * @param datasetDisplayName The display name of the dataset (required)
      * @param importInfo The import to post (required)
      * @param nameConflict Determines what to do if a dataset with the same name already exists (optional)
@@ -547,7 +547,7 @@ public class ImportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importsPostImportCall(String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postImportCall(String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = importInfo;
 
         // create path and map variables
@@ -593,20 +593,20 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importsPostImportValidateBeforeCall(String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postImportValidateBeforeCall(String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'datasetDisplayName' is set
         if (datasetDisplayName == null) {
-            throw new ApiException("Missing the required parameter 'datasetDisplayName' when calling importsPostImport(Async)");
+            throw new ApiException("Missing the required parameter 'datasetDisplayName' when calling postImport(Async)");
         }
         
         // verify the required parameter 'importInfo' is set
         if (importInfo == null) {
-            throw new ApiException("Missing the required parameter 'importInfo' when calling importsPostImport(Async)");
+            throw new ApiException("Missing the required parameter 'importInfo' when calling postImport(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = importsPostImportCall(datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postImportCall(datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
         return call;
 
     }
@@ -620,8 +620,8 @@ public class ImportsApi {
      * @return ModelImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelImport importsPostImport(String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
-        ApiResponse<ModelImport> resp = importsPostImportWithHttpInfo(datasetDisplayName, importInfo, nameConflict);
+    public ModelImport postImport(String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
+        ApiResponse<ModelImport> resp = postImportWithHttpInfo(datasetDisplayName, importInfo, nameConflict);
         return resp.getData();
     }
 
@@ -634,8 +634,8 @@ public class ImportsApi {
      * @return ApiResponse&lt;ModelImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelImport> importsPostImportWithHttpInfo(String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
-        com.squareup.okhttp.Call call = importsPostImportValidateBeforeCall(datasetDisplayName, importInfo, nameConflict, null, null);
+    public ApiResponse<ModelImport> postImportWithHttpInfo(String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
+        com.squareup.okhttp.Call call = postImportValidateBeforeCall(datasetDisplayName, importInfo, nameConflict, null, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -650,7 +650,7 @@ public class ImportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importsPostImportAsync(String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ApiCallback<ModelImport> callback) throws ApiException {
+    public com.squareup.okhttp.Call postImportAsync(String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ApiCallback<ModelImport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -671,13 +671,13 @@ public class ImportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importsPostImportValidateBeforeCall(datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postImportValidateBeforeCall(datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for importsPostImportInGroup
+     * Build call for postImportInGroup
      * @param groupId The group id (required)
      * @param datasetDisplayName The display name of the dataset (required)
      * @param importInfo The import to post (required)
@@ -687,7 +687,7 @@ public class ImportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importsPostImportInGroupCall(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call postImportInGroupCall(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = importInfo;
 
         // create path and map variables
@@ -734,25 +734,25 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importsPostImportInGroupValidateBeforeCall(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call postImportInGroupValidateBeforeCall(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling importsPostImportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling postImportInGroup(Async)");
         }
         
         // verify the required parameter 'datasetDisplayName' is set
         if (datasetDisplayName == null) {
-            throw new ApiException("Missing the required parameter 'datasetDisplayName' when calling importsPostImportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'datasetDisplayName' when calling postImportInGroup(Async)");
         }
         
         // verify the required parameter 'importInfo' is set
         if (importInfo == null) {
-            throw new ApiException("Missing the required parameter 'importInfo' when calling importsPostImportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'importInfo' when calling postImportInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = importsPostImportInGroupCall(groupId, datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postImportInGroupCall(groupId, datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
         return call;
 
     }
@@ -767,8 +767,8 @@ public class ImportsApi {
      * @return ModelImport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelImport importsPostImportInGroup(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
-        ApiResponse<ModelImport> resp = importsPostImportInGroupWithHttpInfo(groupId, datasetDisplayName, importInfo, nameConflict);
+    public ModelImport postImportInGroup(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
+        ApiResponse<ModelImport> resp = postImportInGroupWithHttpInfo(groupId, datasetDisplayName, importInfo, nameConflict);
         return resp.getData();
     }
 
@@ -782,8 +782,8 @@ public class ImportsApi {
      * @return ApiResponse&lt;ModelImport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelImport> importsPostImportInGroupWithHttpInfo(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
-        com.squareup.okhttp.Call call = importsPostImportInGroupValidateBeforeCall(groupId, datasetDisplayName, importInfo, nameConflict, null, null);
+    public ApiResponse<ModelImport> postImportInGroupWithHttpInfo(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict) throws ApiException {
+        com.squareup.okhttp.Call call = postImportInGroupValidateBeforeCall(groupId, datasetDisplayName, importInfo, nameConflict, null, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -799,7 +799,7 @@ public class ImportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importsPostImportInGroupAsync(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ApiCallback<ModelImport> callback) throws ApiException {
+    public com.squareup.okhttp.Call postImportInGroupAsync(String groupId, String datasetDisplayName, ImportInfo importInfo, String nameConflict, final ApiCallback<ModelImport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -820,7 +820,7 @@ public class ImportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importsPostImportInGroupValidateBeforeCall(groupId, datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = postImportInGroupValidateBeforeCall(groupId, datasetDisplayName, importInfo, nameConflict, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

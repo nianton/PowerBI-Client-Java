@@ -32,11 +32,11 @@ public class TilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsCloneTileTest() throws ApiException {
+    public void cloneTileTest() throws ApiException {
         String dashboardKey = null;
         String tileKey = null;
         CloneTileRequest requestParameters = null;
-        Tile response = api.dashboardsCloneTile(dashboardKey, tileKey, requestParameters);
+        Tile response = api.cloneTile(dashboardKey, tileKey, requestParameters);
 
         // TODO: test validations
     }
@@ -50,12 +50,49 @@ public class TilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsCloneTileInGroupTest() throws ApiException {
+    public void cloneTileInGroupTest() throws ApiException {
         String groupId = null;
         String dashboardKey = null;
         String tileKey = null;
         CloneTileRequest requestParameters = null;
-        Tile response = api.dashboardsCloneTileInGroup(groupId, dashboardKey, tileKey, requestParameters);
+        Tile response = api.cloneTileInGroup(groupId, dashboardKey, tileKey, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate token to view the specified tile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateTokenTest() throws ApiException {
+        String dashboardKey = null;
+        String tileKey = null;
+        GenerateTokenRequest requestParameters = null;
+        EmbedToken response = api.generateToken(dashboardKey, tileKey, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate token to view the specified tile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateTokenInGroupTest() throws ApiException {
+        String groupId = null;
+        String dashboardKey = null;
+        String tileKey = null;
+        GenerateTokenRequest requestParameters = null;
+        EmbedToken response = api.generateTokenInGroup(groupId, dashboardKey, tileKey, requestParameters);
 
         // TODO: test validations
     }
@@ -69,10 +106,10 @@ public class TilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetTileTest() throws ApiException {
+    public void getTileTest() throws ApiException {
         String dashboardKey = null;
         String tileKey = null;
-        Tile response = api.dashboardsGetTile(dashboardKey, tileKey);
+        Tile response = api.getTile(dashboardKey, tileKey);
 
         // TODO: test validations
     }
@@ -86,11 +123,11 @@ public class TilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetTileInGroupTest() throws ApiException {
+    public void getTileInGroupTest() throws ApiException {
         String groupId = null;
         String dashboardKey = null;
         String tileKey = null;
-        Tile response = api.dashboardsGetTileInGroup(groupId, dashboardKey, tileKey);
+        Tile response = api.getTileInGroup(groupId, dashboardKey, tileKey);
 
         // TODO: test validations
     }
@@ -104,9 +141,9 @@ public class TilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetTilesTest() throws ApiException {
+    public void getTilesTest() throws ApiException {
         String dashboardKey = null;
-        ODataResponseListTile response = api.dashboardsGetTiles(dashboardKey);
+        ODataResponseListTile response = api.getTiles(dashboardKey);
 
         // TODO: test validations
     }
@@ -120,47 +157,10 @@ public class TilesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetTilesInGroupTest() throws ApiException {
+    public void getTilesInGroupTest() throws ApiException {
         String groupId = null;
         String dashboardKey = null;
-        ODataResponseListTile response = api.dashboardsGetTilesInGroup(groupId, dashboardKey);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate token to view the specified tile
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void tilesGenerateTokenTest() throws ApiException {
-        String dashboardKey = null;
-        String tileKey = null;
-        GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.tilesGenerateToken(dashboardKey, tileKey, requestParameters);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate token to view the specified tile
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void tilesGenerateTokenInGroupTest() throws ApiException {
-        String groupId = null;
-        String dashboardKey = null;
-        String tileKey = null;
-        GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.tilesGenerateTokenInGroup(groupId, dashboardKey, tileKey, requestParameters);
+        ODataResponseListTile response = api.getTilesInGroup(groupId, dashboardKey);
 
         // TODO: test validations
     }

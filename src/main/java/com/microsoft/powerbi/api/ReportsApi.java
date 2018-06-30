@@ -51,130 +51,7 @@ public class ReportsApi {
     }
 
     /**
-     * Build call for dashboardsGetDashboard
-     * @param dashboardKey The dashboard id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call dashboardsGetDashboardCall(String dashboardKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1.0/myorg/dashboards/{dashboardKey}"
-            .replaceAll("\\{" + "dashboardKey" + "\\}", apiClient.escapeString(dashboardKey.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsGetDashboardValidateBeforeCall(String dashboardKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'dashboardKey' is set
-        if (dashboardKey == null) {
-            throw new ApiException("Missing the required parameter 'dashboardKey' when calling dashboardsGetDashboard(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = dashboardsGetDashboardCall(dashboardKey, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Get the specified dashboard
-     * 
-     * @param dashboardKey The dashboard id (required)
-     * @return Dashboard
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Dashboard dashboardsGetDashboard(String dashboardKey) throws ApiException {
-        ApiResponse<Dashboard> resp = dashboardsGetDashboardWithHttpInfo(dashboardKey);
-        return resp.getData();
-    }
-
-    /**
-     * Get the specified dashboard
-     * 
-     * @param dashboardKey The dashboard id (required)
-     * @return ApiResponse&lt;Dashboard&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Dashboard> dashboardsGetDashboardWithHttpInfo(String dashboardKey) throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsGetDashboardValidateBeforeCall(dashboardKey, null, null);
-        Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get the specified dashboard (asynchronously)
-     * 
-     * @param dashboardKey The dashboard id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call dashboardsGetDashboardAsync(String dashboardKey, final ApiCallback<Dashboard> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = dashboardsGetDashboardValidateBeforeCall(dashboardKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for reportsCloneReport
+     * Build call for cloneReport
      * @param reportKey The report id (required)
      * @param requestParameters Clone report parameters (required)
      * @param progressListener Progress listener
@@ -182,7 +59,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsCloneReportCall(String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cloneReportCall(String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -225,20 +102,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsCloneReportValidateBeforeCall(String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cloneReportValidateBeforeCall(String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsCloneReport(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling cloneReport(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsCloneReport(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling cloneReport(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsCloneReportCall(reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cloneReportCall(reportKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -251,8 +128,8 @@ public class ReportsApi {
      * @return Report
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Report reportsCloneReport(String reportKey, CloneReportRequest requestParameters) throws ApiException {
-        ApiResponse<Report> resp = reportsCloneReportWithHttpInfo(reportKey, requestParameters);
+    public Report cloneReport(String reportKey, CloneReportRequest requestParameters) throws ApiException {
+        ApiResponse<Report> resp = cloneReportWithHttpInfo(reportKey, requestParameters);
         return resp.getData();
     }
 
@@ -264,8 +141,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Report&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Report> reportsCloneReportWithHttpInfo(String reportKey, CloneReportRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsCloneReportValidateBeforeCall(reportKey, requestParameters, null, null);
+    public ApiResponse<Report> cloneReportWithHttpInfo(String reportKey, CloneReportRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = cloneReportValidateBeforeCall(reportKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -279,7 +156,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsCloneReportAsync(String reportKey, CloneReportRequest requestParameters, final ApiCallback<Report> callback) throws ApiException {
+    public com.squareup.okhttp.Call cloneReportAsync(String reportKey, CloneReportRequest requestParameters, final ApiCallback<Report> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -300,13 +177,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsCloneReportValidateBeforeCall(reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cloneReportValidateBeforeCall(reportKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsCloneReportInGroup
+     * Build call for cloneReportInGroup
      * @param groupId The group id (required)
      * @param reportKey The report id (required)
      * @param requestParameters Clone report parameters (required)
@@ -315,7 +192,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsCloneReportInGroupCall(String groupId, String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cloneReportInGroupCall(String groupId, String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -359,25 +236,25 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsCloneReportInGroupValidateBeforeCall(String groupId, String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cloneReportInGroupValidateBeforeCall(String groupId, String reportKey, CloneReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsCloneReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling cloneReportInGroup(Async)");
         }
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsCloneReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling cloneReportInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsCloneReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling cloneReportInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsCloneReportInGroupCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cloneReportInGroupCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -391,8 +268,8 @@ public class ReportsApi {
      * @return Report
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Report reportsCloneReportInGroup(String groupId, String reportKey, CloneReportRequest requestParameters) throws ApiException {
-        ApiResponse<Report> resp = reportsCloneReportInGroupWithHttpInfo(groupId, reportKey, requestParameters);
+    public Report cloneReportInGroup(String groupId, String reportKey, CloneReportRequest requestParameters) throws ApiException {
+        ApiResponse<Report> resp = cloneReportInGroupWithHttpInfo(groupId, reportKey, requestParameters);
         return resp.getData();
     }
 
@@ -405,8 +282,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Report&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Report> reportsCloneReportInGroupWithHttpInfo(String groupId, String reportKey, CloneReportRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsCloneReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, null, null);
+    public ApiResponse<Report> cloneReportInGroupWithHttpInfo(String groupId, String reportKey, CloneReportRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = cloneReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -421,7 +298,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsCloneReportInGroupAsync(String groupId, String reportKey, CloneReportRequest requestParameters, final ApiCallback<Report> callback) throws ApiException {
+    public com.squareup.okhttp.Call cloneReportInGroupAsync(String groupId, String reportKey, CloneReportRequest requestParameters, final ApiCallback<Report> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -442,20 +319,20 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsCloneReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cloneReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsDeleteReport
+     * Build call for deleteReport
      * @param reportKey The report id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsDeleteReportCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteReportCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -498,15 +375,15 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsDeleteReportValidateBeforeCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteReportValidateBeforeCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsDeleteReport(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling deleteReport(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsDeleteReportCall(reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteReportCall(reportKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -518,8 +395,8 @@ public class ReportsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object reportsDeleteReport(String reportKey) throws ApiException {
-        ApiResponse<Object> resp = reportsDeleteReportWithHttpInfo(reportKey);
+    public Object deleteReport(String reportKey) throws ApiException {
+        ApiResponse<Object> resp = deleteReportWithHttpInfo(reportKey);
         return resp.getData();
     }
 
@@ -530,8 +407,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> reportsDeleteReportWithHttpInfo(String reportKey) throws ApiException {
-        com.squareup.okhttp.Call call = reportsDeleteReportValidateBeforeCall(reportKey, null, null);
+    public ApiResponse<Object> deleteReportWithHttpInfo(String reportKey) throws ApiException {
+        com.squareup.okhttp.Call call = deleteReportValidateBeforeCall(reportKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -544,7 +421,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsDeleteReportAsync(String reportKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteReportAsync(String reportKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -565,13 +442,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsDeleteReportValidateBeforeCall(reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteReportValidateBeforeCall(reportKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsDeleteReportInGroup
+     * Build call for deleteReportInGroup
      * @param groupId The group id (required)
      * @param reportKey The report id (required)
      * @param progressListener Progress listener
@@ -579,7 +456,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsDeleteReportInGroupCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteReportInGroupCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -623,20 +500,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsDeleteReportInGroupValidateBeforeCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteReportInGroupValidateBeforeCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsDeleteReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling deleteReportInGroup(Async)");
         }
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsDeleteReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling deleteReportInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsDeleteReportInGroupCall(groupId, reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteReportInGroupCall(groupId, reportKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -649,8 +526,8 @@ public class ReportsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object reportsDeleteReportInGroup(String groupId, String reportKey) throws ApiException {
-        ApiResponse<Object> resp = reportsDeleteReportInGroupWithHttpInfo(groupId, reportKey);
+    public Object deleteReportInGroup(String groupId, String reportKey) throws ApiException {
+        ApiResponse<Object> resp = deleteReportInGroupWithHttpInfo(groupId, reportKey);
         return resp.getData();
     }
 
@@ -662,8 +539,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> reportsDeleteReportInGroupWithHttpInfo(String groupId, String reportKey) throws ApiException {
-        com.squareup.okhttp.Call call = reportsDeleteReportInGroupValidateBeforeCall(groupId, reportKey, null, null);
+    public ApiResponse<Object> deleteReportInGroupWithHttpInfo(String groupId, String reportKey) throws ApiException {
+        com.squareup.okhttp.Call call = deleteReportInGroupValidateBeforeCall(groupId, reportKey, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -677,7 +554,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsDeleteReportInGroupAsync(String groupId, String reportKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteReportInGroupAsync(String groupId, String reportKey, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -698,20 +575,20 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsDeleteReportInGroupValidateBeforeCall(groupId, reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteReportInGroupValidateBeforeCall(groupId, reportKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsExportReport
+     * Build call for exportReport
      * @param reportKey The report id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsExportReportCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call exportReportCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -754,15 +631,15 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsExportReportValidateBeforeCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call exportReportValidateBeforeCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsExportReport(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling exportReport(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsExportReportCall(reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = exportReportCall(reportKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -774,8 +651,8 @@ public class ReportsApi {
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File reportsExportReport(String reportKey) throws ApiException {
-        ApiResponse<File> resp = reportsExportReportWithHttpInfo(reportKey);
+    public File exportReport(String reportKey) throws ApiException {
+        ApiResponse<File> resp = exportReportWithHttpInfo(reportKey);
         return resp.getData();
     }
 
@@ -786,8 +663,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> reportsExportReportWithHttpInfo(String reportKey) throws ApiException {
-        com.squareup.okhttp.Call call = reportsExportReportValidateBeforeCall(reportKey, null, null);
+    public ApiResponse<File> exportReportWithHttpInfo(String reportKey) throws ApiException {
+        com.squareup.okhttp.Call call = exportReportValidateBeforeCall(reportKey, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -800,7 +677,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsExportReportAsync(String reportKey, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call exportReportAsync(String reportKey, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -821,13 +698,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsExportReportValidateBeforeCall(reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = exportReportValidateBeforeCall(reportKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsExportReportInGroup
+     * Build call for exportReportInGroup
      * @param groupId The group id (required)
      * @param reportKey The report id (required)
      * @param progressListener Progress listener
@@ -835,7 +712,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsExportReportInGroupCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call exportReportInGroupCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -879,20 +756,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsExportReportInGroupValidateBeforeCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call exportReportInGroupValidateBeforeCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsExportReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling exportReportInGroup(Async)");
         }
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsExportReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling exportReportInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsExportReportInGroupCall(groupId, reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = exportReportInGroupCall(groupId, reportKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -905,8 +782,8 @@ public class ReportsApi {
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public File reportsExportReportInGroup(String groupId, String reportKey) throws ApiException {
-        ApiResponse<File> resp = reportsExportReportInGroupWithHttpInfo(groupId, reportKey);
+    public File exportReportInGroup(String groupId, String reportKey) throws ApiException {
+        ApiResponse<File> resp = exportReportInGroupWithHttpInfo(groupId, reportKey);
         return resp.getData();
     }
 
@@ -918,8 +795,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<File> reportsExportReportInGroupWithHttpInfo(String groupId, String reportKey) throws ApiException {
-        com.squareup.okhttp.Call call = reportsExportReportInGroupValidateBeforeCall(groupId, reportKey, null, null);
+    public ApiResponse<File> exportReportInGroupWithHttpInfo(String groupId, String reportKey) throws ApiException {
+        com.squareup.okhttp.Call call = exportReportInGroupValidateBeforeCall(groupId, reportKey, null, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -933,7 +810,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsExportReportInGroupAsync(String groupId, String reportKey, final ApiCallback<File> callback) throws ApiException {
+    public com.squareup.okhttp.Call exportReportInGroupAsync(String groupId, String reportKey, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -954,13 +831,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsExportReportInGroupValidateBeforeCall(groupId, reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = exportReportInGroupValidateBeforeCall(groupId, reportKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGenerateToken
+     * Build call for generateToken
      * @param reportKey The report id (required)
      * @param requestParameters Generate token parameters (required)
      * @param progressListener Progress listener
@@ -968,7 +845,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenCall(String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenCall(String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -1011,20 +888,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGenerateTokenValidateBeforeCall(String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenValidateBeforeCall(String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsGenerateToken(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling generateToken(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsGenerateToken(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateToken(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenCall(reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenCall(reportKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1037,8 +914,8 @@ public class ReportsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken reportsGenerateToken(String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = reportsGenerateTokenWithHttpInfo(reportKey, requestParameters);
+    public EmbedToken generateToken(String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenWithHttpInfo(reportKey, requestParameters);
         return resp.getData();
     }
 
@@ -1050,8 +927,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> reportsGenerateTokenWithHttpInfo(String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGenerateTokenValidateBeforeCall(reportKey, requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenWithHttpInfo(String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenValidateBeforeCall(reportKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1065,7 +942,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenAsync(String reportKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenAsync(String reportKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1086,20 +963,20 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenValidateBeforeCall(reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenValidateBeforeCall(reportKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGenerateTokenForCreate
+     * Build call for generateTokenForCreate
      * @param requestParameters Generate token parameters (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenForCreateCall(GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenForCreateCall(GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -1141,15 +1018,15 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGenerateTokenForCreateValidateBeforeCall(GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenForCreateValidateBeforeCall(GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsGenerateTokenForCreate(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateTokenForCreate(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenForCreateCall(requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenForCreateCall(requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1161,8 +1038,8 @@ public class ReportsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken reportsGenerateTokenForCreate(GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = reportsGenerateTokenForCreateWithHttpInfo(requestParameters);
+    public EmbedToken generateTokenForCreate(GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenForCreateWithHttpInfo(requestParameters);
         return resp.getData();
     }
 
@@ -1173,8 +1050,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> reportsGenerateTokenForCreateWithHttpInfo(GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGenerateTokenForCreateValidateBeforeCall(requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenForCreateWithHttpInfo(GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenForCreateValidateBeforeCall(requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1187,7 +1064,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenForCreateAsync(GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenForCreateAsync(GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1208,13 +1085,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenForCreateValidateBeforeCall(requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenForCreateValidateBeforeCall(requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGenerateTokenForCreateInGroup
+     * Build call for generateTokenForCreateInGroup
      * @param groupId The group id (required)
      * @param requestParameters Generate token parameters (required)
      * @param progressListener Progress listener
@@ -1222,7 +1099,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenForCreateInGroupCall(String groupId, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenForCreateInGroupCall(String groupId, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -1265,20 +1142,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGenerateTokenForCreateInGroupValidateBeforeCall(String groupId, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenForCreateInGroupValidateBeforeCall(String groupId, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsGenerateTokenForCreateInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling generateTokenForCreateInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsGenerateTokenForCreateInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateTokenForCreateInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenForCreateInGroupCall(groupId, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenForCreateInGroupCall(groupId, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1291,8 +1168,8 @@ public class ReportsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken reportsGenerateTokenForCreateInGroup(String groupId, GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = reportsGenerateTokenForCreateInGroupWithHttpInfo(groupId, requestParameters);
+    public EmbedToken generateTokenForCreateInGroup(String groupId, GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenForCreateInGroupWithHttpInfo(groupId, requestParameters);
         return resp.getData();
     }
 
@@ -1304,8 +1181,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> reportsGenerateTokenForCreateInGroupWithHttpInfo(String groupId, GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGenerateTokenForCreateInGroupValidateBeforeCall(groupId, requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenForCreateInGroupWithHttpInfo(String groupId, GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenForCreateInGroupValidateBeforeCall(groupId, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1319,7 +1196,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenForCreateInGroupAsync(String groupId, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenForCreateInGroupAsync(String groupId, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1340,13 +1217,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenForCreateInGroupValidateBeforeCall(groupId, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenForCreateInGroupValidateBeforeCall(groupId, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGenerateTokenInGroup
+     * Build call for generateTokenInGroup
      * @param groupId The group id (required)
      * @param reportKey The report id (required)
      * @param requestParameters Generate token parameters (required)
@@ -1355,7 +1232,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenInGroupCall(String groupId, String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenInGroupCall(String groupId, String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -1399,25 +1276,25 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGenerateTokenInGroupValidateBeforeCall(String groupId, String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenInGroupValidateBeforeCall(String groupId, String reportKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling generateTokenInGroup(Async)");
         }
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling generateTokenInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateTokenInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenInGroupCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenInGroupCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1431,8 +1308,8 @@ public class ReportsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken reportsGenerateTokenInGroup(String groupId, String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = reportsGenerateTokenInGroupWithHttpInfo(groupId, reportKey, requestParameters);
+    public EmbedToken generateTokenInGroup(String groupId, String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenInGroupWithHttpInfo(groupId, reportKey, requestParameters);
         return resp.getData();
     }
 
@@ -1445,8 +1322,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> reportsGenerateTokenInGroupWithHttpInfo(String groupId, String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGenerateTokenInGroupValidateBeforeCall(groupId, reportKey, requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenInGroupWithHttpInfo(String groupId, String reportKey, GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenInGroupValidateBeforeCall(groupId, reportKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1461,7 +1338,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGenerateTokenInGroupAsync(String groupId, String reportKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenInGroupAsync(String groupId, String reportKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1482,20 +1359,143 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGenerateTokenInGroupValidateBeforeCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenInGroupValidateBeforeCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGetReport
+     * Build call for getDashboard
+     * @param dashboardKey The dashboard id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getDashboardCall(String dashboardKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1.0/myorg/dashboards/{dashboardKey}"
+            .replaceAll("\\{" + "dashboardKey" + "\\}", apiClient.escapeString(dashboardKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getDashboardValidateBeforeCall(String dashboardKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'dashboardKey' is set
+        if (dashboardKey == null) {
+            throw new ApiException("Missing the required parameter 'dashboardKey' when calling getDashboard(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getDashboardCall(dashboardKey, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get the specified dashboard
+     * 
+     * @param dashboardKey The dashboard id (required)
+     * @return Dashboard
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Dashboard getDashboard(String dashboardKey) throws ApiException {
+        ApiResponse<Dashboard> resp = getDashboardWithHttpInfo(dashboardKey);
+        return resp.getData();
+    }
+
+    /**
+     * Get the specified dashboard
+     * 
+     * @param dashboardKey The dashboard id (required)
+     * @return ApiResponse&lt;Dashboard&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Dashboard> getDashboardWithHttpInfo(String dashboardKey) throws ApiException {
+        com.squareup.okhttp.Call call = getDashboardValidateBeforeCall(dashboardKey, null, null);
+        Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get the specified dashboard (asynchronously)
+     * 
+     * @param dashboardKey The dashboard id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getDashboardAsync(String dashboardKey, final ApiCallback<Dashboard> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getDashboardValidateBeforeCall(dashboardKey, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getReport
      * @param reportKey The report id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getReportCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1538,15 +1538,15 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGetReportValidateBeforeCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getReportValidateBeforeCall(String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsGetReport(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling getReport(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGetReportCall(reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportCall(reportKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1558,8 +1558,8 @@ public class ReportsApi {
      * @return Report
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Report reportsGetReport(String reportKey) throws ApiException {
-        ApiResponse<Report> resp = reportsGetReportWithHttpInfo(reportKey);
+    public Report getReport(String reportKey) throws ApiException {
+        ApiResponse<Report> resp = getReportWithHttpInfo(reportKey);
         return resp.getData();
     }
 
@@ -1570,8 +1570,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Report&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Report> reportsGetReportWithHttpInfo(String reportKey) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGetReportValidateBeforeCall(reportKey, null, null);
+    public ApiResponse<Report> getReportWithHttpInfo(String reportKey) throws ApiException {
+        com.squareup.okhttp.Call call = getReportValidateBeforeCall(reportKey, null, null);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1584,7 +1584,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportAsync(String reportKey, final ApiCallback<Report> callback) throws ApiException {
+    public com.squareup.okhttp.Call getReportAsync(String reportKey, final ApiCallback<Report> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1605,13 +1605,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGetReportValidateBeforeCall(reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportValidateBeforeCall(reportKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGetReportInGroup
+     * Build call for getReportInGroup
      * @param groupId The group id (required)
      * @param reportKey The report id (required)
      * @param progressListener Progress listener
@@ -1619,7 +1619,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportInGroupCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getReportInGroupCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1663,20 +1663,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGetReportInGroupValidateBeforeCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getReportInGroupValidateBeforeCall(String groupId, String reportKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsGetReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getReportInGroup(Async)");
         }
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsGetReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling getReportInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGetReportInGroupCall(groupId, reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportInGroupCall(groupId, reportKey, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1689,8 +1689,8 @@ public class ReportsApi {
      * @return Report
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Report reportsGetReportInGroup(String groupId, String reportKey) throws ApiException {
-        ApiResponse<Report> resp = reportsGetReportInGroupWithHttpInfo(groupId, reportKey);
+    public Report getReportInGroup(String groupId, String reportKey) throws ApiException {
+        ApiResponse<Report> resp = getReportInGroupWithHttpInfo(groupId, reportKey);
         return resp.getData();
     }
 
@@ -1702,8 +1702,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Report&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Report> reportsGetReportInGroupWithHttpInfo(String groupId, String reportKey) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGetReportInGroupValidateBeforeCall(groupId, reportKey, null, null);
+    public ApiResponse<Report> getReportInGroupWithHttpInfo(String groupId, String reportKey) throws ApiException {
+        com.squareup.okhttp.Call call = getReportInGroupValidateBeforeCall(groupId, reportKey, null, null);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1717,7 +1717,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportInGroupAsync(String groupId, String reportKey, final ApiCallback<Report> callback) throws ApiException {
+    public com.squareup.okhttp.Call getReportInGroupAsync(String groupId, String reportKey, final ApiCallback<Report> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1738,19 +1738,19 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGetReportInGroupValidateBeforeCall(groupId, reportKey, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportInGroupValidateBeforeCall(groupId, reportKey, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Report>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGetReports
+     * Build call for getReports
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getReportsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1792,10 +1792,10 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGetReportsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getReportsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = reportsGetReportsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportsCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -1806,8 +1806,8 @@ public class ReportsApi {
      * @return ODataResponseListReport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListReport reportsGetReports() throws ApiException {
-        ApiResponse<ODataResponseListReport> resp = reportsGetReportsWithHttpInfo();
+    public ODataResponseListReport getReports() throws ApiException {
+        ApiResponse<ODataResponseListReport> resp = getReportsWithHttpInfo();
         return resp.getData();
     }
 
@@ -1817,8 +1817,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;ODataResponseListReport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListReport> reportsGetReportsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = reportsGetReportsValidateBeforeCall(null, null);
+    public ApiResponse<ODataResponseListReport> getReportsWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getReportsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListReport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1830,7 +1830,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportsAsync(final ApiCallback<ODataResponseListReport> callback) throws ApiException {
+    public com.squareup.okhttp.Call getReportsAsync(final ApiCallback<ODataResponseListReport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1851,20 +1851,20 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGetReportsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListReport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsGetReportsInGroup
+     * Build call for getReportsInGroup
      * @param groupId The group id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getReportsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1907,15 +1907,15 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsGetReportsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getReportsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsGetReportsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getReportsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsGetReportsInGroupCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportsInGroupCall(groupId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1927,8 +1927,8 @@ public class ReportsApi {
      * @return ODataResponseListReport
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListReport reportsGetReportsInGroup(String groupId) throws ApiException {
-        ApiResponse<ODataResponseListReport> resp = reportsGetReportsInGroupWithHttpInfo(groupId);
+    public ODataResponseListReport getReportsInGroup(String groupId) throws ApiException {
+        ApiResponse<ODataResponseListReport> resp = getReportsInGroupWithHttpInfo(groupId);
         return resp.getData();
     }
 
@@ -1939,8 +1939,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;ODataResponseListReport&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListReport> reportsGetReportsInGroupWithHttpInfo(String groupId) throws ApiException {
-        com.squareup.okhttp.Call call = reportsGetReportsInGroupValidateBeforeCall(groupId, null, null);
+    public ApiResponse<ODataResponseListReport> getReportsInGroupWithHttpInfo(String groupId) throws ApiException {
+        com.squareup.okhttp.Call call = getReportsInGroupValidateBeforeCall(groupId, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListReport>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1953,7 +1953,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsGetReportsInGroupAsync(String groupId, final ApiCallback<ODataResponseListReport> callback) throws ApiException {
+    public com.squareup.okhttp.Call getReportsInGroupAsync(String groupId, final ApiCallback<ODataResponseListReport> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1974,13 +1974,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsGetReportsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getReportsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListReport>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsRebindReport
+     * Build call for rebindReport
      * @param reportKey The report id (required)
      * @param requestParameters Rebind report parameters (required)
      * @param progressListener Progress listener
@@ -1988,7 +1988,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsRebindReportCall(String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call rebindReportCall(String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -2031,20 +2031,20 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsRebindReportValidateBeforeCall(String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call rebindReportValidateBeforeCall(String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsRebindReport(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling rebindReport(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsRebindReport(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling rebindReport(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsRebindReportCall(reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = rebindReportCall(reportKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2057,8 +2057,8 @@ public class ReportsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object reportsRebindReport(String reportKey, RebindReportRequest requestParameters) throws ApiException {
-        ApiResponse<Object> resp = reportsRebindReportWithHttpInfo(reportKey, requestParameters);
+    public Object rebindReport(String reportKey, RebindReportRequest requestParameters) throws ApiException {
+        ApiResponse<Object> resp = rebindReportWithHttpInfo(reportKey, requestParameters);
         return resp.getData();
     }
 
@@ -2070,8 +2070,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> reportsRebindReportWithHttpInfo(String reportKey, RebindReportRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsRebindReportValidateBeforeCall(reportKey, requestParameters, null, null);
+    public ApiResponse<Object> rebindReportWithHttpInfo(String reportKey, RebindReportRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = rebindReportValidateBeforeCall(reportKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2085,7 +2085,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsRebindReportAsync(String reportKey, RebindReportRequest requestParameters, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call rebindReportAsync(String reportKey, RebindReportRequest requestParameters, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2106,13 +2106,13 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsRebindReportValidateBeforeCall(reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = rebindReportValidateBeforeCall(reportKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for reportsRebindReportInGroup
+     * Build call for rebindReportInGroup
      * @param groupId The group id (required)
      * @param reportKey The report id (required)
      * @param requestParameters Rebind report parameters (required)
@@ -2121,7 +2121,7 @@ public class ReportsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reportsRebindReportInGroupCall(String groupId, String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call rebindReportInGroupCall(String groupId, String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -2165,25 +2165,25 @@ public class ReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reportsRebindReportInGroupValidateBeforeCall(String groupId, String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call rebindReportInGroupValidateBeforeCall(String groupId, String reportKey, RebindReportRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling reportsRebindReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling rebindReportInGroup(Async)");
         }
         
         // verify the required parameter 'reportKey' is set
         if (reportKey == null) {
-            throw new ApiException("Missing the required parameter 'reportKey' when calling reportsRebindReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'reportKey' when calling rebindReportInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling reportsRebindReportInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling rebindReportInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = reportsRebindReportInGroupCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = rebindReportInGroupCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2197,8 +2197,8 @@ public class ReportsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object reportsRebindReportInGroup(String groupId, String reportKey, RebindReportRequest requestParameters) throws ApiException {
-        ApiResponse<Object> resp = reportsRebindReportInGroupWithHttpInfo(groupId, reportKey, requestParameters);
+    public Object rebindReportInGroup(String groupId, String reportKey, RebindReportRequest requestParameters) throws ApiException {
+        ApiResponse<Object> resp = rebindReportInGroupWithHttpInfo(groupId, reportKey, requestParameters);
         return resp.getData();
     }
 
@@ -2211,8 +2211,8 @@ public class ReportsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> reportsRebindReportInGroupWithHttpInfo(String groupId, String reportKey, RebindReportRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = reportsRebindReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, null, null);
+    public ApiResponse<Object> rebindReportInGroupWithHttpInfo(String groupId, String reportKey, RebindReportRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = rebindReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2227,7 +2227,7 @@ public class ReportsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reportsRebindReportInGroupAsync(String groupId, String reportKey, RebindReportRequest requestParameters, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call rebindReportInGroupAsync(String groupId, String reportKey, RebindReportRequest requestParameters, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2248,7 +2248,7 @@ public class ReportsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reportsRebindReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = rebindReportInGroupValidateBeforeCall(groupId, reportKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

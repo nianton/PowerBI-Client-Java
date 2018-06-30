@@ -15,7 +15,7 @@ import java.io.IOException;
  * A Power BI Gateway
  */
 @ApiModel(description = "A Power BI Gateway")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class Gateway {
   @SerializedName("id")
   private String id = null;

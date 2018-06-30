@@ -49,7 +49,7 @@ public class DatasourcesApi {
     }
 
     /**
-     * Build call for gatewaysAddDatasourceUser
+     * Build call for addDatasourceUser
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param addUserToDatasourceRequest The add user to datasource request (required)
@@ -58,7 +58,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysAddDatasourceUserCall(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addDatasourceUserCall(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = addUserToDatasourceRequest;
 
         // create path and map variables
@@ -102,25 +102,25 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysAddDatasourceUserValidateBeforeCall(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addDatasourceUserValidateBeforeCall(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysAddDatasourceUser(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling addDatasourceUser(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysAddDatasourceUser(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling addDatasourceUser(Async)");
         }
         
         // verify the required parameter 'addUserToDatasourceRequest' is set
         if (addUserToDatasourceRequest == null) {
-            throw new ApiException("Missing the required parameter 'addUserToDatasourceRequest' when calling gatewaysAddDatasourceUser(Async)");
+            throw new ApiException("Missing the required parameter 'addUserToDatasourceRequest' when calling addDatasourceUser(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysAddDatasourceUserCall(gatewayId, datasourceId, addUserToDatasourceRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addDatasourceUserCall(gatewayId, datasourceId, addUserToDatasourceRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -134,8 +134,8 @@ public class DatasourcesApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object gatewaysAddDatasourceUser(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest) throws ApiException {
-        ApiResponse<Object> resp = gatewaysAddDatasourceUserWithHttpInfo(gatewayId, datasourceId, addUserToDatasourceRequest);
+    public Object addDatasourceUser(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest) throws ApiException {
+        ApiResponse<Object> resp = addDatasourceUserWithHttpInfo(gatewayId, datasourceId, addUserToDatasourceRequest);
         return resp.getData();
     }
 
@@ -148,8 +148,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> gatewaysAddDatasourceUserWithHttpInfo(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysAddDatasourceUserValidateBeforeCall(gatewayId, datasourceId, addUserToDatasourceRequest, null, null);
+    public ApiResponse<Object> addDatasourceUserWithHttpInfo(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest) throws ApiException {
+        com.squareup.okhttp.Call call = addDatasourceUserValidateBeforeCall(gatewayId, datasourceId, addUserToDatasourceRequest, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -164,7 +164,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysAddDatasourceUserAsync(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call addDatasourceUserAsync(String gatewayId, String datasourceId, UserAccessRight addUserToDatasourceRequest, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -185,13 +185,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysAddDatasourceUserValidateBeforeCall(gatewayId, datasourceId, addUserToDatasourceRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addDatasourceUserValidateBeforeCall(gatewayId, datasourceId, addUserToDatasourceRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysCreateDatasource
+     * Build call for createDatasource
      * @param gatewayId The gateway id (required)
      * @param datasourceToGatewayRequest The datasource requested to create (required)
      * @param progressListener Progress listener
@@ -199,7 +199,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysCreateDatasourceCall(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createDatasourceCall(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = datasourceToGatewayRequest;
 
         // create path and map variables
@@ -242,20 +242,20 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysCreateDatasourceValidateBeforeCall(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createDatasourceValidateBeforeCall(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysCreateDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling createDatasource(Async)");
         }
         
         // verify the required parameter 'datasourceToGatewayRequest' is set
         if (datasourceToGatewayRequest == null) {
-            throw new ApiException("Missing the required parameter 'datasourceToGatewayRequest' when calling gatewaysCreateDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceToGatewayRequest' when calling createDatasource(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysCreateDatasourceCall(gatewayId, datasourceToGatewayRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createDatasourceCall(gatewayId, datasourceToGatewayRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -268,8 +268,8 @@ public class DatasourcesApi {
      * @return GatewayDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GatewayDatasource gatewaysCreateDatasource(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest) throws ApiException {
-        ApiResponse<GatewayDatasource> resp = gatewaysCreateDatasourceWithHttpInfo(gatewayId, datasourceToGatewayRequest);
+    public GatewayDatasource createDatasource(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest) throws ApiException {
+        ApiResponse<GatewayDatasource> resp = createDatasourceWithHttpInfo(gatewayId, datasourceToGatewayRequest);
         return resp.getData();
     }
 
@@ -281,8 +281,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;GatewayDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GatewayDatasource> gatewaysCreateDatasourceWithHttpInfo(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysCreateDatasourceValidateBeforeCall(gatewayId, datasourceToGatewayRequest, null, null);
+    public ApiResponse<GatewayDatasource> createDatasourceWithHttpInfo(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createDatasourceValidateBeforeCall(gatewayId, datasourceToGatewayRequest, null, null);
         Type localVarReturnType = new TypeToken<GatewayDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -296,7 +296,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysCreateDatasourceAsync(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest, final ApiCallback<GatewayDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call createDatasourceAsync(String gatewayId, PublishDatasourceToGatewayRequest datasourceToGatewayRequest, final ApiCallback<GatewayDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -317,13 +317,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysCreateDatasourceValidateBeforeCall(gatewayId, datasourceToGatewayRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createDatasourceValidateBeforeCall(gatewayId, datasourceToGatewayRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GatewayDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysDeleteDatasource
+     * Build call for deleteDatasource
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param progressListener Progress listener
@@ -331,7 +331,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysDeleteDatasourceCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasourceCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -375,20 +375,20 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysDeleteDatasourceValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteDatasourceValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysDeleteDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling deleteDatasource(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysDeleteDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling deleteDatasource(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysDeleteDatasourceCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasourceCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -401,8 +401,8 @@ public class DatasourcesApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object gatewaysDeleteDatasource(String gatewayId, String datasourceId) throws ApiException {
-        ApiResponse<Object> resp = gatewaysDeleteDatasourceWithHttpInfo(gatewayId, datasourceId);
+    public Object deleteDatasource(String gatewayId, String datasourceId) throws ApiException {
+        ApiResponse<Object> resp = deleteDatasourceWithHttpInfo(gatewayId, datasourceId);
         return resp.getData();
     }
 
@@ -414,8 +414,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> gatewaysDeleteDatasourceWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysDeleteDatasourceValidateBeforeCall(gatewayId, datasourceId, null, null);
+    public ApiResponse<Object> deleteDatasourceWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteDatasourceValidateBeforeCall(gatewayId, datasourceId, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -429,7 +429,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysDeleteDatasourceAsync(String gatewayId, String datasourceId, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasourceAsync(String gatewayId, String datasourceId, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -450,13 +450,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysDeleteDatasourceValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasourceValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysDeleteDatasourceUser
+     * Build call for deleteDatasourceUser
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param emailAdress The user&#39;s email address (required)
@@ -465,7 +465,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysDeleteDatasourceUserCall(String gatewayId, String datasourceId, String emailAdress, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasourceUserCall(String gatewayId, String datasourceId, String emailAdress, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -510,25 +510,25 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysDeleteDatasourceUserValidateBeforeCall(String gatewayId, String datasourceId, String emailAdress, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteDatasourceUserValidateBeforeCall(String gatewayId, String datasourceId, String emailAdress, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysDeleteDatasourceUser(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling deleteDatasourceUser(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysDeleteDatasourceUser(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling deleteDatasourceUser(Async)");
         }
         
         // verify the required parameter 'emailAdress' is set
         if (emailAdress == null) {
-            throw new ApiException("Missing the required parameter 'emailAdress' when calling gatewaysDeleteDatasourceUser(Async)");
+            throw new ApiException("Missing the required parameter 'emailAdress' when calling deleteDatasourceUser(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysDeleteDatasourceUserCall(gatewayId, datasourceId, emailAdress, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasourceUserCall(gatewayId, datasourceId, emailAdress, progressListener, progressRequestListener);
         return call;
 
     }
@@ -542,8 +542,8 @@ public class DatasourcesApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object gatewaysDeleteDatasourceUser(String gatewayId, String datasourceId, String emailAdress) throws ApiException {
-        ApiResponse<Object> resp = gatewaysDeleteDatasourceUserWithHttpInfo(gatewayId, datasourceId, emailAdress);
+    public Object deleteDatasourceUser(String gatewayId, String datasourceId, String emailAdress) throws ApiException {
+        ApiResponse<Object> resp = deleteDatasourceUserWithHttpInfo(gatewayId, datasourceId, emailAdress);
         return resp.getData();
     }
 
@@ -556,8 +556,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> gatewaysDeleteDatasourceUserWithHttpInfo(String gatewayId, String datasourceId, String emailAdress) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysDeleteDatasourceUserValidateBeforeCall(gatewayId, datasourceId, emailAdress, null, null);
+    public ApiResponse<Object> deleteDatasourceUserWithHttpInfo(String gatewayId, String datasourceId, String emailAdress) throws ApiException {
+        com.squareup.okhttp.Call call = deleteDatasourceUserValidateBeforeCall(gatewayId, datasourceId, emailAdress, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -572,7 +572,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysDeleteDatasourceUserAsync(String gatewayId, String datasourceId, String emailAdress, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDatasourceUserAsync(String gatewayId, String datasourceId, String emailAdress, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -593,13 +593,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysDeleteDatasourceUserValidateBeforeCall(gatewayId, datasourceId, emailAdress, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteDatasourceUserValidateBeforeCall(gatewayId, datasourceId, emailAdress, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysGetDatasourceById
+     * Build call for getDatasourceById
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param progressListener Progress listener
@@ -607,7 +607,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourceByIdCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourceByIdCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -651,20 +651,20 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysGetDatasourceByIdValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasourceByIdValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysGetDatasourceById(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling getDatasourceById(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysGetDatasourceById(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling getDatasourceById(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceByIdCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourceByIdCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -677,8 +677,8 @@ public class DatasourcesApi {
      * @return GatewayDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GatewayDatasource gatewaysGetDatasourceById(String gatewayId, String datasourceId) throws ApiException {
-        ApiResponse<GatewayDatasource> resp = gatewaysGetDatasourceByIdWithHttpInfo(gatewayId, datasourceId);
+    public GatewayDatasource getDatasourceById(String gatewayId, String datasourceId) throws ApiException {
+        ApiResponse<GatewayDatasource> resp = getDatasourceByIdWithHttpInfo(gatewayId, datasourceId);
         return resp.getData();
     }
 
@@ -690,8 +690,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;GatewayDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GatewayDatasource> gatewaysGetDatasourceByIdWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceByIdValidateBeforeCall(gatewayId, datasourceId, null, null);
+    public ApiResponse<GatewayDatasource> getDatasourceByIdWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasourceByIdValidateBeforeCall(gatewayId, datasourceId, null, null);
         Type localVarReturnType = new TypeToken<GatewayDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -705,7 +705,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourceByIdAsync(String gatewayId, String datasourceId, final ApiCallback<GatewayDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourceByIdAsync(String gatewayId, String datasourceId, final ApiCallback<GatewayDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -726,13 +726,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceByIdValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourceByIdValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GatewayDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysGetDatasourceStatusById
+     * Build call for getDatasourceStatusById
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param progressListener Progress listener
@@ -740,7 +740,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourceStatusByIdCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourceStatusByIdCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -784,20 +784,20 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysGetDatasourceStatusByIdValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasourceStatusByIdValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysGetDatasourceStatusById(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling getDatasourceStatusById(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysGetDatasourceStatusById(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling getDatasourceStatusById(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceStatusByIdCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourceStatusByIdCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -810,8 +810,8 @@ public class DatasourcesApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object gatewaysGetDatasourceStatusById(String gatewayId, String datasourceId) throws ApiException {
-        ApiResponse<Object> resp = gatewaysGetDatasourceStatusByIdWithHttpInfo(gatewayId, datasourceId);
+    public Object getDatasourceStatusById(String gatewayId, String datasourceId) throws ApiException {
+        ApiResponse<Object> resp = getDatasourceStatusByIdWithHttpInfo(gatewayId, datasourceId);
         return resp.getData();
     }
 
@@ -823,8 +823,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> gatewaysGetDatasourceStatusByIdWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceStatusByIdValidateBeforeCall(gatewayId, datasourceId, null, null);
+    public ApiResponse<Object> getDatasourceStatusByIdWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasourceStatusByIdValidateBeforeCall(gatewayId, datasourceId, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -838,7 +838,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourceStatusByIdAsync(String gatewayId, String datasourceId, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourceStatusByIdAsync(String gatewayId, String datasourceId, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -859,13 +859,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceStatusByIdValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourceStatusByIdValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysGetDatasourceUsers
+     * Build call for getDatasourceUsers
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param progressListener Progress listener
@@ -873,7 +873,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourceUsersCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourceUsersCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -917,20 +917,20 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysGetDatasourceUsersValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasourceUsersValidateBeforeCall(String gatewayId, String datasourceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysGetDatasourceUsers(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling getDatasourceUsers(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysGetDatasourceUsers(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling getDatasourceUsers(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceUsersCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourceUsersCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -943,8 +943,8 @@ public class DatasourcesApi {
      * @return ODataResponseListUserAccessRight
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListUserAccessRight gatewaysGetDatasourceUsers(String gatewayId, String datasourceId) throws ApiException {
-        ApiResponse<ODataResponseListUserAccessRight> resp = gatewaysGetDatasourceUsersWithHttpInfo(gatewayId, datasourceId);
+    public ODataResponseListUserAccessRight getDatasourceUsers(String gatewayId, String datasourceId) throws ApiException {
+        ApiResponse<ODataResponseListUserAccessRight> resp = getDatasourceUsersWithHttpInfo(gatewayId, datasourceId);
         return resp.getData();
     }
 
@@ -956,8 +956,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;ODataResponseListUserAccessRight&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListUserAccessRight> gatewaysGetDatasourceUsersWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceUsersValidateBeforeCall(gatewayId, datasourceId, null, null);
+    public ApiResponse<ODataResponseListUserAccessRight> getDatasourceUsersWithHttpInfo(String gatewayId, String datasourceId) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasourceUsersValidateBeforeCall(gatewayId, datasourceId, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListUserAccessRight>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -971,7 +971,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourceUsersAsync(String gatewayId, String datasourceId, final ApiCallback<ODataResponseListUserAccessRight> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourceUsersAsync(String gatewayId, String datasourceId, final ApiCallback<ODataResponseListUserAccessRight> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -992,20 +992,20 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourceUsersValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourceUsersValidateBeforeCall(gatewayId, datasourceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListUserAccessRight>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysGetDatasources
+     * Build call for getDatasources
      * @param gatewayId The gateway id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourcesCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourcesCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1048,15 +1048,15 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysGetDatasourcesValidateBeforeCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDatasourcesValidateBeforeCall(String gatewayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysGetDatasources(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling getDatasources(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourcesCall(gatewayId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourcesCall(gatewayId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1068,8 +1068,8 @@ public class DatasourcesApi {
      * @return ODataResponseListGatewayDatasource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListGatewayDatasource gatewaysGetDatasources(String gatewayId) throws ApiException {
-        ApiResponse<ODataResponseListGatewayDatasource> resp = gatewaysGetDatasourcesWithHttpInfo(gatewayId);
+    public ODataResponseListGatewayDatasource getDatasources(String gatewayId) throws ApiException {
+        ApiResponse<ODataResponseListGatewayDatasource> resp = getDatasourcesWithHttpInfo(gatewayId);
         return resp.getData();
     }
 
@@ -1080,8 +1080,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;ODataResponseListGatewayDatasource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListGatewayDatasource> gatewaysGetDatasourcesWithHttpInfo(String gatewayId) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysGetDatasourcesValidateBeforeCall(gatewayId, null, null);
+    public ApiResponse<ODataResponseListGatewayDatasource> getDatasourcesWithHttpInfo(String gatewayId) throws ApiException {
+        com.squareup.okhttp.Call call = getDatasourcesValidateBeforeCall(gatewayId, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListGatewayDatasource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1094,7 +1094,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysGetDatasourcesAsync(String gatewayId, final ApiCallback<ODataResponseListGatewayDatasource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDatasourcesAsync(String gatewayId, final ApiCallback<ODataResponseListGatewayDatasource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1115,13 +1115,13 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysGetDatasourcesValidateBeforeCall(gatewayId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDatasourcesValidateBeforeCall(gatewayId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListGatewayDatasource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for gatewaysUpdateDatasource
+     * Build call for updateDatasource
      * @param gatewayId The gateway id (required)
      * @param datasourceId The datasource id (required)
      * @param updateDatasourceRequest The update datasource request (required)
@@ -1130,7 +1130,7 @@ public class DatasourcesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call gatewaysUpdateDatasourceCall(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateDatasourceCall(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateDatasourceRequest;
 
         // create path and map variables
@@ -1174,25 +1174,25 @@ public class DatasourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call gatewaysUpdateDatasourceValidateBeforeCall(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateDatasourceValidateBeforeCall(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'gatewayId' is set
         if (gatewayId == null) {
-            throw new ApiException("Missing the required parameter 'gatewayId' when calling gatewaysUpdateDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'gatewayId' when calling updateDatasource(Async)");
         }
         
         // verify the required parameter 'datasourceId' is set
         if (datasourceId == null) {
-            throw new ApiException("Missing the required parameter 'datasourceId' when calling gatewaysUpdateDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'datasourceId' when calling updateDatasource(Async)");
         }
         
         // verify the required parameter 'updateDatasourceRequest' is set
         if (updateDatasourceRequest == null) {
-            throw new ApiException("Missing the required parameter 'updateDatasourceRequest' when calling gatewaysUpdateDatasource(Async)");
+            throw new ApiException("Missing the required parameter 'updateDatasourceRequest' when calling updateDatasource(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = gatewaysUpdateDatasourceCall(gatewayId, datasourceId, updateDatasourceRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateDatasourceCall(gatewayId, datasourceId, updateDatasourceRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1206,8 +1206,8 @@ public class DatasourcesApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object gatewaysUpdateDatasource(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest) throws ApiException {
-        ApiResponse<Object> resp = gatewaysUpdateDatasourceWithHttpInfo(gatewayId, datasourceId, updateDatasourceRequest);
+    public Object updateDatasource(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest) throws ApiException {
+        ApiResponse<Object> resp = updateDatasourceWithHttpInfo(gatewayId, datasourceId, updateDatasourceRequest);
         return resp.getData();
     }
 
@@ -1220,8 +1220,8 @@ public class DatasourcesApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> gatewaysUpdateDatasourceWithHttpInfo(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest) throws ApiException {
-        com.squareup.okhttp.Call call = gatewaysUpdateDatasourceValidateBeforeCall(gatewayId, datasourceId, updateDatasourceRequest, null, null);
+    public ApiResponse<Object> updateDatasourceWithHttpInfo(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest) throws ApiException {
+        com.squareup.okhttp.Call call = updateDatasourceValidateBeforeCall(gatewayId, datasourceId, updateDatasourceRequest, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1236,7 +1236,7 @@ public class DatasourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call gatewaysUpdateDatasourceAsync(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateDatasourceAsync(String gatewayId, String datasourceId, UpdateDatasourceRequest updateDatasourceRequest, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1257,7 +1257,7 @@ public class DatasourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = gatewaysUpdateDatasourceValidateBeforeCall(gatewayId, datasourceId, updateDatasourceRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateDatasourceValidateBeforeCall(gatewayId, datasourceId, updateDatasourceRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -32,10 +32,10 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void groupsAddGroupUserTest() throws ApiException {
+    public void addGroupUserTest() throws ApiException {
         String groupId = null;
         GroupUserAccessRight userDetails = null;
-        Object response = api.groupsAddGroupUser(groupId, userDetails);
+        Object response = api.addGroupUser(groupId, userDetails);
 
         // TODO: test validations
     }
@@ -49,9 +49,9 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void groupsCreateGroupTest() throws ApiException {
+    public void createGroupTest() throws ApiException {
         GroupCreationRequest requestParameters = null;
-        Group response = api.groupsCreateGroup(requestParameters);
+        Group response = api.createGroup(requestParameters);
 
         // TODO: test validations
     }
@@ -65,9 +65,9 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void groupsDeleteGroupTest() throws ApiException {
+    public void deleteGroupTest() throws ApiException {
         String groupId = null;
-        Object response = api.groupsDeleteGroup(groupId);
+        Object response = api.deleteGroup(groupId);
 
         // TODO: test validations
     }
@@ -81,10 +81,10 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void groupsDeleteUserInGroupTest() throws ApiException {
+    public void deleteUserInGroupTest() throws ApiException {
         String groupId = null;
         String user = null;
-        Object response = api.groupsDeleteUserInGroup(groupId, user);
+        Object response = api.deleteUserInGroup(groupId, user);
 
         // TODO: test validations
     }
@@ -98,9 +98,9 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void groupsGetGroupUsersTest() throws ApiException {
+    public void getGroupUsersTest() throws ApiException {
         String groupId = null;
-        ODataResponseListGroupUserAccessRight response = api.groupsGetGroupUsers(groupId);
+        ODataResponseListGroupUserAccessRight response = api.getGroupUsers(groupId);
 
         // TODO: test validations
     }
@@ -114,8 +114,8 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void groupsGetGroupsTest() throws ApiException {
-        ODataResponseListGroup response = api.groupsGetGroups();
+    public void getGroupsTest() throws ApiException {
+        ODataResponseListGroup response = api.getGroups();
 
         // TODO: test validations
     }

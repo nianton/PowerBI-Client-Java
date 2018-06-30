@@ -27,6 +27,175 @@ public class ReportsApiTest {
 
     
     /**
+     * Clones the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cloneReportTest() throws ApiException {
+        String reportKey = null;
+        CloneReportRequest requestParameters = null;
+        Report response = api.cloneReport(reportKey, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Clones the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cloneReportInGroupTest() throws ApiException {
+        String groupId = null;
+        String reportKey = null;
+        CloneReportRequest requestParameters = null;
+        Report response = api.cloneReportInGroup(groupId, reportKey, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Deletes the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteReportTest() throws ApiException {
+        String reportKey = null;
+        Object response = api.deleteReport(reportKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Deletes the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteReportInGroupTest() throws ApiException {
+        String groupId = null;
+        String reportKey = null;
+        Object response = api.deleteReportInGroup(groupId, reportKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Exports the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void exportReportTest() throws ApiException {
+        String reportKey = null;
+        File response = api.exportReport(reportKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Exports the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void exportReportInGroupTest() throws ApiException {
+        String groupId = null;
+        String reportKey = null;
+        File response = api.exportReportInGroup(groupId, reportKey);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate token to view or edit the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateTokenTest() throws ApiException {
+        String reportKey = null;
+        GenerateTokenRequest requestParameters = null;
+        EmbedToken response = api.generateToken(reportKey, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate token to create a new report on a given dataset
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateTokenForCreateTest() throws ApiException {
+        GenerateTokenRequest requestParameters = null;
+        EmbedToken response = api.generateTokenForCreate(requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate token to create a new report on a given dataset
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateTokenForCreateInGroupTest() throws ApiException {
+        String groupId = null;
+        GenerateTokenRequest requestParameters = null;
+        EmbedToken response = api.generateTokenForCreateInGroup(groupId, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate token to view or edit the specified report
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateTokenInGroupTest() throws ApiException {
+        String groupId = null;
+        String reportKey = null;
+        GenerateTokenRequest requestParameters = null;
+        EmbedToken response = api.generateTokenInGroup(groupId, reportKey, requestParameters);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get the specified dashboard
      *
      * 
@@ -35,178 +204,9 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetDashboardTest() throws ApiException {
+    public void getDashboardTest() throws ApiException {
         String dashboardKey = null;
-        Dashboard response = api.dashboardsGetDashboard(dashboardKey);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Clones the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsCloneReportTest() throws ApiException {
-        String reportKey = null;
-        CloneReportRequest requestParameters = null;
-        Report response = api.reportsCloneReport(reportKey, requestParameters);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Clones the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsCloneReportInGroupTest() throws ApiException {
-        String groupId = null;
-        String reportKey = null;
-        CloneReportRequest requestParameters = null;
-        Report response = api.reportsCloneReportInGroup(groupId, reportKey, requestParameters);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Deletes the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsDeleteReportTest() throws ApiException {
-        String reportKey = null;
-        Object response = api.reportsDeleteReport(reportKey);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Deletes the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsDeleteReportInGroupTest() throws ApiException {
-        String groupId = null;
-        String reportKey = null;
-        Object response = api.reportsDeleteReportInGroup(groupId, reportKey);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Exports the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsExportReportTest() throws ApiException {
-        String reportKey = null;
-        File response = api.reportsExportReport(reportKey);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Exports the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsExportReportInGroupTest() throws ApiException {
-        String groupId = null;
-        String reportKey = null;
-        File response = api.reportsExportReportInGroup(groupId, reportKey);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate token to view or edit the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsGenerateTokenTest() throws ApiException {
-        String reportKey = null;
-        GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.reportsGenerateToken(reportKey, requestParameters);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate token to create a new report on a given dataset
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsGenerateTokenForCreateTest() throws ApiException {
-        GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.reportsGenerateTokenForCreate(requestParameters);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate token to create a new report on a given dataset
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsGenerateTokenForCreateInGroupTest() throws ApiException {
-        String groupId = null;
-        GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.reportsGenerateTokenForCreateInGroup(groupId, requestParameters);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate token to view or edit the specified report
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void reportsGenerateTokenInGroupTest() throws ApiException {
-        String groupId = null;
-        String reportKey = null;
-        GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.reportsGenerateTokenInGroup(groupId, reportKey, requestParameters);
+        Dashboard response = api.getDashboard(dashboardKey);
 
         // TODO: test validations
     }
@@ -220,9 +220,9 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reportsGetReportTest() throws ApiException {
+    public void getReportTest() throws ApiException {
         String reportKey = null;
-        Report response = api.reportsGetReport(reportKey);
+        Report response = api.getReport(reportKey);
 
         // TODO: test validations
     }
@@ -236,10 +236,10 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reportsGetReportInGroupTest() throws ApiException {
+    public void getReportInGroupTest() throws ApiException {
         String groupId = null;
         String reportKey = null;
-        Report response = api.reportsGetReportInGroup(groupId, reportKey);
+        Report response = api.getReportInGroup(groupId, reportKey);
 
         // TODO: test validations
     }
@@ -253,8 +253,8 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reportsGetReportsTest() throws ApiException {
-        ODataResponseListReport response = api.reportsGetReports();
+    public void getReportsTest() throws ApiException {
+        ODataResponseListReport response = api.getReports();
 
         // TODO: test validations
     }
@@ -268,9 +268,9 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reportsGetReportsInGroupTest() throws ApiException {
+    public void getReportsInGroupTest() throws ApiException {
         String groupId = null;
-        ODataResponseListReport response = api.reportsGetReportsInGroup(groupId);
+        ODataResponseListReport response = api.getReportsInGroup(groupId);
 
         // TODO: test validations
     }
@@ -284,10 +284,10 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reportsRebindReportTest() throws ApiException {
+    public void rebindReportTest() throws ApiException {
         String reportKey = null;
         RebindReportRequest requestParameters = null;
-        Object response = api.reportsRebindReport(reportKey, requestParameters);
+        Object response = api.rebindReport(reportKey, requestParameters);
 
         // TODO: test validations
     }
@@ -301,11 +301,11 @@ public class ReportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reportsRebindReportInGroupTest() throws ApiException {
+    public void rebindReportInGroupTest() throws ApiException {
         String groupId = null;
         String reportKey = null;
         RebindReportRequest requestParameters = null;
-        Object response = api.reportsRebindReportInGroup(groupId, reportKey, requestParameters);
+        Object response = api.rebindReportInGroup(groupId, reportKey, requestParameters);
 
         // TODO: test validations
     }

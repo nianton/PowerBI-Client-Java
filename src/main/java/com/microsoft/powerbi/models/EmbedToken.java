@@ -15,7 +15,7 @@ import org.threeten.bp.OffsetDateTime;
  * Power BI Embed Token
  */
 @ApiModel(description = "Power BI Embed Token")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class EmbedToken {
   @SerializedName("token")
   private String token = null;

@@ -14,7 +14,7 @@ import java.io.IOException;
  * Power BI Add Dashboard Request
  */
 @ApiModel(description = "Power BI Add Dashboard Request")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class AddDashboardRequest {
   @SerializedName("name")
   private String name = null;

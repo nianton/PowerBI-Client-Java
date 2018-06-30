@@ -30,9 +30,9 @@ public class ImportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void importsGetImportByIdTest() throws ApiException {
+    public void getImportByIdTest() throws ApiException {
         String importId = null;
-        ModelImport response = api.importsGetImportById(importId);
+        ModelImport response = api.getImportById(importId);
 
         // TODO: test validations
     }
@@ -46,10 +46,10 @@ public class ImportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void importsGetImportByIdInGroupTest() throws ApiException {
+    public void getImportByIdInGroupTest() throws ApiException {
         String groupId = null;
         String importId = null;
-        ModelImport response = api.importsGetImportByIdInGroup(groupId, importId);
+        ModelImport response = api.getImportByIdInGroup(groupId, importId);
 
         // TODO: test validations
     }
@@ -63,8 +63,8 @@ public class ImportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void importsGetImportsTest() throws ApiException {
-        ODataResponseListImport response = api.importsGetImports();
+    public void getImportsTest() throws ApiException {
+        ODataResponseListImport response = api.getImports();
 
         // TODO: test validations
     }
@@ -78,9 +78,9 @@ public class ImportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void importsGetImportsInGroupTest() throws ApiException {
+    public void getImportsInGroupTest() throws ApiException {
         String groupId = null;
-        ODataResponseListImport response = api.importsGetImportsInGroup(groupId);
+        ODataResponseListImport response = api.getImportsInGroup(groupId);
 
         // TODO: test validations
     }
@@ -94,11 +94,11 @@ public class ImportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void importsPostImportTest() throws ApiException {
+    public void postImportTest() throws ApiException {
         String datasetDisplayName = null;
         ImportInfo importInfo = null;
         String nameConflict = null;
-        ModelImport response = api.importsPostImport(datasetDisplayName, importInfo, nameConflict);
+        ModelImport response = api.postImport(datasetDisplayName, importInfo, nameConflict);
 
         // TODO: test validations
     }
@@ -112,12 +112,12 @@ public class ImportsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void importsPostImportInGroupTest() throws ApiException {
+    public void postImportInGroupTest() throws ApiException {
         String groupId = null;
         String datasetDisplayName = null;
         ImportInfo importInfo = null;
         String nameConflict = null;
-        ModelImport response = api.importsPostImportInGroup(groupId, datasetDisplayName, importInfo, nameConflict);
+        ModelImport response = api.postImportInGroup(groupId, datasetDisplayName, importInfo, nameConflict);
 
         // TODO: test validations
     }

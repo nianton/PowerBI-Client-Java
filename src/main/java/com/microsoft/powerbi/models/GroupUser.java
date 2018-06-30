@@ -14,7 +14,7 @@ import java.io.IOException;
  * A Power BI user details in a group
  */
 @ApiModel(description = "A Power BI user details in a group")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class GroupUser {
   /**
    * Type of user in a group.

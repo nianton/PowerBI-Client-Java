@@ -32,9 +32,9 @@ public class DashboardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsAddDashboardTest() throws ApiException {
+    public void addDashboardTest() throws ApiException {
         AddDashboardRequest requestParameters = null;
-        Dashboard response = api.dashboardsAddDashboard(requestParameters);
+        Dashboard response = api.addDashboard(requestParameters);
 
         // TODO: test validations
     }
@@ -48,10 +48,10 @@ public class DashboardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsAddDashboardInGroupTest() throws ApiException {
+    public void addDashboardInGroupTest() throws ApiException {
         String groupId = null;
         AddDashboardRequest requestParameters = null;
-        Dashboard response = api.dashboardsAddDashboardInGroup(groupId, requestParameters);
+        Dashboard response = api.addDashboardInGroup(groupId, requestParameters);
 
         // TODO: test validations
     }
@@ -65,10 +65,10 @@ public class DashboardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGenerateTokenTest() throws ApiException {
+    public void generateTokenTest() throws ApiException {
         String dashboardKey = null;
         GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.dashboardsGenerateToken(dashboardKey, requestParameters);
+        EmbedToken response = api.generateToken(dashboardKey, requestParameters);
 
         // TODO: test validations
     }
@@ -82,11 +82,11 @@ public class DashboardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGenerateTokenInGroupTest() throws ApiException {
+    public void generateTokenInGroupTest() throws ApiException {
         String groupId = null;
         String dashboardKey = null;
         GenerateTokenRequest requestParameters = null;
-        EmbedToken response = api.dashboardsGenerateTokenInGroup(groupId, dashboardKey, requestParameters);
+        EmbedToken response = api.generateTokenInGroup(groupId, dashboardKey, requestParameters);
 
         // TODO: test validations
     }
@@ -100,8 +100,8 @@ public class DashboardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetDashboardsTest() throws ApiException {
-        ODataResponseListDashboard response = api.dashboardsGetDashboards();
+    public void getDashboardsTest() throws ApiException {
+        ODataResponseListDashboard response = api.getDashboards();
 
         // TODO: test validations
     }
@@ -115,9 +115,9 @@ public class DashboardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void dashboardsGetDashboardsInGroupTest() throws ApiException {
+    public void getDashboardsInGroupTest() throws ApiException {
         String groupId = null;
-        ODataResponseListDashboard response = api.dashboardsGetDashboardsInGroup(groupId);
+        ODataResponseListDashboard response = api.getDashboardsInGroup(groupId);
 
         // TODO: test validations
     }

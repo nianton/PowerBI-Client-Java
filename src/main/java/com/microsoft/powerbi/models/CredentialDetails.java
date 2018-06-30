@@ -14,7 +14,7 @@ import java.io.IOException;
  * The credential details
  */
 @ApiModel(description = "The credential details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T09:55:17.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T21:03:34.740Z")
 public class CredentialDetails {
   @SerializedName("credentials")
   private String credentials = null;

@@ -48,14 +48,14 @@ public class DashboardsApi {
     }
 
     /**
-     * Build call for dashboardsAddDashboard
+     * Build call for addDashboard
      * @param requestParameters Add dashboard parameters (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call dashboardsAddDashboardCall(AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addDashboardCall(AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -97,15 +97,15 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsAddDashboardValidateBeforeCall(AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addDashboardValidateBeforeCall(AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling dashboardsAddDashboard(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling addDashboard(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = dashboardsAddDashboardCall(requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addDashboardCall(requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -117,8 +117,8 @@ public class DashboardsApi {
      * @return Dashboard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Dashboard dashboardsAddDashboard(AddDashboardRequest requestParameters) throws ApiException {
-        ApiResponse<Dashboard> resp = dashboardsAddDashboardWithHttpInfo(requestParameters);
+    public Dashboard addDashboard(AddDashboardRequest requestParameters) throws ApiException {
+        ApiResponse<Dashboard> resp = addDashboardWithHttpInfo(requestParameters);
         return resp.getData();
     }
 
@@ -129,8 +129,8 @@ public class DashboardsApi {
      * @return ApiResponse&lt;Dashboard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Dashboard> dashboardsAddDashboardWithHttpInfo(AddDashboardRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsAddDashboardValidateBeforeCall(requestParameters, null, null);
+    public ApiResponse<Dashboard> addDashboardWithHttpInfo(AddDashboardRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = addDashboardValidateBeforeCall(requestParameters, null, null);
         Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -143,7 +143,7 @@ public class DashboardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call dashboardsAddDashboardAsync(AddDashboardRequest requestParameters, final ApiCallback<Dashboard> callback) throws ApiException {
+    public com.squareup.okhttp.Call addDashboardAsync(AddDashboardRequest requestParameters, final ApiCallback<Dashboard> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -164,13 +164,13 @@ public class DashboardsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = dashboardsAddDashboardValidateBeforeCall(requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addDashboardValidateBeforeCall(requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for dashboardsAddDashboardInGroup
+     * Build call for addDashboardInGroup
      * @param groupId The group id (required)
      * @param requestParameters Add dashboard parameters (required)
      * @param progressListener Progress listener
@@ -178,7 +178,7 @@ public class DashboardsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call dashboardsAddDashboardInGroupCall(String groupId, AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addDashboardInGroupCall(String groupId, AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -221,20 +221,20 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsAddDashboardInGroupValidateBeforeCall(String groupId, AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addDashboardInGroupValidateBeforeCall(String groupId, AddDashboardRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling dashboardsAddDashboardInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling addDashboardInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling dashboardsAddDashboardInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling addDashboardInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = dashboardsAddDashboardInGroupCall(groupId, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addDashboardInGroupCall(groupId, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -247,8 +247,8 @@ public class DashboardsApi {
      * @return Dashboard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Dashboard dashboardsAddDashboardInGroup(String groupId, AddDashboardRequest requestParameters) throws ApiException {
-        ApiResponse<Dashboard> resp = dashboardsAddDashboardInGroupWithHttpInfo(groupId, requestParameters);
+    public Dashboard addDashboardInGroup(String groupId, AddDashboardRequest requestParameters) throws ApiException {
+        ApiResponse<Dashboard> resp = addDashboardInGroupWithHttpInfo(groupId, requestParameters);
         return resp.getData();
     }
 
@@ -260,8 +260,8 @@ public class DashboardsApi {
      * @return ApiResponse&lt;Dashboard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Dashboard> dashboardsAddDashboardInGroupWithHttpInfo(String groupId, AddDashboardRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsAddDashboardInGroupValidateBeforeCall(groupId, requestParameters, null, null);
+    public ApiResponse<Dashboard> addDashboardInGroupWithHttpInfo(String groupId, AddDashboardRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = addDashboardInGroupValidateBeforeCall(groupId, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -275,7 +275,7 @@ public class DashboardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call dashboardsAddDashboardInGroupAsync(String groupId, AddDashboardRequest requestParameters, final ApiCallback<Dashboard> callback) throws ApiException {
+    public com.squareup.okhttp.Call addDashboardInGroupAsync(String groupId, AddDashboardRequest requestParameters, final ApiCallback<Dashboard> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -296,13 +296,13 @@ public class DashboardsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = dashboardsAddDashboardInGroupValidateBeforeCall(groupId, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addDashboardInGroupValidateBeforeCall(groupId, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Dashboard>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for dashboardsGenerateToken
+     * Build call for generateToken
      * @param dashboardKey The dashboard id (required)
      * @param requestParameters Generate token parameters (required)
      * @param progressListener Progress listener
@@ -310,7 +310,7 @@ public class DashboardsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGenerateTokenCall(String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenCall(String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -353,20 +353,20 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsGenerateTokenValidateBeforeCall(String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenValidateBeforeCall(String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'dashboardKey' is set
         if (dashboardKey == null) {
-            throw new ApiException("Missing the required parameter 'dashboardKey' when calling dashboardsGenerateToken(Async)");
+            throw new ApiException("Missing the required parameter 'dashboardKey' when calling generateToken(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling dashboardsGenerateToken(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateToken(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = dashboardsGenerateTokenCall(dashboardKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenCall(dashboardKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -379,8 +379,8 @@ public class DashboardsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken dashboardsGenerateToken(String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = dashboardsGenerateTokenWithHttpInfo(dashboardKey, requestParameters);
+    public EmbedToken generateToken(String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenWithHttpInfo(dashboardKey, requestParameters);
         return resp.getData();
     }
 
@@ -392,8 +392,8 @@ public class DashboardsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> dashboardsGenerateTokenWithHttpInfo(String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsGenerateTokenValidateBeforeCall(dashboardKey, requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenWithHttpInfo(String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenValidateBeforeCall(dashboardKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -407,7 +407,7 @@ public class DashboardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGenerateTokenAsync(String dashboardKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenAsync(String dashboardKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -428,13 +428,13 @@ public class DashboardsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = dashboardsGenerateTokenValidateBeforeCall(dashboardKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenValidateBeforeCall(dashboardKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for dashboardsGenerateTokenInGroup
+     * Build call for generateTokenInGroup
      * @param groupId The group id (required)
      * @param dashboardKey The dashboard id (required)
      * @param requestParameters Generate token parameters (required)
@@ -443,7 +443,7 @@ public class DashboardsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGenerateTokenInGroupCall(String groupId, String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenInGroupCall(String groupId, String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestParameters;
 
         // create path and map variables
@@ -487,25 +487,25 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsGenerateTokenInGroupValidateBeforeCall(String groupId, String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call generateTokenInGroupValidateBeforeCall(String groupId, String dashboardKey, GenerateTokenRequest requestParameters, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling dashboardsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling generateTokenInGroup(Async)");
         }
         
         // verify the required parameter 'dashboardKey' is set
         if (dashboardKey == null) {
-            throw new ApiException("Missing the required parameter 'dashboardKey' when calling dashboardsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'dashboardKey' when calling generateTokenInGroup(Async)");
         }
         
         // verify the required parameter 'requestParameters' is set
         if (requestParameters == null) {
-            throw new ApiException("Missing the required parameter 'requestParameters' when calling dashboardsGenerateTokenInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'requestParameters' when calling generateTokenInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = dashboardsGenerateTokenInGroupCall(groupId, dashboardKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenInGroupCall(groupId, dashboardKey, requestParameters, progressListener, progressRequestListener);
         return call;
 
     }
@@ -519,8 +519,8 @@ public class DashboardsApi {
      * @return EmbedToken
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EmbedToken dashboardsGenerateTokenInGroup(String groupId, String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
-        ApiResponse<EmbedToken> resp = dashboardsGenerateTokenInGroupWithHttpInfo(groupId, dashboardKey, requestParameters);
+    public EmbedToken generateTokenInGroup(String groupId, String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
+        ApiResponse<EmbedToken> resp = generateTokenInGroupWithHttpInfo(groupId, dashboardKey, requestParameters);
         return resp.getData();
     }
 
@@ -533,8 +533,8 @@ public class DashboardsApi {
      * @return ApiResponse&lt;EmbedToken&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EmbedToken> dashboardsGenerateTokenInGroupWithHttpInfo(String groupId, String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsGenerateTokenInGroupValidateBeforeCall(groupId, dashboardKey, requestParameters, null, null);
+    public ApiResponse<EmbedToken> generateTokenInGroupWithHttpInfo(String groupId, String dashboardKey, GenerateTokenRequest requestParameters) throws ApiException {
+        com.squareup.okhttp.Call call = generateTokenInGroupValidateBeforeCall(groupId, dashboardKey, requestParameters, null, null);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -549,7 +549,7 @@ public class DashboardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGenerateTokenInGroupAsync(String groupId, String dashboardKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call generateTokenInGroupAsync(String groupId, String dashboardKey, GenerateTokenRequest requestParameters, final ApiCallback<EmbedToken> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -570,19 +570,19 @@ public class DashboardsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = dashboardsGenerateTokenInGroupValidateBeforeCall(groupId, dashboardKey, requestParameters, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = generateTokenInGroupValidateBeforeCall(groupId, dashboardKey, requestParameters, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EmbedToken>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for dashboardsGetDashboards
+     * Build call for getDashboards
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGetDashboardsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDashboardsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -624,10 +624,10 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsGetDashboardsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDashboardsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = dashboardsGetDashboardsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDashboardsCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -638,8 +638,8 @@ public class DashboardsApi {
      * @return ODataResponseListDashboard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListDashboard dashboardsGetDashboards() throws ApiException {
-        ApiResponse<ODataResponseListDashboard> resp = dashboardsGetDashboardsWithHttpInfo();
+    public ODataResponseListDashboard getDashboards() throws ApiException {
+        ApiResponse<ODataResponseListDashboard> resp = getDashboardsWithHttpInfo();
         return resp.getData();
     }
 
@@ -649,8 +649,8 @@ public class DashboardsApi {
      * @return ApiResponse&lt;ODataResponseListDashboard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListDashboard> dashboardsGetDashboardsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsGetDashboardsValidateBeforeCall(null, null);
+    public ApiResponse<ODataResponseListDashboard> getDashboardsWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getDashboardsValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListDashboard>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -662,7 +662,7 @@ public class DashboardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGetDashboardsAsync(final ApiCallback<ODataResponseListDashboard> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDashboardsAsync(final ApiCallback<ODataResponseListDashboard> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -683,20 +683,20 @@ public class DashboardsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = dashboardsGetDashboardsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDashboardsValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListDashboard>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for dashboardsGetDashboardsInGroup
+     * Build call for getDashboardsInGroup
      * @param groupId The group id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGetDashboardsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getDashboardsInGroupCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -739,15 +739,15 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call dashboardsGetDashboardsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getDashboardsInGroupValidateBeforeCall(String groupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
-            throw new ApiException("Missing the required parameter 'groupId' when calling dashboardsGetDashboardsInGroup(Async)");
+            throw new ApiException("Missing the required parameter 'groupId' when calling getDashboardsInGroup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = dashboardsGetDashboardsInGroupCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDashboardsInGroupCall(groupId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -759,8 +759,8 @@ public class DashboardsApi {
      * @return ODataResponseListDashboard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ODataResponseListDashboard dashboardsGetDashboardsInGroup(String groupId) throws ApiException {
-        ApiResponse<ODataResponseListDashboard> resp = dashboardsGetDashboardsInGroupWithHttpInfo(groupId);
+    public ODataResponseListDashboard getDashboardsInGroup(String groupId) throws ApiException {
+        ApiResponse<ODataResponseListDashboard> resp = getDashboardsInGroupWithHttpInfo(groupId);
         return resp.getData();
     }
 
@@ -771,8 +771,8 @@ public class DashboardsApi {
      * @return ApiResponse&lt;ODataResponseListDashboard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ODataResponseListDashboard> dashboardsGetDashboardsInGroupWithHttpInfo(String groupId) throws ApiException {
-        com.squareup.okhttp.Call call = dashboardsGetDashboardsInGroupValidateBeforeCall(groupId, null, null);
+    public ApiResponse<ODataResponseListDashboard> getDashboardsInGroupWithHttpInfo(String groupId) throws ApiException {
+        com.squareup.okhttp.Call call = getDashboardsInGroupValidateBeforeCall(groupId, null, null);
         Type localVarReturnType = new TypeToken<ODataResponseListDashboard>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -785,7 +785,7 @@ public class DashboardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call dashboardsGetDashboardsInGroupAsync(String groupId, final ApiCallback<ODataResponseListDashboard> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDashboardsInGroupAsync(String groupId, final ApiCallback<ODataResponseListDashboard> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -806,7 +806,7 @@ public class DashboardsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = dashboardsGetDashboardsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getDashboardsInGroupValidateBeforeCall(groupId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ODataResponseListDashboard>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

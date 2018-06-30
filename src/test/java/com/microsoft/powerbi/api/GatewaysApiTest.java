@@ -29,9 +29,9 @@ public class GatewaysApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysGetGatewayByIdTest() throws ApiException {
+    public void getGatewayByIdTest() throws ApiException {
         String gatewayId = null;
-        Gateway response = api.gatewaysGetGatewayById(gatewayId);
+        Gateway response = api.getGatewayById(gatewayId);
 
         // TODO: test validations
     }
@@ -45,8 +45,8 @@ public class GatewaysApiTest {
      *          if the Api call fails
      */
     @Test
-    public void gatewaysGetGatewaysTest() throws ApiException {
-        ODataResponseListGateway response = api.gatewaysGetGateways();
+    public void getGatewaysTest() throws ApiException {
+        ODataResponseListGateway response = api.getGateways();
 
         // TODO: test validations
     }

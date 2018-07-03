@@ -12,14 +12,14 @@ import com.microsoft.powerbi.api.TilesApi;
 public class PowerBiApiClient {
     
     private ApiClient apiClient;
-    private DashboardsApi dashboards;
-    private ReportsApi reports;
-    private GroupsApi groups;
-    private DatasetsApi datasets;
-    private DatasourcesApi datasources;
-    private TilesApi tiles;
-    private ImportsApi imports;
-    private GatewaysApi gateways;
+    private final DashboardsApi dashboards;
+    private final ReportsApi reports;
+    private final GroupsApi groups;
+    private final DatasetsApi datasets;
+    private final DatasourcesApi datasources;
+    private final TilesApi tiles;
+    private final ImportsApi imports;
+    private final GatewaysApi gateways;
 
     public PowerBiApiClient() {
         this(Configuration.getDefaultApiClient());

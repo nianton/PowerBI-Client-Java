@@ -4,17 +4,17 @@ All URIs are relative to *https://api.powerbi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**groupsAddGroupUser**](GroupsApi.md#groupsAddGroupUser) | **POST** /v1.0/myorg/groups/{groupId}/users | Add a group user
-[**groupsCreateGroup**](GroupsApi.md#groupsCreateGroup) | **POST** /v1.0/myorg/groups | Create new group
-[**groupsDeleteGroup**](GroupsApi.md#groupsDeleteGroup) | **DELETE** /v1.0/myorg/groups/{groupId} | Deletes the specified group
-[**groupsDeleteUserInGroup**](GroupsApi.md#groupsDeleteUserInGroup) | **DELETE** /v1.0/myorg/groups/{groupId}/users/{user} | Deletes the specified group
-[**groupsGetGroupUsers**](GroupsApi.md#groupsGetGroupUsers) | **GET** /v1.0/myorg/groups/{groupId}/users | Get a group users list
-[**groupsGetGroups**](GroupsApi.md#groupsGetGroups) | **GET** /v1.0/myorg/groups | Returns a list of groups
+[**addGroupUser**](GroupsApi.md#addGroupUser) | **POST** /v1.0/myorg/groups/{groupId}/users | Add a group user
+[**createGroup**](GroupsApi.md#createGroup) | **POST** /v1.0/myorg/groups | Create new group
+[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /v1.0/myorg/groups/{groupId} | Deletes the specified group
+[**deleteUserInGroup**](GroupsApi.md#deleteUserInGroup) | **DELETE** /v1.0/myorg/groups/{groupId}/users/{user} | Deletes the specified group
+[**getGroupUsers**](GroupsApi.md#getGroupUsers) | **GET** /v1.0/myorg/groups/{groupId}/users | Get a group users list
+[**getGroups**](GroupsApi.md#getGroups) | **GET** /v1.0/myorg/groups | Returns a list of groups
 
 
-<a name="groupsAddGroupUser"></a>
-# **groupsAddGroupUser**
-> Object groupsAddGroupUser(groupId, userDetails)
+<a name="addGroupUser"></a>
+# **addGroupUser**
+> Object addGroupUser(groupId, userDetails)
 
 Add a group user
 
@@ -29,10 +29,10 @@ GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | The group id
 GroupUserAccessRight userDetails = new GroupUserAccessRight(); // GroupUserAccessRight | user access right details
 try {
-    Object result = apiInstance.groupsAddGroupUser(groupId, userDetails);
+    Object result = apiInstance.addGroupUser(groupId, userDetails);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#groupsAddGroupUser");
+    System.err.println("Exception when calling GroupsApi#addGroupUser");
     e.printStackTrace();
 }
 ```
@@ -57,9 +57,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="groupsCreateGroup"></a>
-# **groupsCreateGroup**
-> Group groupsCreateGroup(requestParameters)
+<a name="createGroup"></a>
+# **createGroup**
+> Group createGroup(requestParameters)
 
 Create new group
 
@@ -73,10 +73,10 @@ Create new group
 GroupsApi apiInstance = new GroupsApi();
 GroupCreationRequest requestParameters = new GroupCreationRequest(); // GroupCreationRequest | Create group request parameters
 try {
-    Group result = apiInstance.groupsCreateGroup(requestParameters);
+    Group result = apiInstance.createGroup(requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#groupsCreateGroup");
+    System.err.println("Exception when calling GroupsApi#createGroup");
     e.printStackTrace();
 }
 ```
@@ -100,9 +100,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="groupsDeleteGroup"></a>
-# **groupsDeleteGroup**
-> Object groupsDeleteGroup(groupId)
+<a name="deleteGroup"></a>
+# **deleteGroup**
+> Object deleteGroup(groupId)
 
 Deletes the specified group
 
@@ -116,10 +116,10 @@ Deletes the specified group
 GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | The group id to delete
 try {
-    Object result = apiInstance.groupsDeleteGroup(groupId);
+    Object result = apiInstance.deleteGroup(groupId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#groupsDeleteGroup");
+    System.err.println("Exception when calling GroupsApi#deleteGroup");
     e.printStackTrace();
 }
 ```
@@ -143,9 +143,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="groupsDeleteUserInGroup"></a>
-# **groupsDeleteUserInGroup**
-> Object groupsDeleteUserInGroup(groupId, user)
+<a name="deleteUserInGroup"></a>
+# **deleteUserInGroup**
+> Object deleteUserInGroup(groupId, user)
 
 Deletes the specified group
 
@@ -160,10 +160,10 @@ GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | The group id
 String user = "user_example"; // String | The user email to delete
 try {
-    Object result = apiInstance.groupsDeleteUserInGroup(groupId, user);
+    Object result = apiInstance.deleteUserInGroup(groupId, user);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#groupsDeleteUserInGroup");
+    System.err.println("Exception when calling GroupsApi#deleteUserInGroup");
     e.printStackTrace();
 }
 ```
@@ -188,9 +188,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="groupsGetGroupUsers"></a>
-# **groupsGetGroupUsers**
-> ODataResponseListGroupUserAccessRight groupsGetGroupUsers(groupId)
+<a name="getGroupUsers"></a>
+# **getGroupUsers**
+> ODataResponseListGroupUserAccessRight getGroupUsers(groupId)
 
 Get a group users list
 
@@ -204,10 +204,10 @@ Get a group users list
 GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | The group id
 try {
-    ODataResponseListGroupUserAccessRight result = apiInstance.groupsGetGroupUsers(groupId);
+    ODataResponseListGroupUserAccessRight result = apiInstance.getGroupUsers(groupId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#groupsGetGroupUsers");
+    System.err.println("Exception when calling GroupsApi#getGroupUsers");
     e.printStackTrace();
 }
 ```
@@ -231,9 +231,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="groupsGetGroups"></a>
-# **groupsGetGroups**
-> ODataResponseListGroup groupsGetGroups()
+<a name="getGroups"></a>
+# **getGroups**
+> ODataResponseListGroup getGroups()
 
 Returns a list of groups
 
@@ -246,10 +246,10 @@ Returns a list of groups
 
 GroupsApi apiInstance = new GroupsApi();
 try {
-    ODataResponseListGroup result = apiInstance.groupsGetGroups();
+    ODataResponseListGroup result = apiInstance.getGroups();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GroupsApi#groupsGetGroups");
+    System.err.println("Exception when calling GroupsApi#getGroups");
     e.printStackTrace();
 }
 ```

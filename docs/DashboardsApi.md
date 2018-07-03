@@ -4,17 +4,17 @@ All URIs are relative to *https://api.powerbi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dashboardsAddDashboard**](DashboardsApi.md#dashboardsAddDashboard) | **POST** /v1.0/myorg/dashboards | Add a new empty dashboard
-[**dashboardsAddDashboardInGroup**](DashboardsApi.md#dashboardsAddDashboardInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards | Add a new empty dashboard
-[**dashboardsGenerateToken**](DashboardsApi.md#dashboardsGenerateToken) | **POST** /v1.0/myorg/dashboards/{dashboardKey}/GenerateToken | Generate token to view the specified dashboard
-[**dashboardsGenerateTokenInGroup**](DashboardsApi.md#dashboardsGenerateTokenInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/GenerateToken | Generate token to view the specified dashboard
-[**dashboardsGetDashboards**](DashboardsApi.md#dashboardsGetDashboards) | **GET** /v1.0/myorg/dashboards | Gets a list of dashboards
-[**dashboardsGetDashboardsInGroup**](DashboardsApi.md#dashboardsGetDashboardsInGroup) | **GET** /v1.0/myorg/groups/{groupId}/dashboards | Gets a list of dashboards in a group
+[**addDashboard**](DashboardsApi.md#addDashboard) | **POST** /v1.0/myorg/dashboards | Add a new empty dashboard
+[**addDashboardInGroup**](DashboardsApi.md#addDashboardInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards | Add a new empty dashboard
+[**generateToken**](DashboardsApi.md#generateToken) | **POST** /v1.0/myorg/dashboards/{dashboardKey}/GenerateToken | Generate token to view the specified dashboard
+[**generateTokenInGroup**](DashboardsApi.md#generateTokenInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/GenerateToken | Generate token to view the specified dashboard
+[**getDashboards**](DashboardsApi.md#getDashboards) | **GET** /v1.0/myorg/dashboards | Gets a list of dashboards
+[**getDashboardsInGroup**](DashboardsApi.md#getDashboardsInGroup) | **GET** /v1.0/myorg/groups/{groupId}/dashboards | Gets a list of dashboards in a group
 
 
-<a name="dashboardsAddDashboard"></a>
-# **dashboardsAddDashboard**
-> Dashboard dashboardsAddDashboard(requestParameters)
+<a name="addDashboard"></a>
+# **addDashboard**
+> Dashboard addDashboard(requestParameters)
 
 Add a new empty dashboard
 
@@ -28,10 +28,10 @@ Add a new empty dashboard
 DashboardsApi apiInstance = new DashboardsApi();
 AddDashboardRequest requestParameters = new AddDashboardRequest(); // AddDashboardRequest | Add dashboard parameters
 try {
-    Dashboard result = apiInstance.dashboardsAddDashboard(requestParameters);
+    Dashboard result = apiInstance.addDashboard(requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DashboardsApi#dashboardsAddDashboard");
+    System.err.println("Exception when calling DashboardsApi#addDashboard");
     e.printStackTrace();
 }
 ```
@@ -55,9 +55,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsAddDashboardInGroup"></a>
-# **dashboardsAddDashboardInGroup**
-> Dashboard dashboardsAddDashboardInGroup(groupId, requestParameters)
+<a name="addDashboardInGroup"></a>
+# **addDashboardInGroup**
+> Dashboard addDashboardInGroup(groupId, requestParameters)
 
 Add a new empty dashboard
 
@@ -72,10 +72,10 @@ DashboardsApi apiInstance = new DashboardsApi();
 String groupId = "groupId_example"; // String | The group id
 AddDashboardRequest requestParameters = new AddDashboardRequest(); // AddDashboardRequest | Add dashboard parameters
 try {
-    Dashboard result = apiInstance.dashboardsAddDashboardInGroup(groupId, requestParameters);
+    Dashboard result = apiInstance.addDashboardInGroup(groupId, requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DashboardsApi#dashboardsAddDashboardInGroup");
+    System.err.println("Exception when calling DashboardsApi#addDashboardInGroup");
     e.printStackTrace();
 }
 ```
@@ -100,9 +100,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGenerateToken"></a>
-# **dashboardsGenerateToken**
-> EmbedToken dashboardsGenerateToken(dashboardKey, requestParameters)
+<a name="generateToken"></a>
+# **generateToken**
+> EmbedToken generateToken(dashboardKey, requestParameters)
 
 Generate token to view the specified dashboard
 
@@ -117,10 +117,10 @@ DashboardsApi apiInstance = new DashboardsApi();
 String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 GenerateTokenRequest requestParameters = new GenerateTokenRequest(); // GenerateTokenRequest | Generate token parameters
 try {
-    EmbedToken result = apiInstance.dashboardsGenerateToken(dashboardKey, requestParameters);
+    EmbedToken result = apiInstance.generateToken(dashboardKey, requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DashboardsApi#dashboardsGenerateToken");
+    System.err.println("Exception when calling DashboardsApi#generateToken");
     e.printStackTrace();
 }
 ```
@@ -145,9 +145,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGenerateTokenInGroup"></a>
-# **dashboardsGenerateTokenInGroup**
-> EmbedToken dashboardsGenerateTokenInGroup(groupId, dashboardKey, requestParameters)
+<a name="generateTokenInGroup"></a>
+# **generateTokenInGroup**
+> EmbedToken generateTokenInGroup(groupId, dashboardKey, requestParameters)
 
 Generate token to view the specified dashboard
 
@@ -163,10 +163,10 @@ String groupId = "groupId_example"; // String | The group id
 String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 GenerateTokenRequest requestParameters = new GenerateTokenRequest(); // GenerateTokenRequest | Generate token parameters
 try {
-    EmbedToken result = apiInstance.dashboardsGenerateTokenInGroup(groupId, dashboardKey, requestParameters);
+    EmbedToken result = apiInstance.generateTokenInGroup(groupId, dashboardKey, requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DashboardsApi#dashboardsGenerateTokenInGroup");
+    System.err.println("Exception when calling DashboardsApi#generateTokenInGroup");
     e.printStackTrace();
 }
 ```
@@ -192,9 +192,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGetDashboards"></a>
-# **dashboardsGetDashboards**
-> ODataResponseListDashboard dashboardsGetDashboards()
+<a name="getDashboards"></a>
+# **getDashboards**
+> ODataResponseListDashboard getDashboards()
 
 Gets a list of dashboards
 
@@ -207,10 +207,10 @@ Gets a list of dashboards
 
 DashboardsApi apiInstance = new DashboardsApi();
 try {
-    ODataResponseListDashboard result = apiInstance.dashboardsGetDashboards();
+    ODataResponseListDashboard result = apiInstance.getDashboards();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DashboardsApi#dashboardsGetDashboards");
+    System.err.println("Exception when calling DashboardsApi#getDashboards");
     e.printStackTrace();
 }
 ```
@@ -231,9 +231,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="dashboardsGetDashboardsInGroup"></a>
-# **dashboardsGetDashboardsInGroup**
-> ODataResponseListDashboard dashboardsGetDashboardsInGroup(groupId)
+<a name="getDashboardsInGroup"></a>
+# **getDashboardsInGroup**
+> ODataResponseListDashboard getDashboardsInGroup(groupId)
 
 Gets a list of dashboards in a group
 
@@ -247,10 +247,10 @@ Gets a list of dashboards in a group
 DashboardsApi apiInstance = new DashboardsApi();
 String groupId = "groupId_example"; // String | The group id
 try {
-    ODataResponseListDashboard result = apiInstance.dashboardsGetDashboardsInGroup(groupId);
+    ODataResponseListDashboard result = apiInstance.getDashboardsInGroup(groupId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DashboardsApi#dashboardsGetDashboardsInGroup");
+    System.err.println("Exception when calling DashboardsApi#getDashboardsInGroup");
     e.printStackTrace();
 }
 ```

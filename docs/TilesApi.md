@@ -4,19 +4,19 @@ All URIs are relative to *https://api.powerbi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dashboardsCloneTile**](TilesApi.md#dashboardsCloneTile) | **POST** /v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/Clone | Clones the specified tile
-[**dashboardsCloneTileInGroup**](TilesApi.md#dashboardsCloneTileInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/Clone | Clones the specified tile
-[**dashboardsGetTile**](TilesApi.md#dashboardsGetTile) | **GET** /v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey} | Get a specified tile in a specified dashboard
-[**dashboardsGetTileInGroup**](TilesApi.md#dashboardsGetTileInGroup) | **GET** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey} | Get a specified tile in a specified dashboard in a group
-[**dashboardsGetTiles**](TilesApi.md#dashboardsGetTiles) | **GET** /v1.0/myorg/dashboards/{dashboardKey}/tiles | Get tiles in the specified dashboard
-[**dashboardsGetTilesInGroup**](TilesApi.md#dashboardsGetTilesInGroup) | **GET** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles | Get tiles in the specified dashboard in a group
-[**tilesGenerateToken**](TilesApi.md#tilesGenerateToken) | **POST** /v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken | Generate token to view the specified tile
-[**tilesGenerateTokenInGroup**](TilesApi.md#tilesGenerateTokenInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken | Generate token to view the specified tile
+[**cloneTile**](TilesApi.md#cloneTile) | **POST** /v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/Clone | Clones the specified tile
+[**cloneTileInGroup**](TilesApi.md#cloneTileInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/Clone | Clones the specified tile
+[**generateToken**](TilesApi.md#generateToken) | **POST** /v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken | Generate token to view the specified tile
+[**generateTokenInGroup**](TilesApi.md#generateTokenInGroup) | **POST** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey}/GenerateToken | Generate token to view the specified tile
+[**getTile**](TilesApi.md#getTile) | **GET** /v1.0/myorg/dashboards/{dashboardKey}/tiles/{tileKey} | Get a specified tile in a specified dashboard
+[**getTileInGroup**](TilesApi.md#getTileInGroup) | **GET** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles/{tileKey} | Get a specified tile in a specified dashboard in a group
+[**getTiles**](TilesApi.md#getTiles) | **GET** /v1.0/myorg/dashboards/{dashboardKey}/tiles | Get tiles in the specified dashboard
+[**getTilesInGroup**](TilesApi.md#getTilesInGroup) | **GET** /v1.0/myorg/groups/{groupId}/dashboards/{dashboardKey}/tiles | Get tiles in the specified dashboard in a group
 
 
-<a name="dashboardsCloneTile"></a>
-# **dashboardsCloneTile**
-> Tile dashboardsCloneTile(dashboardKey, tileKey, requestParameters)
+<a name="cloneTile"></a>
+# **cloneTile**
+> Tile cloneTile(dashboardKey, tileKey, requestParameters)
 
 Clones the specified tile
 
@@ -32,10 +32,10 @@ String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 String tileKey = "tileKey_example"; // String | The tile id
 CloneTileRequest requestParameters = new CloneTileRequest(); // CloneTileRequest | Clone tile parameters
 try {
-    Tile result = apiInstance.dashboardsCloneTile(dashboardKey, tileKey, requestParameters);
+    Tile result = apiInstance.cloneTile(dashboardKey, tileKey, requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#dashboardsCloneTile");
+    System.err.println("Exception when calling TilesApi#cloneTile");
     e.printStackTrace();
 }
 ```
@@ -61,9 +61,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsCloneTileInGroup"></a>
-# **dashboardsCloneTileInGroup**
-> Tile dashboardsCloneTileInGroup(groupId, dashboardKey, tileKey, requestParameters)
+<a name="cloneTileInGroup"></a>
+# **cloneTileInGroup**
+> Tile cloneTileInGroup(groupId, dashboardKey, tileKey, requestParameters)
 
 Clones the specified tile
 
@@ -80,10 +80,10 @@ String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 String tileKey = "tileKey_example"; // String | The tile id
 CloneTileRequest requestParameters = new CloneTileRequest(); // CloneTileRequest | Clone tile parameters
 try {
-    Tile result = apiInstance.dashboardsCloneTileInGroup(groupId, dashboardKey, tileKey, requestParameters);
+    Tile result = apiInstance.cloneTileInGroup(groupId, dashboardKey, tileKey, requestParameters);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#dashboardsCloneTileInGroup");
+    System.err.println("Exception when calling TilesApi#cloneTileInGroup");
     e.printStackTrace();
 }
 ```
@@ -110,9 +110,105 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGetTile"></a>
-# **dashboardsGetTile**
-> Tile dashboardsGetTile(dashboardKey, tileKey)
+<a name="generateToken"></a>
+# **generateToken**
+> EmbedToken generateToken(dashboardKey, tileKey, requestParameters)
+
+Generate token to view the specified tile
+
+### Example
+```java
+// Import classes:
+//import com.microsoft.powerbi.ApiException;
+//import com.microsoft.powerbi.api.TilesApi;
+
+
+TilesApi apiInstance = new TilesApi();
+String dashboardKey = "dashboardKey_example"; // String | The dashboard id
+String tileKey = "tileKey_example"; // String | The tile id
+GenerateTokenRequest requestParameters = new GenerateTokenRequest(); // GenerateTokenRequest | Generate token parameters
+try {
+    EmbedToken result = apiInstance.generateToken(dashboardKey, tileKey, requestParameters);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TilesApi#generateToken");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dashboardKey** | **String**| The dashboard id |
+ **tileKey** | **String**| The tile id |
+ **requestParameters** | [**GenerateTokenRequest**](GenerateTokenRequest.md)| Generate token parameters |
+
+### Return type
+
+[**EmbedToken**](EmbedToken.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="generateTokenInGroup"></a>
+# **generateTokenInGroup**
+> EmbedToken generateTokenInGroup(groupId, dashboardKey, tileKey, requestParameters)
+
+Generate token to view the specified tile
+
+### Example
+```java
+// Import classes:
+//import com.microsoft.powerbi.ApiException;
+//import com.microsoft.powerbi.api.TilesApi;
+
+
+TilesApi apiInstance = new TilesApi();
+String groupId = "groupId_example"; // String | The group id
+String dashboardKey = "dashboardKey_example"; // String | The dashboard id
+String tileKey = "tileKey_example"; // String | The tile id
+GenerateTokenRequest requestParameters = new GenerateTokenRequest(); // GenerateTokenRequest | Generate token parameters
+try {
+    EmbedToken result = apiInstance.generateTokenInGroup(groupId, dashboardKey, tileKey, requestParameters);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TilesApi#generateTokenInGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| The group id |
+ **dashboardKey** | **String**| The dashboard id |
+ **tileKey** | **String**| The tile id |
+ **requestParameters** | [**GenerateTokenRequest**](GenerateTokenRequest.md)| Generate token parameters |
+
+### Return type
+
+[**EmbedToken**](EmbedToken.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getTile"></a>
+# **getTile**
+> Tile getTile(dashboardKey, tileKey)
 
 Get a specified tile in a specified dashboard
 
@@ -127,10 +223,10 @@ TilesApi apiInstance = new TilesApi();
 String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 String tileKey = "tileKey_example"; // String | The tile id
 try {
-    Tile result = apiInstance.dashboardsGetTile(dashboardKey, tileKey);
+    Tile result = apiInstance.getTile(dashboardKey, tileKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#dashboardsGetTile");
+    System.err.println("Exception when calling TilesApi#getTile");
     e.printStackTrace();
 }
 ```
@@ -155,9 +251,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGetTileInGroup"></a>
-# **dashboardsGetTileInGroup**
-> Tile dashboardsGetTileInGroup(groupId, dashboardKey, tileKey)
+<a name="getTileInGroup"></a>
+# **getTileInGroup**
+> Tile getTileInGroup(groupId, dashboardKey, tileKey)
 
 Get a specified tile in a specified dashboard in a group
 
@@ -173,10 +269,10 @@ String groupId = "groupId_example"; // String | The group id
 String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 String tileKey = "tileKey_example"; // String | The tile id
 try {
-    Tile result = apiInstance.dashboardsGetTileInGroup(groupId, dashboardKey, tileKey);
+    Tile result = apiInstance.getTileInGroup(groupId, dashboardKey, tileKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#dashboardsGetTileInGroup");
+    System.err.println("Exception when calling TilesApi#getTileInGroup");
     e.printStackTrace();
 }
 ```
@@ -202,9 +298,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGetTiles"></a>
-# **dashboardsGetTiles**
-> ODataResponseListTile dashboardsGetTiles(dashboardKey)
+<a name="getTiles"></a>
+# **getTiles**
+> ODataResponseListTile getTiles(dashboardKey)
 
 Get tiles in the specified dashboard
 
@@ -218,10 +314,10 @@ Get tiles in the specified dashboard
 TilesApi apiInstance = new TilesApi();
 String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 try {
-    ODataResponseListTile result = apiInstance.dashboardsGetTiles(dashboardKey);
+    ODataResponseListTile result = apiInstance.getTiles(dashboardKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#dashboardsGetTiles");
+    System.err.println("Exception when calling TilesApi#getTiles");
     e.printStackTrace();
 }
 ```
@@ -245,9 +341,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="dashboardsGetTilesInGroup"></a>
-# **dashboardsGetTilesInGroup**
-> ODataResponseListTile dashboardsGetTilesInGroup(groupId, dashboardKey)
+<a name="getTilesInGroup"></a>
+# **getTilesInGroup**
+> ODataResponseListTile getTilesInGroup(groupId, dashboardKey)
 
 Get tiles in the specified dashboard in a group
 
@@ -262,10 +358,10 @@ TilesApi apiInstance = new TilesApi();
 String groupId = "groupId_example"; // String | The group id
 String dashboardKey = "dashboardKey_example"; // String | The dashboard id
 try {
-    ODataResponseListTile result = apiInstance.dashboardsGetTilesInGroup(groupId, dashboardKey);
+    ODataResponseListTile result = apiInstance.getTilesInGroup(groupId, dashboardKey);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#dashboardsGetTilesInGroup");
+    System.err.println("Exception when calling TilesApi#getTilesInGroup");
     e.printStackTrace();
 }
 ```
@@ -280,102 +376,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ODataResponseListTile**](ODataResponseListTile.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="tilesGenerateToken"></a>
-# **tilesGenerateToken**
-> EmbedToken tilesGenerateToken(dashboardKey, tileKey, requestParameters)
-
-Generate token to view the specified tile
-
-### Example
-```java
-// Import classes:
-//import com.microsoft.powerbi.ApiException;
-//import com.microsoft.powerbi.api.TilesApi;
-
-
-TilesApi apiInstance = new TilesApi();
-String dashboardKey = "dashboardKey_example"; // String | The dashboard id
-String tileKey = "tileKey_example"; // String | The tile id
-GenerateTokenRequest requestParameters = new GenerateTokenRequest(); // GenerateTokenRequest | Generate token parameters
-try {
-    EmbedToken result = apiInstance.tilesGenerateToken(dashboardKey, tileKey, requestParameters);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#tilesGenerateToken");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dashboardKey** | **String**| The dashboard id |
- **tileKey** | **String**| The tile id |
- **requestParameters** | [**GenerateTokenRequest**](GenerateTokenRequest.md)| Generate token parameters |
-
-### Return type
-
-[**EmbedToken**](EmbedToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="tilesGenerateTokenInGroup"></a>
-# **tilesGenerateTokenInGroup**
-> EmbedToken tilesGenerateTokenInGroup(groupId, dashboardKey, tileKey, requestParameters)
-
-Generate token to view the specified tile
-
-### Example
-```java
-// Import classes:
-//import com.microsoft.powerbi.ApiException;
-//import com.microsoft.powerbi.api.TilesApi;
-
-
-TilesApi apiInstance = new TilesApi();
-String groupId = "groupId_example"; // String | The group id
-String dashboardKey = "dashboardKey_example"; // String | The dashboard id
-String tileKey = "tileKey_example"; // String | The tile id
-GenerateTokenRequest requestParameters = new GenerateTokenRequest(); // GenerateTokenRequest | Generate token parameters
-try {
-    EmbedToken result = apiInstance.tilesGenerateTokenInGroup(groupId, dashboardKey, tileKey, requestParameters);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TilesApi#tilesGenerateTokenInGroup");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **groupId** | **String**| The group id |
- **dashboardKey** | **String**| The dashboard id |
- **tileKey** | **String**| The tile id |
- **requestParameters** | [**GenerateTokenRequest**](GenerateTokenRequest.md)| Generate token parameters |
-
-### Return type
-
-[**EmbedToken**](EmbedToken.md)
 
 ### Authorization
 

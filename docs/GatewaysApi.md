@@ -4,13 +4,13 @@ All URIs are relative to *https://api.powerbi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**gatewaysGetGatewayById**](GatewaysApi.md#gatewaysGetGatewayById) | **GET** /v1.0/myorg/gateways/{gatewayId} | Returns the specified gateway
-[**gatewaysGetGateways**](GatewaysApi.md#gatewaysGetGateways) | **GET** /v1.0/myorg/gateways | Returns a list of gateways
+[**getGatewayById**](GatewaysApi.md#getGatewayById) | **GET** /v1.0/myorg/gateways/{gatewayId} | Returns the specified gateway
+[**getGateways**](GatewaysApi.md#getGateways) | **GET** /v1.0/myorg/gateways | Returns a list of gateways
 
 
-<a name="gatewaysGetGatewayById"></a>
-# **gatewaysGetGatewayById**
-> Gateway gatewaysGetGatewayById(gatewayId)
+<a name="getGatewayById"></a>
+# **getGatewayById**
+> Gateway getGatewayById(gatewayId)
 
 Returns the specified gateway
 
@@ -24,10 +24,10 @@ Returns the specified gateway
 GatewaysApi apiInstance = new GatewaysApi();
 String gatewayId = "gatewayId_example"; // String | The gateway id
 try {
-    Gateway result = apiInstance.gatewaysGetGatewayById(gatewayId);
+    Gateway result = apiInstance.getGatewayById(gatewayId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GatewaysApi#gatewaysGetGatewayById");
+    System.err.println("Exception when calling GatewaysApi#getGatewayById");
     e.printStackTrace();
 }
 ```
@@ -51,9 +51,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="gatewaysGetGateways"></a>
-# **gatewaysGetGateways**
-> ODataResponseListGateway gatewaysGetGateways()
+<a name="getGateways"></a>
+# **getGateways**
+> ODataResponseListGateway getGateways()
 
 Returns a list of gateways
 
@@ -66,10 +66,10 @@ Returns a list of gateways
 
 GatewaysApi apiInstance = new GatewaysApi();
 try {
-    ODataResponseListGateway result = apiInstance.gatewaysGetGateways();
+    ODataResponseListGateway result = apiInstance.getGateways();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GatewaysApi#gatewaysGetGateways");
+    System.err.println("Exception when calling GatewaysApi#getGateways");
     e.printStackTrace();
 }
 ```

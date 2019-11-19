@@ -52,15 +52,15 @@
     </dependencies>
   </dependencyManagement>
   <scm>
-    <connection>scm:git:git@github.com:nianton/powerbi-client.git</connection>
-    <developerConnection>scm:git:git@github.com:nianton/powerbi-client.git</developerConnection>
-    <url>https://github.com/nianton/powerbi-client</url>
+    <connection>scm:git:git@github.com:nianton/PowerBI-Client-Java.git</connection>
+    <developerConnection>scm:git:git@github.com:nianton/PowerBI-Client-Java.git</developerConnection>
+    <url>https://github.com/nianton/PowerBI-Client-Java</url>
   </scm>
 
   <licenses>
     <license>
       <name>MIT License</name>
-      <url>https://raw.githubusercontent.com/nianton/powerbi-client/master/LICENSE</url>
+      <url>https://raw.githubusercontent.com/nianton/PowerBI-Client-Java/master/LICENSE</url>
       <distribution>repo</distribution>
     </license>
   </licenses>

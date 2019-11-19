@@ -63,7 +63,7 @@ public class Authenticator {
     }
 
     /**
-     * 
+     * Constructor for PowerBI Master Account authentication.
      * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
      * @param username The username of the AAD account
      * @param password The password of the AAD account

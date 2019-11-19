@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import com.microsoft.aad.adal4j.AuthenticationContext;
+import com.microsoft.aad.adal4j.*;
 
 /**
  * https://msdn.microsoft.com/en-US/library/dn877545.aspx
@@ -22,21 +22,59 @@ public class Authenticator {
     private String powerBiResourceId = DEFAULT_POWER_BI_RESOURCE_ID;
     private boolean validateAuthority = DEFAULT_VALIDATE_AUTHORITY;
 
-    private String nativeClientId;
+    private String clientId;
     private String username;
     private String password;
+    private String clientSecret;
+    private AuthenticationMode mode;
 
     private ExecutorService executor;
     
-    public Authenticator(String nativeClientId, String username, String password) {
-        this(nativeClientId, username, password, Executors.newSingleThreadExecutor());
+    /**
+     * Constructor for Service Principal authentication.
+     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
+     * @param clientSecret The client secret/key for the respective service principal
+     */
+    public Authenticator(String clientId, String clientSecret) {
+        this(clientId, clientSecret, Executors.newSingleThreadExecutor());
     }
 
-    public Authenticator(String nativeClientId, String username, String password, ExecutorService executor) {
-        this.nativeClientId = nativeClientId;
+    /**
+     * Constructor for Service Principal authentication.
+     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
+     * @param clientSecret The client secret/key for the respective service principal
+     * @param executor
+     */
+    public Authenticator(String clientId, String clientSecret, ExecutorService executor) {
+        this.mode = AuthenticationMode.ServicePrincipal;
+        this.executor = executor;
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+    }
+
+    /**
+     * Constructor for PowerBI Master Account authentication.
+     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
+     * @param username The username of the AAD account
+     * @param password The password of the AAD account
+     */
+    public Authenticator(String clientId, String username, String password) {
+        this(clientId, username, password, Executors.newSingleThreadExecutor());
+    }
+
+    /**
+     * 
+     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
+     * @param username The username of the AAD account
+     * @param password The password of the AAD account
+     * @param executor 
+     */
+    public Authenticator(String clientId, String username, String password, ExecutorService executor) {
+        this.mode = AuthenticationMode.MasterAccount;
+        this.clientId = clientId;
         this.username = username;
         this.password = password;
-        this.executor = executor;
+        this.executor = executor;   
     }
 
     public Authenticator setAuthority(String authority) {
@@ -64,7 +102,7 @@ public class Authenticator {
      * repeated, unnecessary calls to the authentication service.
      *
      * @return the bearer token to use for authenticating service requests.
-     * @throws AuthenticationFailureException
+     * @throws AuthenticationFailureException if Azure Active Directory authentication fails
      */
     public String authenticate() throws AuthenticationFailureException {
         try {
@@ -123,14 +161,16 @@ public class Authenticator {
                     executor
             );
 
-            String result = getAccessToken(
-                    authenticationContext,
-                    powerBiResourceId,
-                    nativeClientId,
-                    username,
-                    password
-            );
-
+            String result = null;
+            switch (this.mode) {
+                case MasterAccount: 
+                    result = getMasterAccountAccessToken(authenticationContext, powerBiResourceId, clientId, username, password);
+                    break;
+                case ServicePrincipal:
+                    result = getServicePrincipalAccessToken(authenticationContext, powerBiResourceId, clientId, clientSecret);
+                    break;
+            }
+          
             if (result == null) {
                 throw new AuthenticationFailureException("Returned access token is null.");
             }
@@ -141,8 +181,24 @@ public class Authenticator {
         }
     }
 
-    private String getAccessToken(AuthenticationContext authenticationContext, String resourceId, String clientId,
-                                  String username, String password) throws ExecutionException, InterruptedException {
+    private String getServicePrincipalAccessToken(AuthenticationContext authenticationContext, String resourceId, String clientId,
+                                  String clientSecret) throws ExecutionException, InterruptedException {        
+        
+        ClientCredential credential = new ClientCredential(clientId, clientSecret);
+        return authenticationContext.acquireToken(
+                resourceId, 
+                credential, 
+                null).get().getAccessToken();
+    }
+
+
+    private String getMasterAccountAccessToken(AuthenticationContext authenticationContext, String resourceId, String clientId,
+                                  String username, String password) throws ExecutionException, InterruptedException {        
+        
+        String clientSecret = "";
+        ClientCredential credential = new ClientCredential(clientId, clientSecret);
+        authenticationContext.acquireToken(resourceId, credential, null).get().getAccessToken();
+
         return authenticationContext.acquireToken(
                 resourceId,
                 clientId,

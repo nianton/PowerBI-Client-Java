@@ -1,5 +1,3 @@
-
-
 package com.microsoft.powerbi.auth;
 
 import com.microsoft.powerbi.Pair;

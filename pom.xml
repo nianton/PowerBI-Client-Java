@@ -5,7 +5,7 @@
   <artifactId>microsoft-powerbi-client</artifactId>
   <packaging>jar</packaging>
   <name>microsoft-powerbi-client</name>
-  <version>1.1.0</version>
+  <version>1.2.3</version>
   <url>https://github.com/nianton/PowerBiApiClient</url>
   <description>Microsoft PowerBI API Client for Java</description>
 

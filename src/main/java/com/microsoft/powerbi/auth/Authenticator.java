@@ -1,80 +1,25 @@
 package com.microsoft.powerbi.auth;
 
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-import com.microsoft.aad.adal4j.*;
 
 /**
  * https://msdn.microsoft.com/en-US/library/dn877545.aspx
  *
  */
-public class Authenticator {
-    private static final String DEFAULT_AUTHORITY = "https://login.windows.net/common/oauth2/authorize";
-    private static final String DEFAULT_POWER_BI_RESOURCE_ID = "https://analysis.windows.net/powerbi/api";
-    private static final boolean DEFAULT_VALIDATE_AUTHORITY = false;
+public abstract class Authenticator {
+    protected static final String DEFAULT_POWER_BI_RESOURCE_ID = "https://analysis.windows.net/powerbi/api";
+    protected static final boolean DEFAULT_VALIDATE_AUTHORITY = false;
 
-    private String authority = DEFAULT_AUTHORITY;
-    private String powerBiResourceId = DEFAULT_POWER_BI_RESOURCE_ID;
-    private boolean validateAuthority = DEFAULT_VALIDATE_AUTHORITY;
-
-    private String clientId;
-    private String username;
-    private String password;
-    private String clientSecret;
-    private AuthenticationMode mode;
-
-    private ExecutorService executor;
+    protected String powerBiResourceId = DEFAULT_POWER_BI_RESOURCE_ID;
+    protected boolean validateAuthority = DEFAULT_VALIDATE_AUTHORITY;
+    protected String authority;
+    protected String clientId;
     
     /**
-     * Constructor for Service Principal authentication.
-     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
-     * @param clientSecret The client secret/key for the respective service principal
+     * Constructor for base authenticator.
      */
-    public Authenticator(String clientId, String clientSecret) {
-        this(clientId, clientSecret, Executors.newSingleThreadExecutor());
-    }
-
-    /**
-     * Constructor for Service Principal authentication.
-     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
-     * @param clientSecret The client secret/key for the respective service principal
-     * @param executor
-     */
-    public Authenticator(String clientId, String clientSecret, ExecutorService executor) {
-        this.mode = AuthenticationMode.ServicePrincipal;
-        this.executor = executor;
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
-    }
-
-    /**
-     * Constructor for PowerBI Master Account authentication.
-     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
-     * @param username The username of the AAD account
-     * @param password The password of the AAD account
-     */
-    public Authenticator(String clientId, String username, String password) {
-        this(clientId, username, password, Executors.newSingleThreadExecutor());
-    }
-
-    /**
-     * Constructor for PowerBI Master Account authentication.
-     * @param clientId The clientId/appId of the App Registration on Azure Active Directory 
-     * @param username The username of the AAD account
-     * @param password The password of the AAD account
-     * @param executor 
-     */
-    public Authenticator(String clientId, String username, String password, ExecutorService executor) {
-        this.mode = AuthenticationMode.MasterAccount;
-        this.clientId = clientId;
-        this.username = username;
-        this.password = password;
-        this.executor = executor;   
+    protected Authenticator() {
     }
 
     public Authenticator setAuthority(String authority) {
@@ -116,7 +61,7 @@ public class Authenticator {
 
                     // check again, it may have been set in the time it took us to acquire the write lock
                     if (cachedToken == null) {
-                        cachedToken = _authenticate();
+                        cachedToken = this.doAuthenticate();
                     }
 
                     // Downgrade by acquiring read lock before releasing write lock
@@ -137,7 +82,6 @@ public class Authenticator {
             }
         }
 
-
         return cachedToken;
     }
     
@@ -151,64 +95,9 @@ public class Authenticator {
         }
     }
 
-    private String _authenticate() throws AuthenticationFailureException {
-
-        
-        try {
-            AuthenticationContext authenticationContext = new AuthenticationContext(
-                    authority,
-                    validateAuthority,
-                    executor
-            );
-
-            String result = null;
-            switch (this.mode) {
-                case MasterAccount: 
-                    result = getMasterAccountAccessToken(authenticationContext, powerBiResourceId, clientId, username, password);
-                    break;
-                case ServicePrincipal:
-                    result = getServicePrincipalAccessToken(authenticationContext, powerBiResourceId, clientId, clientSecret);
-                    break;
-            }
-          
-            if (result == null) {
-                throw new AuthenticationFailureException("Returned access token is null.");
-            }
-
-            return result;
-        } catch (ExecutionException | InterruptedException | IOException e) {
-            throw new AuthenticationFailureException(e);
-        }
-    }
-
-    private String getServicePrincipalAccessToken(AuthenticationContext authenticationContext, String resourceId, String clientId,
-                                  String clientSecret) throws ExecutionException, InterruptedException {        
-        
-        ClientCredential credential = new ClientCredential(clientId, clientSecret);
-        return authenticationContext.acquireToken(
-                resourceId, 
-                credential, 
-                null).get().getAccessToken();
-    }
-
-
-    private String getMasterAccountAccessToken(AuthenticationContext authenticationContext, String resourceId, String clientId,
-                                  String username, String password) throws ExecutionException, InterruptedException {        
-        
-        String clientSecret = "";
-        ClientCredential credential = new ClientCredential(clientId, clientSecret);
-        authenticationContext.acquireToken(resourceId, credential, null).get().getAccessToken();
-
-        return authenticationContext.acquireToken(
-                resourceId,
-                clientId,
-                username,
-                password,
-                null
-        ).get().getAccessToken();
-    }
+    protected abstract String doAuthenticate() throws AuthenticationFailureException;
     
-    private static String checkNotNull(String input) {
+    protected static String checkNotNull(String input) {
         if (input == null){
             throw new NullPointerException();
         }
